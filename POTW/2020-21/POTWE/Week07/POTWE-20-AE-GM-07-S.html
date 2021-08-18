@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem E and Solution</p>
+<p align="center">The Area of the Year <br />
+<br />
+</p>
+<p>In the diagram, <span class="math inline">\(\triangle AB_1C_1\)</span> is right-angled with <span class="math inline">\(AB_1=2\)</span> and <span class="math inline">\(AC_1=5\)</span>. Lines <span class="math inline">\(AB_1\)</span> and <span class="math inline">\(AC_1\)</span> are extended and many more points are labelled at intervals of 1 unit, so that<br />
+<span class="math display">\[B_1B_2=B_2B_3=B_3B_4=B_4B_5=\ \cdots\ =1,\ \text{and}\]<br />
+<span class="math display">\[C_1C_2=C_2C_3=C_3C_4=C_4C_5=\ \cdots\ =1.\]<br />
+In fact, <span class="math inline">\(B_1B_j=j-1\)</span> and <span class="math inline">\(C_1C_k=k-1\)</span> for any positive integers <span class="math inline">\(j\)</span> and <span class="math inline">\(k\)</span>.<br />
+For example, <span class="math inline">\(B_1B_{5}=5-1=4\)</span> and <span class="math inline">\(C_1C_{4}=4-1=3\)</span>.<br />
+Determine the value of <span class="math inline">\(n\)</span> so that the area of quadrilateral <span class="math inline">\(B_nB_{n+1}C_{n+1}C_n\)</span> is 2020. That is, determine the value of <span class="math inline">\(n\)</span> so that the area of the quadrilateral with vertices <span class="math inline">\(B_n\)</span>, <span class="math inline">\(B_{n+1}\)</span>, <span class="math inline">\(C_{n+1}\)</span>, and <span class="math inline">\(C_n\)</span> is 2020.</p>
+<p align="center"><img style="height:8cm" src="images/Lines1.png" alt="A vertical line and a horizontal line meet at point A. Points B subscript 1, B subscript 2, and so on, lie on the vertical line. Points C subscript 1, C subscript 2, and so on, lie on the horizontal line."/><br />
+</p>
+<p><strong>Solution</strong><br />
+</p>
+<p><strong><u>Solution 1</u></strong><br />
+In order to solve the problem, looking at the calculation of a specific area may prove helpful.<br />
+So let’s determine the area of quadrilateral <span class="math inline">\(B_4B_{5}C_{5}C_4\)</span>.<br />
+<span class="math display">\[\begin{aligned}
+\text{Area of quadrilateral } B_4B_{5}C_{5}C_4&amp;=&amp;\text{Area }\triangle B_5AC_5 - \text{Area }\triangle B_4AC_4\\
+&amp;=&amp;\frac{1}{2}(AB_5)(AC_5)-\frac{1}{2}(AB_4)(AC_4)\\
+&amp;=&amp;\frac{1}{2}(2+(5-1))(5+(5-1))-\frac{1}{2}(2+(4-1))(5+(4-1))\\
+&amp;=&amp;\frac{1}{2}(6)(9)-\frac{1}{2}(5)(8)\\
+&amp;=&amp;27-20\\
+&amp;=&amp;7\text{ units}^2\\[-7mm]\end{aligned}\]</p>
+<p>We will solve the problem by following what we did in the above example.</p>
+<p><span class="math display">\[\begin{aligned}
+\text{Area of quad. } B_nB_{n+1}C_{n+1}C_n&amp;=&amp;\text{Area }\triangle B_{n+1}AC_{n+1} - \text{Area }\triangle B_nAC_n\\
+2020&amp;=&amp;\frac{1}{2}(AB_{n+1})(AC_{n+1})-\frac{1}{2}(AB_n)(AC_n)\\
+2020&amp;=&amp;\frac{1}{2}(2+((n+1)-1))(5+((n+1)-1))-\frac{1}{2}(2+(n-1))(5+(n-1))\\
+2020&amp;=&amp;\frac{1}{2}(2+n)(5+n)-\frac{1}{2}(1+n)(4+n)\\
+4040&amp;=&amp;(2+n)(5+n)-(1+n)(4+n)\qquad \text{multiplying by 2}\\[-0.5mm]
+4040&amp;=&amp;n^2+7n+10-(n^2+5n+4)\\[-0.5mm]
+4040&amp;=&amp;n^2+7n+10-n^2-5n-4\\[-0.5mm]
+4040&amp;=&amp;2n+6\\[-0.5mm]
+4034&amp;=&amp;2n\\[-0.5mm]
+2017&amp;=&amp;n\\[-6mm]\end{aligned}\] Therefore, the value of <span class="math inline">\(n\)</span> is 2017.</p>
+<p> <br />
+<strong><u>Solution 2</u></strong><br />
+In this solution we look for a pattern in the area calculations.<br />
+<img style="height:4cm" src="images/Linespoly1.png" alt = "Quadrilateral with vertices B subscript 1, B subscript 2, C subscript 2, and C subscript 1. Two of the sides of this quadrilateral have length 1." /> <span class="math display">\[\begin{aligned}
+\text{Area of quad. } B_1B_{2}C_{2}C_1&amp;=&amp;\text{Area }\triangle B_2AC_2 - \text{Area }\triangle B_1AC_1\\
+&amp;=&amp;\frac{1}{2}(AB_2)(AC_2)-\frac{1}{2}(AB_1)(AC_1)\\
+&amp;=&amp;\frac{1}{2}(3)(6)-\frac{1}{2}(2)(5)\\
+&amp;=&amp;9-5\\
+\text{Area of first quad. }&amp;=&amp;4\text{ units}^2\end{aligned}\]</p>
+<p><img style="height:4cm" src="images/Linespoly2.png" alt = "Quadrilateral with vertices B subscript 2, B subscript 3, C subscript 3, and C subscript 2. Two of the sides of this quadrilateral have length 1." /></p>
+<p><span class="math display">\[\begin{aligned}
+%\hspace*{45mm} 
+\text{Area of quad. } B_2B_{3}C_{3}C_2&amp;=&amp;\text{Area }\triangle B_3AC_3 - \text{Area }\triangle B_2AC_2\\
+&amp;=&amp;\frac{1}{2}(AB_3)(AC_3)-\frac{1}{2}(AB_2)(AC_2)\\
+&amp;=&amp;\frac{1}{2}(4)(7)-\frac{1}{2}(3)(6)\\
+&amp;=&amp;14-9\\
+\text{Area of second quad. }&amp;=&amp;5\text{ units}^2\\[-12mm]\end{aligned}\]</span></p>
+<p><img style="height:4cm" src="images/Linespoly3.png" alt = "Quadrilateral with vertices B subscript 3, B subscript 4, C subscript 4, and C subscript 3. Two of the sides of this quadrilateral have length 1." /><br /></p>
+<p><span class="math display">\[\begin{aligned}
+%\hspace*{45mm} 
+\text{Area of quad. } B_2B_{3}C_{3}C_2&amp;=&amp;\text{Area }\triangle B_3AC_3 - \text{Area }\triangle B_2AC_2\\
+&amp;=&amp;\frac{1}{2}(AB_3)(AC_3)-\frac{1}{2}(AB_2)(AC_2)\\
+&amp;=&amp;\frac{1}{2}(4)(7)-\frac{1}{2}(3)(6)\\
+&amp;=&amp;14-9\\
+\text{Area of second quad. }&amp;=&amp;5\text{ units}^2\\[-12mm]\end{aligned}\]</span></p>
+<p>A possible pattern has emerged. The area of the quadrilateral appears to be three more than the position of the quadrilateral on the stack of consecutive quadrilaterals. If we want the area to be 2020, then it should be the <span class="math inline">\(2017^{{\mbox{th}}}\)</span> quadrilateral. That is, it should be the quadrilateral with vertices <span class="math inline">\(B_{2017}B_{2018}C_{2018}C_{2017}\)</span>. Therefore, the value of <span class="math inline">\(n\)</span> is 2017.<br />
+We can verify this value of <span class="math inline">\(n\)</span> using the area calculation. Recall from the problem statement, <span class="math inline">\(B_1B_j=j-1\)</span> and <span class="math inline">\(C_1C_k=k-1\)</span> for any positive integers <span class="math inline">\(j\)</span> and <span class="math inline">\(k\)</span>.<br />
+So, <span class="math inline">\(B_1B_{2017}=2017-1=2016\)</span>. Then <span class="math inline">\(AB_{2017}=AB_1+B_1B_{2017}=2+2016=2018\)</span>.<br />
+Since <span class="math inline">\(AB_{2018}=AB_{2017}+1\)</span>, it follows that <span class="math inline">\(AB_{2018}=2019\)</span>.<br />
+Also, <span class="math inline">\(C_1C_{2017}=2017-1=2016\)</span>. Then <span class="math inline">\(AC_{2017}=AC_1+C_1C_{2017}=5+2016=2021\)</span>.<br />
+Since <span class="math inline">\(AC_{2018}=AC_{2017}+1\)</span>, it follows that <span class="math inline">\(AC_{2018}=2022\)</span>.</p>
+<p><img style="height:4cm" src="images/Linespoly2017.png" alt = "The 2017th quadrilateral." /><br /></p>
+<p><span class="math display">\[\begin{aligned}
+%\hspace*{55mm}  &amp;&amp; 
+\text{Area of quadrilateral } B_{2017}B_{2018}C_{2018}C_{2017}\\
+&amp;=&amp;\text{Area }\triangle B_{2018}AC_{2018} - \text{Area }\triangle B_{2017}AC_{2017}\\
+&amp;=&amp;\frac{1}{2}(AB_{2018})(AC_{2018})-\frac{1}{2}(AB_{2017})(AC_{2017})\\
+&amp;=&amp;\frac{1}{2}(2019)(2022)-\frac{1}{2}(2018)(2021)\\
+&amp;=&amp;2\,041\,209-2\,039\,189\\
+&amp;=&amp;2020\text{ units}^2\\[-7mm]\end{aligned}\]</span></p>
+</body>
+</html>

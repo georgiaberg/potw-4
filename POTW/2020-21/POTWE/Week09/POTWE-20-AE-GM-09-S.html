@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem E and Solution</p>
+<p align="center">Terry’s Triangles <br />
+<br />
+</p>
+<p><strong>Problem</strong><br />
+</p>
+<p>Terry is drawing isosceles triangles with side lengths <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> such that <span class="math display">\[\begin{aligned}
+a&amp;=y-x\\
+b&amp;=x+z\\
+c&amp;=y-z\end{aligned}\] where <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> are positive integers and <span class="math inline">\(x+y+z&lt;10\)</span>.<br />
+Find all the possible triples <span class="math inline">\((a,b,c)\)</span> that satisfy this.</p>
+<p align="center"><img src="images/triangle1.png" alt="" /></p>
+<p><strong>Solution</strong><br />
+</p>
+<p>In an isosceles triangle, two sides must have equal length. So we need to consider three cases: <span class="math inline">\(a=b\)</span>, <span class="math inline">\(b=c\)</span>, and <span class="math inline">\(a=c\)</span>. Also, in order for <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> to represent side lengths of a triangle, they must be positive numbers and the sum of any two side lengths must be greater than the other side length.<br />
+<strong>Case 1: <span class="math inline">\(a=b\)</span></strong><br />
+If <span class="math inline">\(a=b\)</span>, then <span class="math inline">\(y-x=x+z\)</span>, so <span class="math inline">\(y=2x+z\)</span>. We can make a table of all the values of <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> that satisfy this equation as well as <span class="math inline">\(x+y+z&lt;10\)</span>, and then find the corresponding values of <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> and check if they are valid side lengths.</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(y\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(z\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(a\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(b\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(c\)</span></th>
+<th style="text-align: center;">Valid?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Case 2: <span class="math inline">\(b=c\)</span></strong><br />
+If <span class="math inline">\(b=c\)</span>, then <span class="math inline">\(x+z=y-z\)</span>, so <span class="math inline">\(y=x+2z\)</span>. As in Case 1, we can write the possible values of <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>, <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> in a table.</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(y\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(z\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(a\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(b\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(c\)</span></th>
+<th style="text-align: center;">Valid?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Case 3: <span class="math inline">\(a=c\)</span></strong><br />
+If <span class="math inline">\(a=c\)</span>, then <span class="math inline">\(y-x=y-z\)</span>, so <span class="math inline">\(x=z\)</span>. As in previous cases, we can write the possible values of <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>, <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> in a table.<br />
+</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(y\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(z\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(a\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(b\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(c\)</span></th>
+<th style="text-align: center;">Valid?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">No (<span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> are not positive)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">No (<span class="math inline">\(a+c \not&gt;b\)</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\(-1\)</span></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">\(-1\)</span></td>
+<td style="text-align: center;">No (<span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> are not positive)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">No (<span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> are not positive)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">No (<span class="math inline">\(a+c \not&gt;b\)</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">No (<span class="math inline">\(a+c \not&gt;b\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(-2\)</span></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><span class="math inline">\(-2\)</span></td>
+<td style="text-align: center;">No (<span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> are not positive)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(-1\)</span></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><span class="math inline">\(-1\)</span></td>
+<td style="text-align: center;">No (<span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> are not positive)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">No (<span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> are not positive)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">\(-3\)</span></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"><span class="math inline">\(-3\)</span></td>
+<td style="text-align: center;">No (<span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> are not positive)</td>
+</tr>
+</tbody>
+</table>
+<p>Therefore, there are 12 possible triples <span class="math inline">\((a,b,c)\)</span>. They are listed below. <span class="math display">\[\begin{aligned}
+&amp;(2,2,2)\quad(3,3,2)\quad(4,4,2)\quad(3,3,4)\\
+&amp;(2,3,3)\quad(2,4,4)\quad(4,3,3)\\
+&amp;(3,2,3)\quad(4,2,4)\quad(5,2,5)\quad(6,2,6)\quad(3,4,3)\end{aligned}\]</p>
+</body>
+</html>

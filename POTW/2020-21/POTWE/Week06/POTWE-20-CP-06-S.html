@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem E and Solution</p>
+<p align="center">Such a Card <br />
+<br />
+</p>
+<p><strong>Problem</strong><br />
+</p>
+<p>Johanna has a deck of cards with the following properties:</p>
+<ol>
+<li><p>Each card in the deck has a positive three-digit integer on it.<br />
+</p></li>
+<li><p>There is exactly one card in the deck for every three-digit positive integer.<br />
+</p></li>
+</ol>
+<p>Johanna randomly selects a card from the deck of cards. Determine the probability that the sum of the digits of the integer on this card is 15.<br />
+</p>
+<p align="center"><img style="height:6cm" src="images/card.png" alt = "Card numbered 456." /></p>
+<p><strong>Solution</strong><br />
+</p>
+<p>To begin, we need to determine the number of cards in the deck. Since there is a card for each three-digit positive integer, there are 900 cards in the deck. We must be careful calculating this number. There are 999 positive integers less than 1000. Of this set, 90 are two-digit numbers and 9 are single-digit numbers. Therefore there are <span class="math inline">\(999-90-9=900\)</span> three-digit positive integers.<br />
+Next we need to determine the digit combinations on a card that have a sum of 15. We will determine the possibilities using cases. Then we will look at the specific groups of numbers that sum to 15 to count the number of cards produced from each group.<br />
+</p>
+<ul>
+<li><p>One of the digits on the card is a 0. The other two digits on the card must add to 15. This leads to two groups of numbers: <span class="math inline">\((0,6,9)\)</span> and <span class="math inline">\((0,7,8)\)</span>.</p></li>
+<li><p>One of the digits on the card is a 1 but the number does not contain a 0. The other two digits on the card must add to 14. This leads to three groups of numbers: <span class="math inline">\((1,5,9)\)</span>, <span class="math inline">\((1,6,8)\)</span> and <span class="math inline">\((1,7,7)\)</span>.</p></li>
+<li><p>One of the digits on the card is a 2 but the number does not contain a 0 or 1. The other two digits on the card must add to 13. This leads to three groups of numbers: <span class="math inline">\((2,4,9)\)</span>, <span class="math inline">\((2,5,8)\)</span> and <span class="math inline">\((2,6,7)\)</span>.</p></li>
+<li><p>One of the digits on the card is a 3 but the number does not contain a 0, 1, or 2. The other two digits on the card must add to 12. This leads to four groups of numbers: <span class="math inline">\((3,3,9)\)</span>, <span class="math inline">\((3,4,8)\)</span>, <span class="math inline">\((3,5,7)\)</span> and <span class="math inline">\((3,6,6)\)</span>.</p></li>
+<li><p>One of the digits on the card is a 4 but the number does not contain a 0, 1, 2, or 3. The other two digits on the card must add to 11. This leads to two groups of numbers: <span class="math inline">\((4,4,7)\)</span> and <span class="math inline">\((4,5,6)\)</span>.</p></li>
+<li><p>One of the digits on the card is a 5 but the number does not contain a 0, 1, 2, 3, or 4. The other two digits on the card must add to 10. This leads to only one group of numbers: <span class="math inline">\((5,5,5)\)</span>.</p></li>
+</ul>
+<p>Now that we have the groups of numbers, we can determine the number of cards that can be created from each group of three numbers. We will do this again with cases: groups containing a 0, groups containing three distinct numbers but not 0, groups containing exactly two numbers the same but not 0, and groups containing three numbers the same but not 0.<br />
+</p>
+<ul>
+<li><p>One of the numbers on the card is 0. Earlier we found that there were two such groups: <span class="math inline">\((0,6,9)\)</span> and <span class="math inline">\((0,7,8)\)</span>. This is a special case since 0 cannot appear in the number as the hundreds digit for the number to be a three-digit number. For each of the two groups of numbers, the 0 can be placed in two ways, in the tens digit or the units digit. Once the 0 is placed, the other two numbers can be placed in the remaining two spots in two ways. Each group can form <span class="math inline">\(2\times 2=4\)</span> three-digit numbers. Since there are two groups, there are <span class="math inline">\(2\times 4=8\)</span> cards in the deck that contain a 0 and add to 15.<br />
+</p></li>
+<li><p>All three digits on the card are different and the number does not contain a 0. From the earlier cases there are eight groups in which all three numbers are different: <span class="math inline">\((1,5,9)\)</span>, <span class="math inline">\((1,6,8)\)</span>, <span class="math inline">\((2,4,9)\)</span>, <span class="math inline">\((2,5,8)\)</span>, <span class="math inline">\((2,6,7)\)</span>, <span class="math inline">\((3,4,8)\)</span>, <span class="math inline">\((3,5,7)\)</span>, and <span class="math inline">\((4,5,6)\)</span>. For each of these groups, the hundreds digit can be filled three ways. For each of these three choices for hundreds digit, the tens digit can be filled two ways. Once the hundreds digit and tens digit are selected, the units digit must get the third number. So each group can form <span class="math inline">\(3\times 2=6\)</span> different numbers. Since there are eight groups, there are <span class="math inline">\(8\times 6=48\)</span> cards in the deck that contain three different digits other than 0 that add to 15.</p></li>
+<li><p>Two of the digits on the card are the same and the number does not contain a 0. From the earlier cases, there are four groups of numbers in which exactly two of the numbers in the group are the same: <span class="math inline">\((1,7,7)\)</span>, <span class="math inline">\((3,3,9)\)</span>, <span class="math inline">\((3,6,6)\)</span>, and <span class="math inline">\((4,4,7)\)</span>. For each of these groups, the unique number can be placed in one of three spots. Once the unique number is placed the other two numbers must go in the remaining two spots. So each group can form three different numbers. Since there are four groups, there are <span class="math inline">\(4\times 3=12\)</span> cards in the deck that do not contain a 0 but contain two digits the same and whose digits add to 15.</p></li>
+<li><p>The three digits on the card are the same. From the earlier cases we discovered only one such group: <span class="math inline">\((5,5,5)\)</span>. Only one card can be produced using the numbers from this group.</p></li>
+</ul>
+<p>Combining the counts from the above four cases, there are <span class="math inline">\(8+48+12+1=69\)</span> cards in the deck with a digit sum of 15. Therefore, the probability that Johanna selects card whose digits add to 15 is <span class="math inline">\(\dfrac{69}{900}=\dfrac{23}{300}\)</span>. This translates to approximately a <span class="math inline">\(7.7\%\)</span> chance.<br />
+A game is considered <em>fair</em> if there is close to a 50% chance of winning. If Johanna was playing a game where she can win by drawing a card whose digits sum to 15, then this game is definitely not fair. If you changed the game to “if the card chosen has a sum that is divisible by 5”, there is about a 20% chance of winning. This is better but still not fair.<br />
+Can you create a game using this specific deck of cards that is reasonably fair and fun to play?</p>
+</body>
+</html>
