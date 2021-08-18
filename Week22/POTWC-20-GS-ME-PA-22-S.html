@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 75%;
+      overflow-x: auto;
+      border: 1px solid black;
+      /*display: block;*
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /*border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;*/
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+      border: 1px solid black;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+      border: 1px solid black;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem C and Solution<br />
+Locate the Fourth Vertex</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>Quadrilateral <span class="math inline">\(BDFH\)</span> is constructed so that each vertex is on a different side of square <span class="math inline">\(ACEG\)</span>. Vertex <span class="math inline">\(B\)</span> is on side <span class="math inline">\(AC\)</span> so that <span class="math inline">\(AB=4\text{ cm}\)</span> and <span class="math inline">\(BC=6\text{ cm}\)</span>. Vertex <span class="math inline">\(F\)</span> is on <span class="math inline">\(EG\)</span> so that <span class="math inline">\(EF=3\text{ cm}\)</span> and <span class="math inline">\(FG=7\text{ cm}\)</span>. Vertex <span class="math inline">\(H\)</span> is on <span class="math inline">\(GA\)</span> so that <span class="math inline">\(GH=4\text{ cm}\)</span> and <span class="math inline">\(HA=6\text{ cm}\)</span>. The area of quadrilateral <span class="math inline">\(BDFH\)</span> is <span class="math inline">\(47\text{ cm}^2\)</span>.</p>
+<p>The fourth vertex of quadrilateral <span class="math inline">\(BDFH\)</span>, labelled <span class="math inline">\(D\)</span>, is located on side <span class="math inline">\(CE\)</span> so that the lengths of <span class="math inline">\(CD\)</span> and <span class="math inline">\(DE\)</span> are both positive integers.</p>
+<p>Determine the lengths of <span class="math inline">\(CD\)</span> and <span class="math inline">\(DE\)</span>.</p>
+<p style="text-align:center"><img src="images/findthepointdiagram.png" style="width:60.0%" alt="" /></p>
+<h2>Solution</h2>
+<p><span><strong><span>Solution 1</span></strong></span></p>
+<p>Since <span class="math inline">\(ACEG\)</span> is a square and the length of<br />
+<span class="math inline">\(AG=AH+HG=6+4=10\)</span> cm, then the length of each side of the square is <span class="math inline">\(10\text{ cm}\)</span> and the area is <span class="math inline">\(10\times 10 = 100\text{ cm}^2\)</span>.</p>
+<p>We can determine the area of triangles <span class="math inline">\(BAH\)</span> and <span class="math inline">\(FGH\)</span> using the formula <span class="math inline">\(\text{area} = \frac{\text{base}\times\text{height}}{2}\)</span>.</p>
+<p>In <span class="math inline">\(\triangle BAH\)</span>, since <span class="math inline">\(BA\)</span> is perpendicular to <span class="math inline">\(AH\)</span>, we can use <span class="math inline">\(BA\)</span> as the height and <span class="math inline">\(AH\)</span> as the base. The area of <span class="math inline">\(\triangle BAH\)</span> is <span class="math inline">\(\frac{6\times 4}{2}=12\text{ cm}^2\)</span>.</p>
+<p>In <span class="math inline">\(\triangle FGH\)</span>, since <span class="math inline">\(FG\)</span> is perpendicular to <span class="math inline">\(GH\)</span>, we can use <span class="math inline">\(FG\)</span> as the height and <span class="math inline">\(GH\)</span> as the base. The area of <span class="math inline">\(\triangle FGH\)</span> is <span class="math inline">\(\frac{4\times 7}{2}=14\text{ cm}^2\)</span>.</p>
+<p>The area of <span class="math inline">\(\triangle BCD\)</span> plus the area of <span class="math inline">\(\triangle FED\)</span> must be the total area minus the three known areas. That is, <span class="math inline">\(\text{Area }\triangle BCD +\text{Area }\triangle FED=100-12-47-14=27\text{ cm}^2\)</span>.</p>
+<p style="text-align:center"><img src="images/findthepointdiagramsoln.png" style="width:40.0%" alt="" /></p>
+<p><span class="math inline">\(CD\)</span> and <span class="math inline">\(DE\)</span> are both positive integers and <span class="math inline">\(CD+DE=10\)</span>. We will systematically check all possible values for <span class="math inline">\(CD\)</span> and <span class="math inline">\(DE\)</span> to determine the values which produce the correct area.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(CD\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(DE\)</span></th>
+<th style="text-align: center;">Area<span class="math inline">\(\ \triangle BCD\)</span></th>
+<th style="text-align: center;">Area<span class="math inline">\(\ \triangle FED\)</span></th>
+<th style="text-align: center;">Area <span class="math inline">\(\triangle BCD\ +\)</span> Area <span class="math inline">\(\triangle FED\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;"><span class="math inline">\(1\times 6 \div 2=3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9\times 3\div 2=13.5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3+13.5=16.5\not=27\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"><span class="math inline">\(2\times 6 \div 2=6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8\times 3\div 2=12\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6+12=18\not=27\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"><span class="math inline">\(3\times 6 \div 2=9\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(7\times 3\div 2=10.5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9+10.5=19.5\not=27\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><span class="math inline">\(4\times 6 \div 2=12\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6\times 3\div 2=9\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(12+9=21\not=27\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math inline">\(5\times 6 \div 2=15\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(5\times 3\div 2=7.5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(15+7.5=22.5\not=27\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">\(6\times 6 \div 2=18\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(4\times 3\div 2=6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(18+6=24\not=27\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(7\times 6 \div 2=21\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3\times 3\div 2=4.5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(21+4.5=25.5\not=27\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\(8\times 6 \div 2=24\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\times 3\div 2=3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(24+3=27\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\(9\times 6 \div 2=27\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\times 3\div 2=1.5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(27+1.5=28.5\not=27\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Therefore, when <span class="math inline">\(CD=8\)</span> cm and <span class="math inline">\(DE=2\)</span> cm, the area of quadrilateral <span class="math inline">\(BDFH\)</span> is <span class="math inline">\(47\text{ cm}^2\)</span>.</p>
+<p>The second solution is more algebraic and will produce a solution for any lengths of <span class="math inline">\(CD\)</span> and <span class="math inline">\(DE\)</span> between <span class="math inline">\(0\)</span> and <span class="math inline">\(10\)</span> cm.</p>
+<p><span><strong><span>Solution 2</span></strong></span></p>
+<p>This solution begins the same as Solution 1. Algebra is introduced to complete the solution.</p>
+<p>Since <span class="math inline">\(ACEG\)</span> is a square and the length of <span class="math inline">\(AG=AH+HG=6+4=10\)</span> cm, then the length of each side of the square is <span class="math inline">\(10\text{ cm}\)</span> and the area is <span class="math inline">\(10\times 10=100\text{ cm}^2\)</span>.</p>
+<p>We can determine the area of the triangles <span class="math inline">\(BAH\)</span> and <span class="math inline">\(FGH\)</span> using the formula <span class="math inline">\(\frac{\text{base}\times\text{height}}{2}\)</span>.</p>
+<p>In <span class="math inline">\(\triangle BAH\)</span>, since <span class="math inline">\(BA\)</span> is perpendicular to <span class="math inline">\(AH\)</span>, we can use <span class="math inline">\(BA\)</span> as the height and <span class="math inline">\(AH\)</span> as the base. The area of <span class="math inline">\(\triangle BAH\)</span> is <span class="math inline">\(\frac{6\times 4}{2}=12\text{ cm}^2\)</span>.</p>
+<p>In <span class="math inline">\(\triangle FGH\)</span>, since <span class="math inline">\(FG\)</span> is perpendicular to <span class="math inline">\(GH\)</span>, we can use <span class="math inline">\(FG\)</span> as the height and <span class="math inline">\(GH\)</span> as the base. The area of <span class="math inline">\(\triangle FGH\)</span> is <span class="math inline">\(\frac{4\times 7}{2}=14\text{ cm}^2\)</span>.</p>
+<p>The area of <span class="math inline">\(\triangle BCD\)</span> plus the area of <span class="math inline">\(\triangle FED\)</span> must be the total area minus the three known areas. That is, <span class="math inline">\(\text{Area }\triangle BCD +\text{Area }\triangle FED=100-12-47-14=27\text{ cm}^2\)</span>.</p>
+<p style="text-align:center"><img src="images/findthepointdiagramsoln.png" style="width:50.0%" alt="" /><br />
+</p>
+<p>Let the length of <span class="math inline">\(CD\)</span> be <span class="math inline">\(n\)</span> cm. Then the length of <span class="math inline">\(DE\)</span> is <span class="math inline">\((10-n)\)</span> cm.</p>
+<p>The area of <span class="math inline">\(\triangle BCD\)</span> is <span class="math inline">\(\dfrac{BC\times CD}{2}=\dfrac{6\times n}{2}=3n\)</span>.</p>
+<p>The area of <span class="math inline">\(\triangle FED\)</span> is <span class="math inline">\(\dfrac{FE\times DE}{2}=\dfrac{3\times (10-n)}{2}=\dfrac{10-n+10-n+10-n}{2}=\dfrac{30-3n}{2}\)</span>.</p>
+<p>Therefore, <span class="math display">\[\begin{aligned}
+\text{Area }\triangle BCD+\text{Area }\triangle FED&amp;=27\\
+3n+\frac{30-3n}{2}&amp;=27\\
+6n+30-3n&amp;=54 &amp; \text{(multiplying both sides by 2)}  \\
+3n+30&amp;=54\\
+3n&amp;=24\\
+n&amp;=8\\\end{aligned}\]</span></p>
+<p>Therefore, the length of <span class="math inline">\(CD\)</span> is <span class="math inline">\(8\)</span> cm and the length of <span class="math inline">\(DE\)</span> is <span class="math inline">\(2\)</span> cm.</p>
+<p>The algebra presented in Solution 2 may not be familiar to all students at this level.</p>
+</main>
+</body>
+</html>
