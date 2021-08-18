@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SolutionD1</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem B and Solution</p>
+<p align="center">Your Teeth, You Must Care For <br />
+<br />
+</p>
+<p><strong>Problem</strong><br />
+</p>
+<p>Some dentists recommend that you brush your teeth twice a day for 2.5 minutes each time.<br />
+Assume for these problems that this recommendation has been followed. Also assume there are no leap years.</p>
+<ol type="a">
+<li><p>How many seconds per day of brushing are required by this recommendation?</p></li>
+<li><p>For about how many hours would you brush your teeth in a year?</p></li>
+<li><p>Over the past 25 years, for about how many days would this hockey player have brushed what teeth he has?</p></li>
+<li><p>Yoda was about 900 years old. Regularly, his teeth he did brush. For about how many weeks would he have brushed his teeth throughout his life?</p></li>
+</ol>
+<p align="center"><img style="height:6cm" src="D1_dgm1.jpg"  alt="" /></p>
+<p align="center"><img style="height:6cm" src="D1_dgm2.jpg"  alt="" /></p>
+<p><span class="smallcaps">Time Conversion List: (Look these up if you don’t know them.)</p>
+<table>
+<tr>
+<td>____ seconds = 1 minute</td><td> ____ days = 1 year</td>
+</tr><tr>
+<td>____ hours = 1 day</td><td> ____ weeks = 1 year</td>
+</tr><tr>
+<td>____ days = 1 week</td><td></td>
+</tr>
+</table>
+<p><strong>Solution</strong><br />
+</p>
+<ol type="a">
+<li><p>It is recommend that you brush for 2.5 minutes twice per day, for a total of 5 minutes per day. The recommended number of seconds per day is<br />
+5 minutes per day <span class="math inline">\(\times\)</span> 60 seconds per minute <span class="math inline">\(= 300\)</span> seconds per day.<br />
+</p></li>
+<li><p>The recommended number of minutes per year is<br />
+5 minutes per day <span class="math inline">\(\times\)</span> 365 days per year = 1825 minutes per year.<br />
+This is equal to 30 hours and 25 minutes, or 30<span class="math inline">\(\frac{5}{12}\)</span> hours <span class="math inline">\(\approx\)</span> 30.42 hours.<br />
+Alternatively, 5 minutes is equal to <span class="math inline">\(\frac{1}{12}\)</span> of an hour, giving<br />
+<span class="math inline">\(\frac{1}{12}\)</span> hours per day <span class="math inline">\(\times\)</span> 365 days = <span class="math inline">\(\frac{365}{12}\)</span> hours or <span class="math inline">\(30\frac{5}{12}\)</span> hours.<br />
+</p></li>
+<li><p>The number of hours of brushing in 25 years is equal to<br />
+<span class="math inline">\(\frac{365}{12}\text{ hours per year} \times\)</span> 25 years <span class="math inline">\(= \frac{9125}{12}\)</span> hours <span class="math inline">\(= 760\frac{5}{12}\)</span> <span class="math inline">\(\approx\)</span> 760.42 hours. This gives a total of <span class="math inline">\(\frac{9125}{12}\)</span> hours <span class="math inline">\(\div\)</span> 24 hours per day <span class="math inline">\(\approx\)</span> 31.7 days, slightly less than 32 days.<br />
+</p></li>
+<li><p>The number of hours of brushing in 900 years would be<br />
+<span class="math inline">\(\frac{365}{12}\)</span> hours per year <span class="math inline">\(\times\)</span> 900 years = <span class="math inline">\(\frac{328\,500}{12} = 27\,375\)</span> hours of brushing.<br />
+This gives <span class="math inline">\(27\,375\)</span> hours of brushing <span class="math inline">\(\div\)</span> 24 hours per day <span class="math inline">\(= 1140.625\)</span> days of brushing.<br />
+This is equal to 1140.625 days of brushing <span class="math inline">\(\div\)</span> 7 days per week <span class="math inline">\(\approx\)</span> 162.95 or almost 163 weeks of brushing.</p></li>
+</ol>
+</body>
+</html>
