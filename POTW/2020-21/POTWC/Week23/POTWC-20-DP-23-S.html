@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid black
+      /*display: block;*/
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+      border: 1px solid black
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+      border: 1px solid black
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem C and Solution<br />
+CADET</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>We can take any word and rearrange all the letters to get another “word”. These new “words” may be nonsensical. For example, you can rearrange the letters in <span class="math inline">\(MATH\)</span> to get <span class="math inline">\(MTHA\)</span>. Geordie wants to rearrange all the letters in the word <span class="math inline">\(CADET\)</span>. However, he uses the following rules:</p>
+<ul>
+<li><p>the letters <span class="math inline">\(A\)</span> and <span class="math inline">\(D\)</span> must be beside each other, and</p></li>
+<li><p>the letters <span class="math inline">\(E\)</span> and <span class="math inline">\(T\)</span> must be beside each other.</p></li>
+</ul>
+<p>How many different arrangements of the word <span class="math inline">\(CADET\)</span> can Geordie make if he follows these rules?</p>
+<p style="text-align:center"><img src="images/cadet.png" style="width:20.0%" /></p>
+<p><span class="smallcaps">Note:</span> <span class="math inline">\(ADCET\)</span> and <span class="math inline">\(ADTEC\)</span> are acceptable words, while <span class="math inline">\(ADTCE\)</span> is not.</p>
+<h2>Solution</h2>
+<p>We will look at a systematic way of counting the arrangements by first looking at a simpler example.</p>
+<p>Let’s start with a three letter word. How many different ways can we arrange the letters of the word <span class="math inline">\(SPY\)</span>?<br />
+If we list all the arrangements, we get 6 arrangements.<br />
+They are: <span class="math inline">\(SPY, SYP, PYS, PSY, YPS, YSP\)</span>.</p>
+<p>There is another way to count these <span class="math inline">\(6\)</span> cases without listing them all out:</p>
+<p>If we consider the first letter, there are <span class="math inline">\(3\)</span> possibilities. For each of these possibilities, there are <span class="math inline">\(2\)</span> remaining options for the second letter. Finally, once the first and second letters are set, there is only one possibility left for the last letter.</p>
+<p>To get the number of possible arrangements, we multiply <span class="math inline">\(\underline{\  3 \ } \times \underline{\  2 \ } \times \underline{\  1 \ } = 6\)</span>.</p>
+<p>Let’s look at our problem now.</p>
+<p>If we consider <span class="math inline">\(A\)</span> and <span class="math inline">\(D\)</span> as the single “letter” <span class="math inline">\(AD\)</span>, and <span class="math inline">\(E\)</span> and <span class="math inline">\(T\)</span> as the single “letter” <span class="math inline">\(ET\)</span>, we now have only the three “letters” <span class="math inline">\(C\)</span>, <span class="math inline">\(AD\)</span>, and <span class="math inline">\(ET\)</span>.<br />
+As we saw above, there are <span class="math inline">\(\underline{\  3 \ } \times \underline{\  2 \ } \times \underline{\  1 \ } = 6\)</span> ways to arrange the three “letters”.<br />
+These arrangements are: <span class="math inline">\(CADET, CETAD, ADCET, ADETC, ETCAD, ETADC\)</span>.<br />
+(We will refer to these as the original six.)</p>
+<p>However, note that the question says <span class="math inline">\(A\)</span> and <span class="math inline">\(D\)</span> must be beside each other. This means they could appear as <span class="math inline">\(AD\)</span> or <span class="math inline">\(DA\)</span>. Similarly, <span class="math inline">\(E\)</span> and <span class="math inline">\(T\)</span> could appear as <span class="math inline">\(ET\)</span> or <span class="math inline">\(TE\)</span>.</p>
+<p>Let’s take a look at the first word, <span class="math inline">\(CADET\)</span>.<br />
+We could switch <span class="math inline">\(AD\)</span> to <span class="math inline">\(DA\)</span>. This means <span class="math inline">\(CADET\)</span> becomes <span class="math inline">\(CDAET\)</span>, which is a valid arrangement.<br />
+We could also switch <span class="math inline">\(ET\)</span> to <span class="math inline">\(TE\)</span>. This means <span class="math inline">\(CADET\)</span> becomes <span class="math inline">\(CADTE\)</span>, which is a valid arrangement.<br />
+We could also switch both <span class="math inline">\(AD\)</span> to <span class="math inline">\(DA\)</span> and <span class="math inline">\(ET\)</span> to <span class="math inline">\(TE\)</span>. This means <span class="math inline">\(CADET\)</span> becomes <span class="math inline">\(CDATE\)</span>, which is a valid arrangement.</p>
+<p>We can do these changes for each of the original six. We list these arrangements in the table below.</p>
+<table>
+<tr><th>One of the <br />Original Six</th><th>Switch <span class="math inline">\(AD\)</span></th><th>Switch <span class="math inline">\(ET\)</span></th><th>Switch both <br /><span class="math inline">\(AD\)</span> and <span class="math inline">\(ET\)</span></th></tr>
+<tr><td><span class="math inline">\(CADET\)</span></td><td><span class="math inline">\(CDAET\)</span></td><td><span class="math inline">\(CADTE\)</span></td><td><span class="math inline">\(CDATE\)</span></td></tr>
+<tr><td><span class="math inline">\(CETAD\)</span></td><td><span class="math inline">\(CETDA\)</span></td><td><span class="math inline">\(CTEAD\)</span></td><td><span class="math inline">\(CTEDA\)</span></td></tr>
+<tr><td><span class="math inline">\(ADCET\)</span></td><td><span class="math inline">\(DACET\)</span></td><td><span class="math inline">\(ADCTE\)</span></td><td><span class="math inline">\(DACTE\)</span></td></tr>
+<tr><td><span class="math inline">\(ADETC\)</span></td><td><span class="math inline">\(DAETC\)</span></td><td><span class="math inline">\(ADTEC\)</span></td><td><span class="math inline">\(DATEC\)</span></td></tr>
+<tr><td><span class="math inline">\(ETCAD\)</span></td><td><span class="math inline">\(ETCDA\)</span></td><td><span class="math inline">\(TECAD\)</span></td><td><span class="math inline">\(TECDA\)</span></td></tr>
+<tr><td><span class="math inline">\(ETADC\)</span></td><td><span class="math inline">\(ETDAC\)</span></td><td><span class="math inline">\(TEADC\)</span></td><td><span class="math inline">\(TEDAC\)</span></td></tr>
+</table>
+<p>Therefore, there are <span class="math inline">\(24\)</span> possible arrangements that Geordie can make when following the given rules.</p>
+<p><span class="smallcaps">Note:</span> There is another way to count the number of arrangements. There are <span class="math inline">\(6\)</span> ways to arrange the <span class="math inline">\(3\)</span> “letters”. There are <span class="math inline">\(2\)</span> ways to arrange <span class="math inline">\(AD\)</span> and there are <span class="math inline">\(2\)</span> ways to arrange <span class="math inline">\(ET\)</span>. To determine the total number of arrangements, we multiply <span class="math inline">\(6 \times 2 \times 2\)</span>. This gives us <span class="math inline">\(24\)</span> arrangements.</p>
+</body>
+</html>
