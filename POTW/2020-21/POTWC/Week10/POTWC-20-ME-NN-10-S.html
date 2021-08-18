@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem C and Solution</p>
+<p align="center">Around the Farm <br />
+<br />
+</p>
+<p><strong>Problem</strong> <br />
+</p>
+<p>Rahul has a farm he wishes to fence. The farm is the pentagon <span class="math inline">\(ABCDE\)</span> shown below. He knows that <span class="math inline">\(ABCD\)</span> is a 140 m by 150 m rectangle. He also knows that <span class="math inline">\(E\)</span> is 50 m from the side <span class="math inline">\(AB\)</span> and 30 m from the side <span class="math inline">\(BC\)</span>.<br />
+Determine the length of <span class="math inline">\(AE\)</span>, the length of <span class="math inline">\(DE\)</span>, and the perimeter of pentagon <span class="math inline">\(ABCDE\)</span>.</p>
+<p align="center"><img style="height:6cm" src="images/triangles.png"alt = "Side B C has length 140 metres and side C D has length 150 metres. Point E is in the interior of rectangle A B C D. A line is drawn perpendicular to side B C through E indicating the distance from B C to E and similarly for the distance from A B to E." /></p>
+<p>NOTE: The <em>Pythagorean Theorem</em> states, “In a right-angled triangle, the square of the length of hypotenuse (the side opposite the right angle) equals the sum of the squares of the lengths of the other two sides”.<br />
+In the following right triangle, <span class="math inline">\(p^2=r^2+q^2\)</span>.<br />
+</p>
+<p align="center"><img style="height:6cm" src="images/PythTheorem.png"alt = "A right-angled triangle with hypotenuse of length p and remaining sides of length r and length q." /></p>
+<p><strong>Solution</strong> <br />
+</p>
+<p>Let <span class="math inline">\(F\)</span> be the point on <span class="math inline">\(AB\)</span> with <span class="math inline">\(EF=50\)</span> m.<br />
+Let <span class="math inline">\(H\)</span> be the point on <span class="math inline">\(BC\)</span> with <span class="math inline">\(EH=30\)</span> m.<br />
+Extend <span class="math inline">\(EF\)</span> to <span class="math inline">\(G\)</span> on <span class="math inline">\(CD\)</span>.<br />
+Since <span class="math inline">\(ABCD\)</span> is a rectangle and <span class="math inline">\(FG\)</span> is perpendicular to <span class="math inline">\(AB\)</span>, then <span class="math inline">\(FG\)</span> is perpendicular to <span class="math inline">\(CD\)</span> and <span class="math inline">\(FGCB\)</span> is a rectangle. Therefore, <span class="math inline">\(FB= EH=GC=30\)</span> m.<br />
+Also, <span class="math inline">\(DG = AF = AB - FB = 150 - 30 = 120\)</span> m.<br />
+<img style="height:6cm" src="images/trianglessoln.png"alt = "Angle A F E and angle B H E are right angles and E G has length 90." /></p>
+<p>Since <span class="math inline">\(\triangle AFE\)</span> and <span class="math inline">\(\triangle DGE\)</span> are right-angled triangles, we can use the Pythagorean Theorem to determine the lengths of <span class="math inline">\(AE\)</span> and <span class="math inline">\(DE\)</span>.</p>
+<p>In <span class="math inline">\(\triangle AFE\)</span>, <span class="math display">\[\begin{aligned}
+AE^2&amp;=&amp;AF^2+FE^2\\
+  &amp;=&amp;120^2+50^2\\
+  &amp;=&amp;14\,400+2500\\
+  &amp;=&amp;16\,900\\
+  AE&amp;=&amp;130\mbox{, since $AE &gt; 0$}\\\end{aligned}\] <img style="height:6cm" src="images/trianglessolnleft.png"alt = "Triangle A F E has a right angle at F. The length of side A F is 120 and the length of side E F is 50." /></p>
+<p>In <span class="math inline">\(\triangle DGE\)</span>, <span class="math display">\[\begin{aligned}
+DE^2&amp;=&amp;DG^2+EG^2\\
+  &amp;=&amp;120^2+90^2\\
+  &amp;=&amp;14\,400+8100\\
+  &amp;=&amp;22\,500\\
+  DE&amp;=&amp;150\mbox{, since $DE &gt; 0$}\end{aligned}\] <img style="height:6cm" src="images/trianglessolnright.png"alt = "Triangle E G D has a right angle at G. The length of side E G is 90 and the length of side D G is 120." /></p>
+<p>Therefore, <span class="math inline">\(AE=130\)</span> m and <span class="math inline">\(DE=150\)</span> m.<br />
+Also, the perimeter of pentagon <span class="math inline">\(ABCDE\)</span> is equal to <span class="math inline">\(AB + BC + CD + DE + AE = 150 + 140 + 150 + 150 + 130= 720\)</span> m.</p>
+</body>
+</html>
