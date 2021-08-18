@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem C and Solution</p>
+<p align="center">New Steps <br />
+<br />
+</p>
+<p><strong>Problem</strong> <br />
+</p>
+<p>The POTW clubhouse needs to replace their front steps. A suggestion for the steps is shown below. The steps are of equal depth and equal height. The steps are 120 cm high, 120 cm from front to back and 100 cm wide.<br />
+The stairs are to be painted gold and the two sides are to be painted black. One of the two sides that is to be painted black is shaded in the diagram. The back and bottom of the structure will not be seen and will not be painted.<br />
+Determine the total area to be painted gold and the total area to be painted black.</p>
+<p align="center"><img style="height:6cm" src="images/steps.png" alt="Four steps with total height of 120 cm. Each individual step is as tall as it is long. The shaded vertical side of the steps is a ten-sided polygon." /></p>
+<p><strong>Solution</strong> <br />
+</p>
+<p>In order to solve both parts of the problem, the depth and height of each individual step must be calculated. The entire structure is 120 cm from front to back and four steps cover the entire depth. Therefore, each step is <span class="math inline">\(120 \mbox{ cm} \div 4 = 30\)</span> cm wide and high.<br />
+The area to paint gold is made up of 8 identical rectangles, each 30 cm wide and 100 cm long. Using the formula <span class="math inline">\(\text{area}=\text{length} \times \text{width}\)</span>, the area of one rectangle is <span class="math inline">\(30 \times 100=3000 \mbox{ cm}^2\)</span>. The area of all surfaces to be painted gold is <span class="math inline">\(8 \times 3000=24\,000 \mbox{ cm}^2\)</span>.<br />
+There are many different ways to find the area of the sides of the stairs. One solution would be to break the figure into four equal width rectangles, one four steps high, one three steps high, one two steps high and the final rectangle one step high.<br />
+The area of one side is<br />
+<span class="math inline">\(30 \times (4 \times 30) + 30 \times (3 \times 30)+30 \times (2 \times 30)+30 \times (1 \times 30)\)</span><br />
+<span class="math inline">\(=30 \times 120 + 30 \times 90 + 30 \times 60 + 30 \times 30=3600+2700+1800 +900\)</span><br />
+= <span class="math inline">\(9000 \mbox{ cm}^2\)</span>.<br />
+<img style="height:6cm" src="images/stepssoln1.png" alt="One side of the steps is broken into four vertical rectangles that make up the ten-sided polygon."/><br />
+</p>
+<p>The total area of the two sides to be painted black is <span class="math inline">\(2 \times 9000 = 18\,000\ \mbox{cm}^2\)</span></p>
+<p>A second method to calculate the area of one side involves breaking the figure into triangles. Draw a diagonal from the top left corner to the bottom right corner. This diagonal line would hit the bottom corner of each step as shown in the diagram. The larger triangle has a base and height of 120 cm. Each of the four smaller triangles has a base and a height of 30 cm, the width and height of each step.<br />
+Using the formula <span class="math inline">\(\text{area} =\text{base} \times \text{height} \div 2\)</span>, the area of one side is<br />
+<span class="math inline">\(120 \times 120 \div 2+4 \times (30 \times 30 \div 2)=7200 + 1800=9000\ \mbox{cm}^2\)</span>.<br />
+<img style="height:6cm" src="images/stepssoln2.png" alt="One side of the steps is broken into five triangles using a diagonal line." /><br />
+The total area of the two sides to be painted black is <span class="math inline">\(2 \times 9000 = 18\,000\ \mbox{cm}^2\)</span>.<br />
+<strong>Therefore, the total area to paint gold is <span class="math inline">\(24\, 000 \mbox{ cm}^{\bf 2}\)</span> and the total area to paint black is <span class="math inline">\(18\,000 \mbox{ cm}^{\bf 2}.\)</span></strong></p>
+</body>
+</html>

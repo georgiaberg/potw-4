@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem C and Solution</p>
+<p align="center">Branching Out <br />
+<br />
+</p>
+<p><strong>Problem</strong> <br />
+</p>
+<p>Consider the following number tree.</p>
+<p>In this number tree, the integers greater than or equal to 0 are written out in increasing order, with the top row containing one integer and every row after containing twice as many integers as the row above it.</p>
+<p align="center"><img src="images/tree.png"alt = "The first row of the tree has the number 0. The second row of the tree has the numbers 1 and 2. The third row has the numbers 3, 4, 5, and 6. The fourth row has the numbers 7, 8, 9, 10, 11, 12, 13, and 14. This pattern continues." /><br />
+</p>
+<p>If row 1 contains the integer 0, what is the fifth number in row 10?<br />
+</p>
+<p><strong>Solution</strong> <br />
+</p>
+<p><strong><u>Solution 1</u></strong><br />
+One approach to solving the problem would be to write out the first 10 rows of the chart and read off the fifth number in row 10. You would discover that the fifth integer in row 10 is 515. This solution may “work” in this example but it is certainly not ideal. It would not be practical if you were asked for the seventh integer in row 50.<br />
+<strong><u>Observations</u></strong><br />
+There are many patterns in the tree. The solutions provided below will look at some of the different patterns which can be used to solve the problem.<br />
+<strong><u>Solution 2</u></strong><br />
+Row 1 contains 1 integer, row 2 contains 2 integers, row 3 contains 4 integers, and row 4 contains 8 integers. Each new row in the tree has twice as many integers as the previous row.<br />
+Using this, we could find the number of integers in the first 9 rows of the chart. There are <span class="math display">\[1+2+4+8+16+32+64+128+256=511\]</p>
+<p>integers in the first 9 rows of the chart. There are 511 integers in the 9 rows, but the first integer in the chart is 0. Therefore, it follows that the last integer in the 9th row is 1 less than the number of integers in 9 rows. That is, the last integer in row 9 is 510. Therefore, the first integer in row 10 is 511. We can easily count to the fifth spot to obtain 515, as above.<br />
+<strong><u>Solution 3</u></strong><br />
+This solution is similar to Solution 2, but only looks at the rightmost number in each row.<br />
+To get from the top number to the rightmost number in row 2, add 2. To get from the rightmost number in row 2 to the rightmost number in row 3, add 4. To get from the rightmost number in row 3 to the rightmost number in row 4, add 8. The numbers that are added correspond to the number of integers in the next row. We will find the rightmost number in row 9 and then add 1 to get the leftmost number in row 10. The rightmost number in row 9 is: <span class="math display">\[0+2+4+8+16+32+64+128+256=510\] This tells us that the leftmost number in row 10 is 511. Therefore, the fifth number in row 10 is 515.<br />
+<strong><u>Solution 4</u></strong><br />
+Since each row after the first has twice as many integers as the row above, there is some connection to powers of 2 in the problem. The following table shows the row number, the rightmost number in that row, the power of 2 with the row number as the exponent, and the connection between this power and the last number in the row.</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Row Number</th>
+<th style="text-align: center;">Rightmost Number in Row</th>
+<th style="text-align: center;">Power of 2</th>
+<th style="text-align: center;">Connection</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="math inline">\(2^1=2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2^1-2=2-2=0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\(2^2=4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2^2-2=4-2=2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><span class="math inline">\(2^3=8\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2^3-2=8-2=6\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;"><span class="math inline">\(2^4=16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2^4-2=16-2=14\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(n\)</span></td>
+<td style="text-align: center;">??</td>
+<td style="text-align: center;"><span class="math inline">\(2^n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2^n-2=??\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>It would appear that the last number in row 5 should be <span class="math inline">\(2^5-2=32-2=30\)</span>. We could write out the fifth row to confirm that this is correct.<br />
+It would also appear that the last number in row <span class="math inline">\(n\)</span> should be <span class="math inline">\(2^n-2\)</span>. By recognizing the pattern, we predict that the last number in row 9 should be <span class="math inline">\(2^{9}-2=512-2=510\)</span>. We know from earlier solutions that this is correct.<br />
+Therefore, the first number in row 10 is 511 and the fifth number in row 10 is 515.<br />
+It should be noted that this relationship works for all of the rows we have sampled, but we have not proven that it is true in general. You will have to wait for some higher mathematics to be able to prove that this is true in general.<br />
+The pattern used in this solution is not an obvious one, but by discovering it the solution became fairly straightforward. In fact, if we accept the result as true, then we can quickly determine the value of the rightmost integer in any row with a simple calculation.</p>
+</body>
+</html>
