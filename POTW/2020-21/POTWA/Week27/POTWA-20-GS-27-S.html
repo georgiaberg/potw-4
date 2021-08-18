@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 50em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1{
+    	margin-top: 1.4em;
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	margin-top: 1.4em;
+    	font-size: 22px
+    }
+    h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 80%;
+      overflow-x: auto;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+      border: 1px solid black;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+      border: 1px solid black;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+	button {
+		border-radius: 5px;
+  		background-color: #00008B;
+  		border: 1px solid #00008B;
+  		color: #FFFFFF;
+  		padding: 8px 8px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 12px;
+  	}
+  	button:hover{
+  		background: #D3D3D3;
+  		border: 1px solid #00008B;
+  		color: #000000
+  	}
+  	.column-left {
+  		float: left;
+  		width: 40%;
+	}
+	.column-right {
+ 		float: right;
+  		width: 30%;
+	}
+	.column-center {
+  		display: inline-block;
+  		width: 30%;
+	}
+	.long {
+  		font-size: 15px;
+	}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<script>
+function hideSeek() {
+  var x = document.getElementById("longdesc");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Wrapping Presents</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>When Jack wraps a box, he first does a test to determine if his sheet of wrapping paper is long enough.</p>
+<p>To do this, Jack places his box on top of the wrapping paper so that one edge of the box is lined up with the width of the wrapping paper. He then flips the box along the length of the paper so that each of its four sides touches the paper once.</p>
+<p style="text-align:center"><img src="images/BoxRoll.png" style="width:70.0%" alt="Four identical rectangles representing the different positions of the box during the test.  The rectangles lie side by side on a horizontal line representing the wrapping paper. The line extends beyond the rectangles indicating extra paper. The first and third rectangles have their longer sides touching the paper and the second and fourth rectangles have their shorter sides touching the paper. Arrows indicate movement from the first rectangle to the second, from the second to the third, and from the third to the fourth." /></p>
+<p>If there is at least <span class="math inline">\(6\)</span> cm of extra paper left after the last flip, Jack concludes that his sheet of wrapping paper is long enough. If there is less than <span class="math inline">\(6\)</span> cm of extra paper left after the last flip, Jack rotates his box so a different edge of his box is lined up with the wrapping paper and tries his test again.</p>
+<p>Jack wants to wrap a box with dimensions <span class="math inline">\(20\text{ cm} \times 12 \text{ cm}\times 8 \text{ cm}\)</span>.<br />
+He has a sheet of wrapping paper that is <span class="math inline">\(62\)</span> cm long.</p>
+<p>Would this sheet of wrapping paper be long enough to wrap his box? If so, how should he position his box on the wrapping paper at the beginning of his test? You can assume the wrapping paper is wide enough to wrap the box. Justify your answer.</p>
+
+<h2>Solution</h2>
+<p>To solve this problem we can try putting the box on the paper, and then check to see if the paper is long enough. Since the box has three dimensions, there are three different edge lengths that we can line up with the edge of the wrapping paper. We will consider these three different tests.</p>
+<p><em>First Test</em></p>
+<p>First we line up one of the <span class="math inline">\(20\)</span> cm edges of the box with the width of the wrapping paper. Then when we look at the box from the side as we are rolling it along the paper, we will see only the <span class="math inline">\(8\)</span> cm and <span class="math inline">\(12\)</span> cm sides.</p>
+<p style="text-align:center"><img src="images/BoxRollSol1.png" style="width:60.0%" alt="Four rectangles lie side by side with their bases arranged along a horizontal line. The bases of the first and third rectangles are 12 cm and the bases of the second and fourth rectangles are 8 cm." /></p>
+<p>Rolling the box along the paper this way is the same as measuring the perimeter of a <span class="math inline">\(8 \text{ cm} \times 12 \text{ cm}\)</span> rectangle, which is <span class="math inline">\(12+8+12+8=40\)</span> cm. Since the wrapping paper is <span class="math inline">\(62\)</span> cm long, there will be <span class="math inline">\(62-40=22\)</span> cm of extra paper left after the last roll. This is more than <span class="math inline">\(6\)</span> cm, so with this starting position, the wrapping paper is long enough to wrap Jack’s box.</p>
+<p><em>Second Test</em></p>
+<p>Next we will line up one of the <span class="math inline">\(8\)</span> cm edges of the box with the width of the wrapping paper. Then when we look at the box from the side as we are rolling it along the paper, we will see only the <span class="math inline">\(12\)</span> cm and <span class="math inline">\(20\)</span> cm sides.</p>
+<p style="text-align:center"><img src="images/BoxRollSol2.png" style="width:60.0%" alt="Four rectangles lie side by side with their bases arranged along a horizontal line. The bases of the first and third rectangles are 20 cm and the bases of the second and fourth rectangles are 12 cm." /></p>
+<p>Rolling the box along the paper this way is the same as measuring the perimeter of a <span class="math inline">\(12 \text{ cm} \times 20 \text{ cm}\)</span> rectangle, which is <span class="math inline">\(20+12+20+12=64\)</span> cm. Since the wrapping paper is only <span class="math inline">\(62\)</span> cm long, it is not long enough to wrap Jack’s box this way.</p>
+<p><em>Third Test</em></p>
+<p>Finally we will line up one of the <span class="math inline">\(12\)</span> cm edges of the box with the width of the wrapping paper. Then when we look at the box from the side as we are rolling it along the paper, we will see only the <span class="math inline">\(8\)</span> cm and <span class="math inline">\(20\)</span> cm sides.</p>
+<p style="text-align:center"><img src="images/BoxRollSol3.png" style="width:60.0%" alt="Four rectangles lie side by side with their bases arranged along a horizontal line. The bases of the first and third rectangles are 20 cm and the bases of the second and fourth rectangles are 8 cm." /></p>
+<p>Rolling the box along the paper this way is the same as measuring the perimeter of a <span class="math inline">\(8 \text{ cm} \times 20 \text{ cm}\)</span> rectangle, which is <span class="math inline">\(20+8+20+8=56\)</span> cm. Since the wrapping paper is <span class="math inline">\(62\)</span> cm long, there will be <span class="math inline">\(62-56=6\)</span> cm of extra paper left after the last roll. Therefore with this starting position, the wrapping paper is just long enough to wrap Jack’s box.</p>
+<p>Thus, the wrapping paper is long enough to wrap Jack’s box if he starts by placing the box on the wrapping paper with either the <span class="math inline">\(12\)</span> cm edge or the <span class="math inline">\(20\)</span> cm edge lined up with the width of the wrapping paper.</p>
+<p><span class="smallcaps">Extension:</span> If this piece of wrapping paper was <span class="math inline">\(24\)</span> cm wide, would it be wide enough to wrap the box? Think about how much wrapping paper would be needed on either side of the box when you are rolling it. Remember that you will need to wrap the two side faces of the box as well.</p>
+<h3>Teacher’s Notes</h3>
+<p>With two-dimensional objects, we are often interested in the area and perimeter of the object. With three-dimensional objects, the analogous measurements would be volume and surface area. There are some formulae we can use to find these measurements for common 3-D objects.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>3-D Object</strong></th>
+<th style="text-align: center;"><strong>Dimensions</strong></th>
+<th style="text-align: center;"><strong>Volume</strong></th>
+<th style="text-align: center;"><strong>Surface Area</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Cube</td>
+<td style="text-align: center;">side length <span class="math inline">\(= s\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(s^3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6s^2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Sphere</td>
+<td style="text-align: center;">radius <span class="math inline">\(= r\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dfrac{4}{3} \pi r^3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(4 \pi r^2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Right Cylinder</td>
+<td style="text-align: center;">radius <span class="math inline">\(= r\)</span>, height <span class="math inline">\(= h\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi r^2  h\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2 \pi r^2 + 2 \pi r h\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Right Square Pyramid</td>
+<td style="text-align: center;">base side length <span class="math inline">\(= a\)</span>, height <span class="math inline">\(= h\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a^2 \dfrac{h}{3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a^2 + 2 a \sqrt{\dfrac{a^2}{4} + h^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Right Cone</td>
+<td style="text-align: center;">radius <span class="math inline">\(= r\)</span>, height <span class="math inline">\(= h\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi r^2\dfrac{h}{3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi r \sqrt{r^2 + h^2} + \pi r^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>These formulae are useful when you need to know the volume or surface area of the objects above. Using calculus, we are able to find the volumes of more uncommon objects.</p>
+
+</main>
+</body>
+</html>

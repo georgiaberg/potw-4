@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+    button {
+		border-radius: 5px;
+  		background-color: #00008B;
+  		border: 1px solid #00008B;
+  		color: #FFFFFF;
+  		padding: 10px 10px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 16px;
+  	}
+  	button:hover{
+  		background: #D3D3D3;
+  		border: 1px solid #00008B;
+  		color: #000000
+  	}
+  	@media print {
+  		.noPrint{
+    		display:none;
+    	}
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+    <script>
+function hideSeek() {
+  var x = document.getElementById("longdesc");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Forgotten Cookies</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>Janelle and Jean-Paul baked <span class="math inline">\(60\)</span> cookies for a school bake sale. When Janelle and Jean-Paul got to school, they realized that they were missing the <em>sugar</em> cookies. Below is a pictograph of the cookies that they brought to the school.</p>
+<p style="text-align:center"><img src="images/CookiePictographP.png" style="width:70.0%" alt="A pictograph shows the number of cookies of each kind. There are no sugar cookies but there are cookies of four other kinds." /></p>
+<button onclick="hideSeek()" style="box-shadow:none">Hide/Reveal the Information in the Pictograph</button>
+<div id="longdesc" style="display:none">
+<p>In the pictograph, an oval represents 4 cookies.</p>
+<ul>
+<li><p>Chocolate Chip: 4 and a half ovals</p></li>
+<li><p>Oatmeal Raisin: 2 and a half ovals</p></li>
+<li><p>Gingerbread: 1 and a half ovals</p></li>
+<li><p>Coconut Macaroon: 3 ovals</p></li>
+</ul>
+<hr style="border-top: dashed 1px black" />
+</div>
+<p>How many <em>sugar</em> cookies had they forgotten at home? Complete the pictograph and explain your answer.</p>
+<p style="text-align:center"><img src="images/cookie.jpg" style="height:6cm" alt="" /><br />
+</p>
+<h2>Solution</h2>
+<p>We will start by counting the known cookies represented in the pictograph. Since each full oval in the picture represents four cookies, then a half oval must represent half as many cookies, or two cookies.</p>
+<p>So in the picture, we can calculate the number of different kinds of cookies:</p>
+<ul>
+<li><p><span><em>Chocolate Chip:</em> There are four full ovals, which represent <span class="math inline">\(4\times 4 = 16\)</span> cookies. There is one half oval, which represents <span class="math inline">\(2\)</span> cookies. So there are a total of <span class="math inline">\(16 + 2 = 18\)</span> chocolate chip cookies.</span></p></li>
+<li><p><span><em>Oatmeal Raisin:</em> There are <span class="math inline">\(2\)</span> full ovals, which represent <span class="math inline">\(2\times 4 = 8\)</span> cookies. There is one half oval, which represents <span class="math inline">\(2\)</span> cookies. So there are a total of <span class="math inline">\(8 + 2 = 10\)</span> oatmeal raisin cookies.</span></p></li>
+<li><p><span><em>Gingerbread:</em> There is one full oval, which represents <span class="math inline">\(4\)</span> cookies. There is one half oval, which represents <span class="math inline">\(2\)</span> cookies. So there are a total of <span class="math inline">\(4 + 2 = 6\)</span> gingerbread cookies.</span></p></li>
+<li><p><span><em>Coconut Macaroon:</em> There are three full ovals, which represent a total of <span class="math inline">\(3\times 4 = 12\)</span> coconut macaroon cookies. </span></p></li>
+</ul>
+<p>From this, the total number of cookies we know about is <span class="math inline">\(18 + 10 + 6 + 12= 46\)</span>.</p>
+<p>Another way we could have computed the known number of cookies is by counting up all of the full ovals, for a total of <span class="math inline">\(10\)</span>, and counting up all of the half ovals, for a total of <span class="math inline">\(3\)</span>. The total number of cookies represented by full ovals is <span class="math inline">\(10 \times 4 = 40\)</span>. The total number of cookies represented by half ovals is <span class="math inline">\(3 \times 2 = 6\)</span>. Then the total number of cookies is <span class="math inline">\(40 + 6 = 46\)</span>.</p>
+<p>Since Janelle and Jean-Paul baked a total of <span class="math inline">\(60\)</span>  ookies, but we can only account for <span class="math inline">\(46\)</span> of them, then there are <span class="math inline">\(60 - 46 = 14\)</span> cookies missing. These must be our <em>sugar</em> cookies.</p>
+<p>We can figure out how many extra full ovals we need in our pictograph by dividing the number of sugar cookies we need to represent by <span class="math inline">\(4\)</span> and getting the quotient of that calculation.</p>
+<p>Since <span class="math inline">\(14 \div 4 = 3\)</span> with a remainder <span class="math inline">\(2\)</span>, then we need <span class="math inline">\(3\)</span> full ovals and <span class="math inline">\(1\)</span> half oval to represent this number of sugar cookies.</p>
+<p>The complete pictograph would look like this:</p>
+<p style="text-align:center"><img src="images/CookiePictographS.png" style="width:70.0%" alt="The original pictograph with the number of sugar cookies included." /></p>
+<h3>Teacher’s Notes:</h3>
+<p>Data visualization allows us to literally see the big picture. It is the process of linking graphical images to often complex, numerical information. This problem started with the graphic and students were required to compute the numerical information. Most of the time, we are given the numbers and produce a visual representation such as a bar chart, a pie graph, or a scatter plot.</p>
+<p>Information visualization is relatively new field of study within computer science. Understanding graphics, human-computer interaction, and psychology is helpful when trying to process the increasing amount of <em>big data</em> that is being generated daily.</p>
+<p>A word cloud is one way to visualize data. There is quite a bit of mathematics that goes into generating this graphic. This requires statistical analysis to determine the relative sizes of the words that appear, as well as geometry to determine how to arrange the output. Here is a word cloud generated from text from previous POTW-A problems. It was created using an online word cloud program.</p>
+<p style="text-align:center"><img src="images/wordcloud.png" style="width:70.0%" alt="A word cloud with many words. The word Problem is much larger than all other words. The words many, Sense, and Week are the next largest words followed closely by the words coins, bear, Numeration, Strand, and Number." /></p>
+</main>
+</body>
+</html>

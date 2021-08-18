@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 50em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1{
+    	margin-top: 1.4em;
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	margin-top: 1.4em;
+    	font-size: 22px
+    }
+    h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 80%;
+      overflow-x: auto;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+      border: 1px solid black;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+      border: 1px solid black;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+	button {
+		border-radius: 5px;
+  		background-color: #00008B;
+  		border: 1px solid #00008B;
+  		color: #FFFFFF;
+  		padding: 8px 8px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 12px;
+  	}
+  	button:hover{
+  		background: #D3D3D3;
+  		border: 1px solid #00008B;
+  		color: #000000
+  	}
+  	.column-left {
+  		float: left;
+  		width: 40%;
+	}
+	.column-right {
+ 		float: right;
+  		width: 30%;
+	}
+	.column-center {
+  		display: inline-block;
+  		width: 30%;
+	}
+	.long {
+  		font-size: 15px;
+	}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<script>
+function hideSeek() {
+  var x = document.getElementById("longdesc");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Making Plans</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>Mr. Lee’s Grade 4 class is going to create a play area for their school’s daycare that includes a picnic table and a sandbox. They want square foam tiles under the entire play area (even under the sandbox and under the picnic table). There will be a rubber trim surrounding the play area to keep the tiles in place.</p>
+<p>This is a picture of their plan. Each small square represents one square foam tile.</p>
+<p style="text-align:center"><img src="images/areaplan.png" style="width:50.0%" alt="The play area is rectangular. The area is covered with twelve rows of identical square tiles with seven tiles in each row. The picnic table and sandbox are placed in opposite corners of the play area." /></p>
+<ol type="A">
+<li><p>How many foam tiles do the students need to complete this job?</p></li>
+<li><p>If each foam tile is <span class="math inline">\(0.5\)</span> m by <span class="math inline">\(0.5\)</span> m, how many metres of rubber trim is needed to surround the entire play area?</p></li>
+</ol>
+<h2>Solution</h2>
+<ol type="A">
+<li><p>There are several ways of solving this question.</p>
+<p>There are <span class="math inline">\(12\)</span> groups of <span class="math inline">\(7\)</span> tiles or <span class="math inline">\(12 \times 7\)</span> tiles. Simply counting the small squares of a <span class="math inline">\(12 \times 7\)</span> grid determines that there are <span class="math inline">\(84\)</span> small squares in the grid.</p>
+<p style="text-align:center"><img src="images/areaplansol1.png" style="width:50.0%" alt="" /></p>
+<p>Rather than counting, the number of tiles in the play area can be calculated using multiplication. One way of calculating the product <span class="math inline">\(12 \times 7\)</span> is by breaking <span class="math inline">\(12\)</span> into <span class="math inline">\(10 + 2\)</span>. We know that <span class="math inline">\(10 \times 7 = 70\)</span>, and <span class="math inline">\(2 \times 7 = 14\)</span>. We can add these together to determine the value of <span class="math inline">\(12 \times 7\)</span>. That is, <span class="math inline">\(12 \times 7 = 70 + 14 = 84\)</span>.</p>
+<p>Similarly, using the split array model, the play area can be split into two rectangles: a <span class="math inline">\(10\times 7\)</span> rectangle and a <span class="math inline">\(2\times 7\)</span> rectangle. This leads to a total of <span class="math inline">\(70 + 14 = 84\)</span> tiles.</p>
+<p>Therefore, the answer is <span class="math inline">\(84\)</span> tiles.</p></li>
+<li><p>If every tile is <span class="math inline">\(0.5\)</span> m or <span class="math inline">\(\frac{1}{2}\)</span> m or <span class="math inline">\(50\)</span> cm, then <span class="math inline">\(2\)</span> adjacent tiles would have a length of <span class="math inline">\(1\)</span> m. Thus <span class="math inline">\(12\)</span> tiles would have a length of <span class="math inline">\(6\)</span> m, and <span class="math inline">\(7\)</span> tiles would have a length of <span class="math inline">\(3.5\)</span> m. Therefore, the play area has dimensions <span class="math inline">\(6\)</span> m and <span class="math inline">\(3.5\)</span> m.</p>
+<p style="text-align:center"><img src="images/areaplansol2.png" style="width:50.0%" alt="" /></p>
+<p>To find the amount of rubber trim for the play area, we need to determine its perimeter. This may be calculated by adding the lengths of all sides. <span class="math display">\[3.5 \text{ m} + 6 \text{ m} + 3.5 \text{ m} + 6 \text{ m} = 19  \text{ m}\]</span></p>
+<p>Thus, <span class="math inline">\(19\)</span> m of rubber trim is required.</p></li>
+</ol>
+<h3>Teacher’s Notes</h3>
+<p>Generally speaking, calculating the area or perimeter of a rectangle is quite straightforward as long as you know its dimensions. For this problem, students need to do a bit of work to determine the length and width of the play area. In particular, the students must recognize that the width of the picnic table is the same on both sides, even though they can’t see the tiles underneath. From the diagram they know that the picnic table is three tiles wide at one end, then they know that it is the same width on the opposite side. This allows them to determine the longer dimension of the rectangle.</p>
+<p>Very often in the real world we are given incomplete information when trying to solve a problem. The logical thinking that we practise in mathematics can help fill in the blanks.</p>
+
+</main>
+</body>
+</html>
