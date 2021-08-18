@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 50em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid black
+      /*display: block;*/
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+      border: 1px solid black
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+      border: 1px solid black
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+	button {
+		border-radius: 5px;
+  		background-color: #00008B;
+  		border: 1px solid #00008B;
+  		color: #FFFFFF;
+  		padding: 8px 8px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 12px;
+  	}
+  	button:hover{
+  		background: #D3D3D3;
+  		border: 1px solid #00008B;
+  		color: #000000
+  	}
+  	.column-left {
+  		float: left;
+  		width: 40%;
+	}
+	.column-right {
+ 		float: right;
+  		width: 30%;
+	}
+	.column-center {
+  		display: inline-block;
+  		width: 30%;
+	}
+	.long {
+  		font-size: 15px;
+	}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<script>
+function hideSeek() {
+  var x = document.getElementById("longdesc");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem D and Solution<br />
+Approved!</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>Debit and credit cards contain account numbers which consist of many digits. When purchasing items online, you are often asked to type in your account number. Because there are so many digits, it is easy to type the number incorrectly. The last digit of the number is a specially generated check digit which can be used to quickly verify the validity of the number. A common algorithm used for verifying numbers is called the <em>Luhn Algorithm</em>. A series of operations are performed on the number and a final result is produced. If the final result ends in zero, the number is valid. Otherwise, the number is invalid.</p>
+<p>The steps performed in the Luhn Algorithm are outlined in the flowchart below. Two examples are provided.</p>
+<div class="container">
+  <div class="column-left">
+  		<br />
+  		<img src="images/FlowChart21C.png" style="width:75.0%" alt="The flowchart for the algorithm with the steps outlined in the adjacent text." />
+		<button onclick="hideSeek()" style="box-shadow:none">Hide/Reveal the Steps of the Algorithm</button>
+		<div class="long" id="longdesc" style="display:none">
+		<p>Accept any number to check and then perform the following steps in order:</p>
+		<ol>
+		<li><p>Reverse the digits.</p></li>
+		<li><p>Add all the digits in the odd positions. Call this <span class="math inline">\(A\)</span>.</p></li>
+		<li><p>Double each of the remaining digits.</p></li>
+		<li><p>Add the digits in each of the products, and then find the sum of these numbers. Call this <span class="math inline">\(B\)</span>.</p></li>
+		<li><p>Calculate <span class="math inline">\(C = A + B\)</span>.</p></li>
+		</ol>
+		<p>If <span class="math inline">\(C\)</span> does not end in <span class="math inline">\(0\)</span>, then the number is invalid.<br />
+		If <span class="math inline">\(C\)</span> does end in <span class="math inline">\(0\)</span>, then the number is valid.</p>
+		<hr style="border-top: dashed 1px black" />
+		</div>
+	</div>
+	<div class="column-center">
+  		<p><span><strong>Example 1:</strong></span></p>
+		<p>Number: <span class="math inline">\(135792\)</span></p>
+		<p>Reversal: <span class="math inline">\(\textcolor{red}{2}9\textcolor{red}{7}5\textcolor{red}{3}1\)</span></p>
+		<p><span class="math display">
+			\(\begin{aligned}
+			A&amp;=\textcolor{red}{2+7+3}\\
+			&amp;=12\\
+			\end{aligned}\)
+		</span>
+		</p>
+		<p><span class="math display">	
+			\(\begin{aligned}
+			2\times9&amp;=18\\
+			2\times5&amp;=10\\
+			2\times1&amp;=2\\
+			\end{aligned}\)
+		</span>
+		</p>	
+		<p><span class="math display">	
+			\(\begin{aligned}
+			B&amp;=(1+8)+(1+0)+2\\
+			&amp;=9+1+2\\
+			&amp;=12\\
+			\end{aligned}\)
+		</span>
+		</p>
+		<span class="math inline">\(C=12+12=24\)</span><br /><br />
+		<span class="math inline">\(C\)</span> does not end in zero.<br /><br />
+		The number is not valid.</p>
+	</div>
+	<div class="column-right">
+  		<p><span><strong>Example 2:</strong></span></p>
+		<p>Number: <span class="math inline">\(1357987\)</span></p>
+		<p>Reversal: <span class="math inline">\(\textcolor{red}{7}8\textcolor{red}{9}7\textcolor{red}{5}3\textcolor{red}{1}\)</span></p>
+		<p><span class="math display">
+			\(\begin{aligned}
+			A&amp;=\textcolor{red}{7+9+5+1}\\
+			&amp;=22\\
+			\end{aligned}\)
+		</span>
+		</p>	
+		<p><span class="math display">
+			\(\begin{aligned}
+			2\times8&amp;=16\\
+			2\times7&amp;=14\\
+			2\times3&amp;=6\\
+			\end{aligned}\)
+		</span>
+		</p>
+		<p><span class="math display">
+			\(\begin{aligned}
+			B&amp;=(1+6)+(1+4)+6\\
+			&amp;=7+5+6\\
+			&amp;=18\\
+			\end{aligned}\)
+		</span>
+		<p><span class="math inline">\(C=22+18=40\)</span><br /><br />
+		<span class="math inline">\(C\)</span> ends in zero.<br /><br />
+		The number is valid.</p>
+	</div>
+</div>
+<p>The number <span class="math inline">\(8763\,D8D4\,D6D8\,0459\)</span> is a valid number when verified by the Luhn Algorithm. <span class="math inline">\(D\)</span> is an integer from 0 to 9 occurring four times in the number. (It may also be one of the existing known digits.) Determine all possible values of <span class="math inline">\(D\)</span>.</p>
+<h2>Solution</h2>
+<p><span><strong><span>Solution 1</span></strong></span></p>
+<p>When the digits of the number are reversed the resulting number is <span class="math inline">\(9540\,8D6D\,4D8D\,3678\)</span>. The sum of the digits in the odd positions is</p>
+<p><span class="math display">\[A=9+4+8+6+4+8+3+7=49\]</span></p>
+<p>When the digits in the remaining positions are doubled, the following products are obtained:<br />
+<span class="math display">\[2\times 5=10;~ 2\times 0=0;~ 2\times D=2D;~ 2\times D=2D;~ 2\times D=2D;~ 2\times D=2D;~ 2\times 6=12;~ \text{and }2\times 8=16.\]</span></p>
+<p>Let <span class="math inline">\(x\)</span> represent the sum of the digits of <span class="math inline">\(2D\)</span>.</p>
+<p>When the digit sums from each of the products are added, the sum is: <span class="math display">\[B=(1+0)+0+x+x+x+x+(1+2)+(1+6)=1+0+4x+3+7=4x+11\]</span></p>
+<p>Since <span class="math inline">\(C=A+B\)</span>, we have <span class="math inline">\(C=49+4x+11=60+4x\)</span>.</p>
+<p>When an integer from <span class="math inline">\(0\)</span> to <span class="math inline">\(9\)</span> is doubled and the digits of the product are added together, what are the possible sums which can be obtained?</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Original Digit <span class="math inline">\(\rightarrow D\)</span></th>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(7\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9\)</span></td>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th style="text-align: right;">Twice the Original Digit <span class="math inline">\(\rightarrow 2D\)</span></th>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(12\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(14\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(18\)</span></td>
+</tr>
+<tr class="even">
+<th style="text-align: right;">The Sum of the Digits of <span class="math inline">\(2D\)</span></th>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(7\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Notice that the sum of the digits of twice the original digit can only be an integer from <span class="math inline">\(0\)</span> to <span class="math inline">\(9\)</span> inclusive. It follows that the only values for <span class="math inline">\(x\)</span> are the integers from <span class="math inline">\(0\)</span> to <span class="math inline">\(9\)</span>.</p>
+<p>To be a valid number, the units digit of <span class="math inline">\(C\)</span> must be 0. We want <span class="math inline">\(60+4x\)</span> to be an integer greater than or equal to <span class="math inline">\(60\)</span> such that the units digit is <span class="math inline">\(0\)</span>.</p>
+<p>Can <span class="math inline">\(60+4x=60\)</span>? When <span class="math inline">\(4x=0\)</span>, then <span class="math inline">\(x=0\)</span>, <span class="math inline">\(60+4x=0\)</span> and <span class="math inline">\(D=0\)</span>. That is, when <span class="math inline">\(D=0\)</span>, <span class="math inline">\(2D=0\)</span> and the sum of the digits of <span class="math inline">\(2D\)</span> is <span class="math inline">\(x=0\)</span>. This value of <span class="math inline">\(D\)</span> produces a valid number.</p>
+<p>Can <span class="math inline">\(60+4x=70\)</span>? When <span class="math inline">\(4x=10\)</span>, then <span class="math inline">\(x=2.5\)</span> and <span class="math inline">\(60+4x=70\)</span>. But <span class="math inline">\(x\)</span> must be an integer value so this is not possible.</p>
+<p>Can <span class="math inline">\(60+4x=80\)</span>? When <span class="math inline">\(4x=20\)</span>, then <span class="math inline">\(x=5\)</span>, <span class="math inline">\(60+4x=80\)</span> and <span class="math inline">\(D=7\)</span>. That is, when <span class="math inline">\(D=7\)</span>, <span class="math inline">\(2D=14\)</span> and the sum of the digits of <span class="math inline">\(2D\)</span> is <span class="math inline">\(x=5\)</span>. This value of <span class="math inline">\(D\)</span> produces a valid number.</p>
+<p>Can <span class="math inline">\(60+4x=90\)</span>? When <span class="math inline">\(4x=30\)</span>, then <span class="math inline">\(x=7.5\)</span> and <span class="math inline">\(60+4x=90\)</span>. But <span class="math inline">\(x\)</span> must be an integer value so this is not possible.</p>
+<p>Can <span class="math inline">\(60+4x=100\)</span>? When <span class="math inline">\(4x=40\)</span>, then <span class="math inline">\(x=10\)</span> and <span class="math inline">\(60+4x=100\)</span>. But <span class="math inline">\(x\)</span> must be an integer from 0 to 9 inclusive, so this is not possible.</p>
+<p>Every integer ending in 0 that is larger than 100 would produce a value for <span class="math inline">\(x\)</span> greater than 10. There are no more possible values for <span class="math inline">\(x\)</span> or <span class="math inline">\(D\)</span>.</p>
+<p>Therefore, the two valid possibilities for <span class="math inline">\(D\)</span> are <span class="math inline">\(0\)</span> and <span class="math inline">\(7\)</span>.</p>
+<p>When <span class="math inline">\(D=0\)</span>, the number is <span class="math inline">\(8763\,0804\,0608\,0459\)</span>, which is indeed valid by the Luhn Algorithm.<br />
+When <span class="math inline">\(D=7\)</span>, the number is <span class="math inline">\(8763\,7874\,7678\,0459\)</span>, which is indeed valid by the Luhn Algorithm.</p>
+<p><span><strong><span>Solution 2</span></strong></span></p>
+<p>The second solution looks at each of the possible values of <span class="math inline">\(D\)</span> and then verifies the resulting number. A computer program or spreadsheet could be developed to solve this problem efficiently.</p>
+<p>Remember that <span class="math inline">\(A\)</span> is the sum of the digits in the odd positions of the reversal. Each of the digits in the even positions of the reversal are doubled and <span class="math inline">\(B\)</span> is the sum of the sum of the digits of each of these products. <span class="math inline">\(C\)</span> is the sum <span class="math inline">\(A+B\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(D\)</span></th>
+<th style="text-align: center;">Number</th>
+<th style="text-align: center;">Reversal</th>
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;">Double Even Digits</th>
+<th style="text-align: center;"><span class="math inline">\(B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(C\)</span></th>
+<th style="text-align: center;">Valid/Invalid</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8763\ 0804\ 0608\ 0459\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9540\ 8060\ 4080\ 3678\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(49\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10,\ 0,\ 0,\ 0,\ 0,\ 0,\ 12,\ 16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(11\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(60\)</span></td>
+<td style="text-align: center;">Valid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8763\ 1814\ 1618\ 0459\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9540\ 8161\ 4181\ 3678\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(49\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10,\ 0,\ 2,\ 2,\ 2,\ 2,\ 12,\ 16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(19\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(68\)</span></td>
+<td style="text-align: center;">Invalid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8763\ 2824\ 2628\ 0459\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9540\ 8262\ 4282\ 3678\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(49\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10,\ 0,\ 4,\ 4,\ 4,\ 4,\ 12,\ 16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(27\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(76\)</span></td>
+<td style="text-align: center;">Invalid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8763\ 3834\ 3638\ 0459\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9540\ 8363\ 4383\ 3678\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(49\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10,\ 0,\ 6,\ 6,\ 6,\ 6,\ 12,\ 16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(35\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(84\)</span></td>
+<td style="text-align: center;">Invalid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8763\ 4844\ 4648\ 0459\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9540\ 8464\ 4484\ 3678\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(49\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10,\ 0,\ 8,\ 8,\ 8,\ 8,\ 12,\ 16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(43\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(92\)</span></td>
+<td style="text-align: center;">Invalid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8763\ 5854\ 5658\ 0459\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9540\ 8565\ 4585\ 3678\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(49\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10,\ 0,\ 10,\ 10,\ 10,\ 10,\ 12,\ 16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(15\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(64\)</span></td>
+<td style="text-align: center;">Invalid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8763\ 6864\ 6668\ 0459\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9540\ 8666\ 4686\ 3678\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(49\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10,\ 0,\ 12,\ 12,\ 12,\ 12,\ 12,\ 16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(23\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(72\)</span></td>
+<td style="text-align: center;">Invalid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(7\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8763\ 7874\ 7678\ 0459\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9540\ 8767\ 4787\ 3678\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(49\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10,\ 0,\ 14,\ 14,\ 14,\ 14,\ 12,\ 16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(31\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(80\)</span></td>
+<td style="text-align: center;">Valid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(8\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8763\ 8884\ 8688\ 0459\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9540\ 8868\ 4888\ 3678\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(49\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10,\ 0,\ 16,\ 16,\ 16,\ 16,\ 12,\ 16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(39\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(88\)</span></td>
+<td style="text-align: center;">Invalid</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(9\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8763\ 9894\ 9698\ 0459\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9540\ 8969\ 4989\ 3678\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(49\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10,\ 0,\ 18,\ 18,\ 18,\ 18,\ 12,\ 16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(47\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(96\)</span></td>
+<td style="text-align: center;">Invalid</td>
+</tr>
+</tbody>
+</table>
+<p>Therefore, the two valid possibilities for <span class="math inline">\(D\)</span> are <span class="math inline">\(0\)</span> and <span class="math inline">\(7\)</span>.</p>
+</main>
+</body>
+</html>

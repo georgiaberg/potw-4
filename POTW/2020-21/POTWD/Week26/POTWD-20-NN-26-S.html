@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem D and Solution<br />
+Watery Ways</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>Two parks in Yourtown have very unique but similar designs, which are illustrated in the following diagrams.</p>
+<p><img src="images/westpark.png" style="width:38.0%" alt="The top view of the park drawn on a square grid." /> <img src="images/eastpark.png" style="width:50.0%" alt="The top view of the park drawn on a square grid." /></p>
+<p>The smaller park can be completely enclosed by a square that is <span class="math inline">\(300\)</span> m by <span class="math inline">\(300\)</span> m. The larger park can be completely enclosed by a square that is <span class="math inline">\(500\)</span> m by <span class="math inline">\(500\)</span> m.</p>
+<p>On each drawing, there are horizontal and vertical lines, each spaced <span class="math inline">\(100\)</span> m apart. These lines create identical <span class="math inline">\(100\)</span> m by <span class="math inline">\(100\)</span> m squares, nine squares on the drawing of the smaller park and twenty-five squares on the drawing of the larger park.</p>
+<p>The drawing for each park also shows two concentric circles. The circumference of the outer circle touches each of the four sides of the square enclosing the park. The circumference of the inner circle passes through the four vertices of the largest square created by the gridlines that are totally inside the park. (In the smaller park, this largest square is the single square in the centre of the grid. In the larger park, this largest square is formed by the nine squares in the centre of the grid.)</p>
+<p>The ring created between the outer circle and inner circle in each park is completely filled with water to a uniform depth of <span class="math inline">\(0.5\)</span> m.</p>
+<p>Which of the two waterways contains more water?</p>
+<h2>Solution</h2>
+<p>To find the volume of water in each waterway we need to find the top area of each waterway and multiply that by the depth of the water. Since the depth of the water in each waterway is the same and is constant, we need only compare the top areas to determine which one is larger.</p>
+<p>For the waterway in the smaller park, let the diameter of the inner circle be <span class="math inline">\(d_1\)</span>, the diameter of the larger circle be <span class="math inline">\(D_1\)</span>, the radius of the inner circle be <span class="math inline">\(r_1\)</span> and the radius of the larger circle be <span class="math inline">\(R_1\)</span>.</p>
+<p>For the waterway in the larger park, let the diameter of the inner circle be <span class="math inline">\(d_2\)</span>, the diameter of the larger circle be <span class="math inline">\(D_2\)</span>, the radius of the inner circle be <span class="math inline">\(r_2\)</span> and the radius of the larger circle be <span class="math inline">\(R_2\)</span>.</p>
+<p>The calculations for the parks are shown.</p>
+<p><em>Smaller Park</em></p>
+<p>The diameter of the inner circle is the length of the diagonal of the contained <span class="math inline">\(100\)</span> m by <span class="math inline">\(100\)</span> m square. Using the Pythagorean Theorem,</p>
+<p><span class="math display">\[\begin{aligned}
+d_1&amp;=\sqrt{100^2+100^2}\\
+&amp;=\sqrt{20\,000}\\
+&amp;=\sqrt{(10\,000)(2)}\quad &ast;\\
+&amp;=100\sqrt{2}\text{ m}\\
+r_1&amp;=\frac{1}{2}d_1\\
+&amp;=50\sqrt{2}\text{ m}\end{aligned}\]</span></p>
+<p><em>Larger Park</em></p>
+<p>The diameter of the inner circle is the length of the diagonal of the contained <span class="math inline">\(300\)</span> m by <span class="math inline">\(300\)</span> m square. Using the Pythagorean Theorem,</p>
+<p><span class="math display">\[\begin{aligned}
+d_2&amp;=\sqrt{300^2+300^2}\\
+&amp;=\sqrt{180\,000}\\
+&amp;= \sqrt{(90\,000)(2)}\quad &ast;\\
+&amp;=300\sqrt{2}\text{ m}\\
+r_2&amp;=\frac{1}{2}d_2\\
+&amp;=150\sqrt{2}\text{ m}\end{aligned}\]</span></p>
+<p><em>Smaller Park</em></p>
+<p>The diameter of the outer circle is the width of the <span class="math inline">\(300\)</span> m by <span class="math inline">\(300\)</span> m square. It follows that</p>
+<p><span class="math display">\[\begin{aligned}
+D_1&amp;=300\text{ m}\\
+R_1&amp;=\frac{1}{2}D_1\\
+&amp;=150\text{ m}\end{aligned}\]</span></p>
+<p><em>Larger Park</em></p>
+<p>The diameter of the outer circle is the width of the <span class="math inline">\(500\)</span> m by <span class="math inline">\(500\)</span> m square. It follows that</p>
+<p><span class="math display">\[\begin{aligned}
+D_2&amp;=500\text{ m}\\
+R_2&amp;=\frac{1}{2}D_2\\
+&amp;=250\text{ m}\end{aligned}\]</span></p>
+<p>The top area of each waterway can be determined by subtracting the area of the inner circle from the area of the outer circle in each case.</p>
+<p>Let <span class="math inline">\(A_1\)</span> be the top area of the smaller park’s waterway and <span class="math inline">\(A_2\)</span> be the top area of the larger park’s waterway.</p>
+<p><em>Smaller Park</em></p>
+<p><span class="math display">\[\begin{aligned}
+A_1&amp;=\pi (R_1)^2 - \pi (r_1)^2\\
+&amp;=\pi (150)^2-\pi (50\sqrt{2})^2\\
+&amp;=22500\pi-5000\pi\\
+&amp;=17500\pi \text{ m}^2\end{aligned}\]</span></p>
+<p><em>Larger Park</em></p>
+<p><span class="math display">\[\begin{aligned}
+A_2&amp;=\pi (R_2)^2 - \pi (r_2)^2\\
+&amp;=\pi (250)^2-\pi (150\sqrt{2})^2\\
+&amp;=62500\pi-45000\pi\\
+&amp;=17500\pi \text{ m}^2\end{aligned}\]</span></p>
+<p>This may be a surprising result. Both waterways have equal top areas. Since the depths of the waterways are equal and uniform, the volume of water in each waterway will be the same. Neither waterway contains more water than the other waterway.</p>
+<h3>For Further Thought:</h3>
+<p>A third medium sized park can be completely enclosed by a <span class="math inline">\(400\)</span> m by <span class="math inline">\(400\)</span> m square. If a waterway were constructed in a similar manner to the waterways in the other two parks, how would the volume of the water in this third waterway compare to the volume of water in the other two waterways? Can you explain what is happening here?</p>
+<p>&ast; &nbsp; We reduced the radicals by factoring out the largest perfect square, and then finding the square root of that perfect square.  Here is a simpler example: <span class="math inline">\(\sqrt{20}= \sqrt{(4)(5)} = \sqrt{4}\sqrt{5} = 2 \sqrt{5}\)</span>.</p>
+</main>
+</body>
+</html>

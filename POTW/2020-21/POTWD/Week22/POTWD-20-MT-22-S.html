@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem D and Solution<br />
+That Triangle</h1>
+</header>
+<main role="solution">
+<p>In the diagram, <span class="math inline">\(ABCD\)</span> is a rectangle. Point <span class="math inline">\(E\)</span> is outside the rectangle so that <span class="math inline">\(\triangle AED\)</span> is an isosceles right-angled triangle with hypotenuse <span class="math inline">\(AD\)</span>. Point <span class="math inline">\(F\)</span> is the midpoint of <span class="math inline">\(AD\)</span>, and <span class="math inline">\(EF\)</span> is perpendicular to <span class="math inline">\(AD\)</span>.</p>
+<p>If <span class="math inline">\(BC=4\)</span> and <span class="math inline">\(AB=3\)</span>, determine the area of <span class="math inline">\(\triangle EBD\)</span>.</p>
+<p style="text-align:center"><img src="images/Shape.png" style="width:40.0%" alt="" /></p>
+<h2>Solution</h2>
+<p>Since <span class="math inline">\(ABCD\)</span> is a rectangle then <span class="math inline">\(AD=BC=4\)</span>. Since <span class="math inline">\(F\)</span> is the midpoint of <span class="math inline">\(AD\)</span>, then <span class="math inline">\(AF=FD= 2.\)</span></p>
+<p>Since <span class="math inline">\(\triangle AED\)</span> is an isosceles right-angled triangle, then <span class="math inline">\(\angle EAD = 45^\circ\)</span>.<br />
+Now in <span class="math inline">\(\triangle EAF\)</span>, <span class="math inline">\(\angle EAF = \angle EAD = 45^\circ\)</span> and <span class="math inline">\(\angle AFE= 90^\circ\)</span>.<br />
+Since the sum of the angles in a triangle is <span class="math inline">\(180^\circ\)</span>, then <span class="math inline">\(\angle AEF = 180^\circ - 90^\circ - 45^\circ = 45^\circ\)</span>.<br />
+Therefore, <span class="math inline">\(\triangle EAF\)</span> has two equal angles and is therefore an isosceles right-angled triangle.<br />
+Therefore, <span class="math inline">\(EF=AF = 2\)</span>.</p>
+<p style="text-align:center"><img alt="" src="images/Shapesoln1.png" style="width:40.0%" /></p>
+<p>From this point we are going to look at two different solutions.</p>
+<p><span><strong><span>Solution 1</span>:</strong></span></p>
+<p>We calculate the area of <span class="math inline">\(\triangle EBD\)</span> by adding the areas of <span class="math inline">\(\triangle BAD\)</span> and <span class="math inline">\(\triangle AED\)</span> and subtracting the area of <span class="math inline">\(\triangle ABE\)</span>.<br />
+Since <span class="math inline">\(AB=3\)</span>, <span class="math inline">\(DA=4\)</span>, and <span class="math inline">\(\angle DAB= 90^\circ\)</span>, then the area of <span class="math inline">\(\triangle BAD\)</span> is <span class="math inline">\(\frac{1}{2} (3)(4) = 6\)</span>.<br />
+Since <span class="math inline">\(AD = 4\)</span>, <span class="math inline">\(EF = 2\)</span>, and <span class="math inline">\(EF\)</span> is perpendicular <span class="math inline">\(AD\)</span>, then the area of <span class="math inline">\(\triangle AED\)</span> is <span class="math inline">\(\frac{1}{2} (4)(2) = 4\)</span>.<br />
+When we look at <span class="math inline">\(\triangle ABE\)</span> with the base being <span class="math inline">\(AB\)</span>, then its height is the length of <span class="math inline">\(AF\)</span>.<br />
+Therefore, the area of <span class="math inline">\(\triangle ABE\)</span> is <span class="math inline">\(\frac{1}{2} (3)(2)=3\)</span>.</p>
+<p style="text-align:center"><img alt="" src="images/Shape2.png" style="width:40.0%" /></p>
+<p>Therefore, the area of <span class="math inline">\(\triangle EBD\)</span> is <span class="math inline">\(6 + 4 - 3 = 7\)</span>.</p>
+<p><span><strong><span>Solution 2</span>:</strong></span></p>
+<p>Extend <span class="math inline">\(BA\)</span> to <span class="math inline">\(G\)</span> and <span class="math inline">\(CD\)</span> to <span class="math inline">\(H\)</span> so that <span class="math inline">\(GH\)</span> is perpendicular to each <span class="math inline">\(GB\)</span> and <span class="math inline">\(HC\)</span> and so that <span class="math inline">\(GH\)</span> passes through <span class="math inline">\(E\)</span>.<br />
+Each of <span class="math inline">\(GAFE\)</span> and <span class="math inline">\(EFDH\)</span> has three right angles (at <span class="math inline">\(G\)</span>, <span class="math inline">\(A\)</span>, and <span class="math inline">\(F\)</span>, and <span class="math inline">\(F\)</span>, <span class="math inline">\(D\)</span>, and <span class="math inline">\(H\)</span>, respectively), so each of these is a rectangle.<br />
+Since <span class="math inline">\(AF= EF =  FD = 2\)</span>, then each of <span class="math inline">\(GAFE\)</span> and <span class="math inline">\(EFDH\)</span> is a square with side length 2.<br />
+Now <span class="math inline">\(GBCH\)</span> is a rectangle with <span class="math inline">\(GB = GA + AB = 2 + 3 = 5\)</span> and <span class="math inline">\(BC = 4\)</span>.</p>
+<p style="text-align:center"><img alt="" src="images/Shape3.png" style="width:40.0%" /></p>
+<p>The area of <span class="math inline">\(\triangle EBD\)</span> is equal to the area of rectangle <span class="math inline">\(GBCH\)</span> minus the areas of <span class="math inline">\(\triangle EGB\)</span>, <span class="math inline">\(\triangle BCD\)</span>, and <span class="math inline">\(\triangle DHE\)</span>.</p>
+<p>Rectangle <span class="math inline">\(GBCH\)</span> is 5 by 4, and so has area <span class="math inline">\(5 \times 4 = 20\)</span>.<br />
+Since <span class="math inline">\(EG = 2\)</span> and <span class="math inline">\(GB =  5\)</span> and <span class="math inline">\(EG\)</span> is perpendicular to <span class="math inline">\(GB\)</span>,<br />
+then the area of <span class="math inline">\(\triangle EGB\)</span> is <span class="math inline">\(\frac{1}{2} (EG)(GB) = \frac{1}{2}(2)(5)=5\)</span>.<br />
+Since <span class="math inline">\(BC = 4\)</span> and <span class="math inline">\(CD=3\)</span> and <span class="math inline">\(BC\)</span> perpendicular to <span class="math inline">\(CD\)</span>,<br />
+then the area of <span class="math inline">\(\triangle BCD\)</span> is <span class="math inline">\(\frac{1}{2} (BC)(CD) = \frac{1}{2}(4)(3)=6\)</span>.<br />
+Since <span class="math inline">\(DH = HE = 2\)</span> and <span class="math inline">\(DH\)</span> is perpendicular to <span class="math inline">\(EH\)</span>,<br />
+then the area of <span class="math inline">\(\triangle DHE\)</span> is <span class="math inline">\(\frac{1}{2} (DH)(HE)=\frac{1}{2}(2)(2)=2\)</span>.</p>
+<p>Therefore, the area of <span class="math inline">\(\triangle EBH\)</span> is <span class="math inline">\(20 - 5 -  6 -  2 = 7\)</span>.</p>
+</main>
+</body>
+</html>
