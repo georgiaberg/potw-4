@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem D and Solution</p>
+<p align="center">Follow the Path <br />
+<br />
+</p>
+<p><strong>Problem</strong><br />
+</p>
+<p>Consider the following number tree.</p>
+<p>In this number tree, the integers greater than or equal to 0 are written out in increasing order, with the top row containing one integer and every row after containing twice as many integers as the row above it.</p>
+<p align="center"><img style="height:8cm" src="images/tree2.png" alt = "The first row of the tree has the number 0. The second row of the tree has the numbers 1 and 2. The third row has the numbers 3, 4, 5, and 6. The fourth row has the numbers 7, 8, 9, 10, 11, 12, 13, and 14. This pattern continues." /><br />
+</p>
+<p>Each integer is connected to two integers in the row below, one down and to the left and one down and to the right, as shown in the tree. For example, the number 5 is connected to the number 11 (down to the left) and the number 12 (down to the right) in the row below. Notice that we can get from 0 to 12 by going down right (R), down left (L), then down right (R).<br />
+Determine the integer you end at when you take the following path from 0: <span class="math display">\[\mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{L}\rightarrow \mbox{L}\rightarrow \mbox{R}\rightarrow \mbox{L}\rightarrow \mbox{R}\]<br />
+</p>
+<p><strong>Solution</strong><br />
+</p>
+<p><strong><u>Solution 1</u></strong><br />
+At first it may not be obvious how to proceed. We can see from the given diagram that <span class="math inline">\(\mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{R}\)</span> takes us from 0 to 2 to 6 to 14. But from there where do we go? We could write out more rows of the tree until we are able to make the required number of moves and then read off the final answer. This approach would work for a relatively small number of moves but would not be practical in general for “longer” strings of moves.<br />
+We will proceed by making an observation. When we perform a move to the left (L) from any number, we end up at an odd number. When we perform a move to the right (R) from any number, we end up at an even number. Is there a general formula which can be used when asked to move left (L)? Is there a general formula which can be used when asked to move right (R)?</p>
+<p>The diagram has two parts of the tree circled.</p>
+<p><img style="height:6cm" src="images/treeoddeven2.png" alt = "The group of numbers 1, 3 and 4 is circled. 1 is connected to 3 and 4 in the row below. The group of numbers 6, 13, and 14 is also circled. 6 is connected to 13 and 14 in the row below." /></p>
+<p>Can we discover a pattern that takes us from each initial number to the odd and even numbers below? To get from 1 to 3 we could add 2 and to get from 1 to 4 we could add 3. But doing the same with 6 would not get us to 13 and 14. As we go down the tree, each new row has twice as many numbers as the row above. Let’s try multiplying the initial number by 2 and then seeing what is necessary to get to the odd and even number below. If we double 1 we get 2. Then we would need to add 1 to get to the odd number 3 below and add 2 to get to the even number 4 below. Does this work with the 6? If we double 6 and add 1, we get 13. It appears to work. If we double 6 and add 2, we get 14. It also appears to work.<br />
+So it would appear that if we make a move left (L) from any number <span class="math inline">\(a\)</span> in the tree, the resulting number is one more than twice the value of <span class="math inline">\(a\)</span>. That is, a move left (L) from <span class="math inline">\(a\)</span> takes us to the number <span class="math inline">\(2a+1\)</span> in the tree.<br />
+It would appear that if we make a move right (R) from any number <span class="math inline">\(a\)</span> in the tree, the resulting number is two more than twice the value of <span class="math inline">\(a\)</span>. That is, a move right (R) from <span class="math inline">\(a\)</span> takes us to the number <span class="math inline">\(2a+2\)</span> in the tree.<br />
+These results are true but unproven. This relationship has worked for all of the rows we have sampled but we have not proven it true in general. You will have to wait for some higher mathematics to be able to prove that this is true in general.<br />
+The following table shows the result of performing the given sequence of moves <span class="math display">\[\mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{L}\rightarrow \mbox{L}\rightarrow \mbox{R}\rightarrow \mbox{L}\rightarrow \mbox{R}\]</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Initial Number</th>
+<th style="text-align: center;">Move</th>
+<th style="text-align: center;">Calculation</th>
+<th style="text-align: center;">Next Number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;"><span class="math inline">\(2(0)+2\)</span></td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;"><span class="math inline">\(2(2)+2\)</span></td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;"><span class="math inline">\(2(6)+2\)</span></td>
+<td style="text-align: center;">14</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;"><span class="math inline">\(2(14)+2\)</span></td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;"><span class="math inline">\(2(30)+2\)</span></td>
+<td style="text-align: center;">62</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">L</td>
+<td style="text-align: center;"><span class="math inline">\(2(62)+1\)</span></td>
+<td style="text-align: center;">125</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">125</td>
+<td style="text-align: center;">L</td>
+<td style="text-align: center;"><span class="math inline">\(2(125)+1\)</span></td>
+<td style="text-align: center;">251</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">251</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;"><span class="math inline">\(2(251)+2\)</span></td>
+<td style="text-align: center;">504</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">504</td>
+<td style="text-align: center;">L</td>
+<td style="text-align: center;"><span class="math inline">\(2(504)+1\)</span></td>
+<td style="text-align: center;">1009</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1009</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;"><span class="math inline">\(2(1009)+2\)</span></td>
+<td style="text-align: center;">2020</td>
+</tr>
+</tbody>
+</table>
+<p>Starting at 0 and making the moves <span class="math inline">\(\mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{R}\rightarrow \mbox{L}\rightarrow \mbox{L}\rightarrow \mbox{R}\rightarrow \mbox{L}\rightarrow \mbox{R}\)</span>, we end at the number 2020.<br />
+Once we determined the operations required to make a move left (L) and a move right (R), the problem was quite straightforward to solve. It would be possible to write a computer program which would accept any length sequence of Ls and Rs, and get the computer to determine the final position in this specific tree.<br />
+A solution that does not require the use of the unproven result is provided on the next page.<br />
+<strong><u>Solution 2</u></strong><br />
+By following the given directions, we will end up in row 11 of the tree. So we first determine which integers are in row 11.<br />
+To get from the top integer to the rightmost integer in row 2, add 2. To get from the rightmost integer in row 2 to the rightmost integer in row 3, add 4. To get from the rightmost integer in row 3 to the rightmost integer in row 4, add 8. These numbers which are added correspond to the number of integers in that next row. We will find the rightmost integer in row 10 and the rightmost integer in row 11.<br />
+The rightmost integer in row 10 is: <span class="math inline">\(0+2+4+8+16+32+64+128+256+512=1022\)</span>.<br />
+The rightmost integer in row 11 is: <span class="math inline">\(0+2+4+8+16+32+64+128+256+512+1024=2046\)</span>.<br />
+It follows that row 11 contains the 1024 integers from 1023 (1 more than the last integer in row 10) to 2046 (the rightmost integer in row 11), inclusive.<br />
+Now we look at the commands to narrow down where we will be in the 11th row.<br />
+The first R will take us to the right half of the number range 1023 to 2046, namely 1535 to 2046, 512 possible numbers.<br />
+The second R will take us to the right half of the number range 1535 to 2046, namely 1791 to 2046, 256 possible numbers.<br />
+The third R will take us to the right half of the number range 1791 to 2046, namely 1919 to 2046, 128 possible numbers.<br />
+The fourth R will take us to the right half of the number range 1919 to 2046, namely 1983 to 2046, 64 possible numbers.<br />
+The fifth R will take us to the right half of the number range 1983 to 2046, namely 2015 to 2046, 32 possible numbers.<br />
+The first L will take us to the left half of the number range 2015 to 2046, namely 2015 to 2030, 16 possible numbers.<br />
+The second L will take us to the left half of the number range 2015 to 2030, namely 2015 to 2022, 8 possible numbers.<br />
+The sixth R will take us to the right half of the number range 2015 to 2022, namely 2019 to 2022, 4 possible numbers.<br />
+The third L will take us to the left half of the number range 2019 to 2022, namely 2019 to 2020, 2 possible numbers.<br />
+The final R will take us to the right half of the number range 2019 to 2020, namely 2020, our final destination.<br />
+Therefore we end up at 2020, a number in the 11th row of the tree.<br />
+</p>
+</body>
+</html>

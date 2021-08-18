@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem D and Solution</p>
+<p align="center">Tickets <br />
+<br />
+</p>
+<p><strong>Problem</strong><br />
+</p>
+<p>POTW Secondary School is putting on a play. Tickets for the play are numbered, and each ticket consists of exactly four digits chosen from the digits 0 to 9.<br />
+Every possible ticket is printed exactly once. If tickets are handed out in a random order, what is the probability that first ticket handed out has digits whose sum is 34 or higher?<br />
+</p>
+<p align="center"><img style="height:4cm" src="images/ticket.png" alt = "Ticket numbered 0826" /></p>
+<p><strong>Solution</strong><br />
+</p>
+<p>First we must determine the total number of possible four-digit ticket numbers. There are 10 choices for the first digit. For each of these choices there are 10 choices for the second digit. Therefore, there are <span class="math inline">\(10\times 10=100\)</span> choices for the first two digits. For each of these possibilities, there are 10 choices for the third digit. Therefore, there are <span class="math inline">\(100\times 10=1000\)</span> possibilities for the first three digits. And finally, for each of these 1000 choices for the first three digits there are 10 choices for the fourth digit. Therefore there are <span class="math inline">\(1000\times 10= 10\,000\)</span> possible four-digit ticket numbers.<br />
+Now we must determine the number of ticket numbers with a digit sum of 34 or higher. We will consider cases.<br />
+</p>
+<ul>
+<li><p><strong>The ticket number contains four 9s.</strong> If the digits are all 9s, the sum is 36 which is acceptable. There is only one way to form a number using all 9s for digits.<br />
+</p></li>
+<li><p><strong>The ticket number contains three 9s and one other digit.</strong> The three 9s sum to 27. In order to get 34 or higher the fourth digit must be 7 or 8. There are two choices for the fourth digit. Once the digit is chosen there are four places to put the digit. Once the digit is placed the remaining spots must be 9s. Therefore, there are <span class="math inline">\(2\times 4 =8\)</span> ticket numbers containing three 9s. (It is possible to list them: 7999, 8999, 9799, 9899, 9979, 9989, 9997, 9998.)<br />
+</p></li>
+<li><p><strong>The ticket number contains two 9s.</strong> The two 9s sum to 18. In order to get to 34 or higher, we need a sum of <span class="math inline">\(34-18=16\)</span> or higher from the two remaining digits. The only way to do this, since we cannot use more 9s, is to use two 8s. The two 8s can be placed in six ways and then the 9s must go in the remaining spots. Therefore, there are six ticket numbers containing two 9s.<br />
+(It is possible to list them: 8899, 8989, 8998, 9889, 9898, 9988.)<br />
+</p></li>
+<li><p><strong>The ticket number contains one 9.</strong> In order to get to 34 or higher, we need a sum of <span class="math inline">\(34-9=25\)</span> or higher from the remaining three digits. But this sum would be made from three digits chosen from the digits 0 to 8. The maximum possible sum would be 24 if three 8s were used. We need 25 or higher. Therefore, no ticket number containing only one 9 will produce a sum of 34 or higher. It should be noted that a ticket number with no nines would not produce a sum of 34 or higher either.<br />
+</p></li>
+</ul>
+<p>Therefore, the number of ticket numbers with a digit sum of 34 or higher is <span class="math inline">\(1+8+6=15\)</span>. To calculate the probability we divide the number of tickets with a digit sum of 34 or more by the number of possible ticket numbers. The probability of getting a ticket with a digit sum of 34 or higher is <span class="math inline">\(\frac{15}{10\,000}=\frac{3}{2000}\)</span>. Another way of looking at this result is out of every <span class="math inline">\(2000\)</span> tickets you could expect, on average, to find 3 with a digit sum of 34 or higher.</p>
+</body>
+</html>

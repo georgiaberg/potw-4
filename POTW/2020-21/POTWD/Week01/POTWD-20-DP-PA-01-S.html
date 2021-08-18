@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem D and Solution</p>
+<p align="center">Near Perfect <br />
+<br />
+</p>
+<p><strong>Problem</strong><br />
+</p>
+<p>In ten-pin bowling, the highest possible score in a single game is 300.<br />
+At one point in the bowling season, Fred F Stone had an average score of 177. In his next game he obtained a score of 199, which caused his average to increase to 178. After one more game Fred would like his average to be 183.<br />
+Is it possible for Fred to accomplish this? If it is possible, what score does he need in his next game? If it is not possible, explain why not.<br />
+</p>
+<p align="center"><img src="images/bowling.png" alt="" /></p>
+<p><strong>Solution</strong><br />
+</p>
+<p><strong><u>Solution 1</u></strong><br />
+Let <span class="math inline">\(n\)</span> be the number of games bowled to achieve his 177 average. His total points scored in <span class="math inline">\(n\)</span> games is his average times <span class="math inline">\(n\)</span>. Therefore, Fred has <span class="math inline">\(177n\)</span> total points in <span class="math inline">\(n\)</span> games.<br />
+To compute his average after bowling the 199 game, we take his new total points and divide by <span class="math inline">\(n+1\)</span>, the new number of games.<br />
+<span class="math display">\[\begin{aligned}
+\mbox{Average}&amp;=\frac{\mbox{Total Points}}{\mbox{Games Played}}\\
+178&amp;=\frac{177n+199}{n+1}\\
+178(n+1)&amp;=177n+199\\
+178n+178&amp;=177n+199\\
+n&amp;=21\\[-8mm]\end{aligned}\] Prior to bowling the 199 game, Fred had bowled 21 games. So after bowling the 199 game, Fred has bowled 22 games. Fred wants to have a 183 average after bowling his 23rd game. The difference between his total points after 23 games with a 183 average and his total points after bowling 22 games with a 178 average must be his score on the 23rd game.<br />
+<span class="math display">\[\begin{aligned}
+\mbox{Score on 23rd Game}&amp;=23\times 183-22\times 178=4209-3916=293\\[-6mm]\end{aligned}\] Therefore it is possible for Fred to raise his average from 178 to 183 in a single game, but he must bowl 293 in his next game to do this. This is a near perfect game.<br />
+<br />
+<strong><u>Solution 2</u></strong><br />
+Fred’s score of 199 is <span class="math inline">\(199-177=22\)</span> points above his previous average. The game where Fred scored 199 raised his average 1 point. Therefore, his game with the 199 score must have been his 22nd game.<br />
+To raise his average 5 points in his 23rd game he must bowl <span class="math inline">\(5\times 23=115\)</span> points above his 178 average. Therefore, he must bowl <span class="math inline">\(178+115=293\)</span> in his next game.<br />
+Therefore, it is possible for Fred to raise his average from 178 to 183 in a single game, but he must bowl 293 in his next game to do this. This is a near perfect game.<br />
+We can verify our results:<br />
+      Average on 21 games is 177.<br />
+      Average on 22 games <span class="math inline">\(=\dfrac{21\times 177+199}{22}=\dfrac{3916}{22}=178\)</span><br />
+      Average on 23 games <span class="math inline">\(=\dfrac{22\times 178+293}{23}=\dfrac{4209}{23}=183\)</span></p>
+</body>
+</html>

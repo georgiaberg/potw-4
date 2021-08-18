@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem D and Solution</p>
+<p align="center">More Power, Mr. Scott! <br />
+<br />
+</p>
+<p><strong>Problem</strong><br />
+</p>
+<p>Mr. Scott likes to pose interesting problems to his Mathematics classes. Today, he started with the expression <span class="math inline">\(6^{2020}+7^{2020}\)</span>. He stated that the expression was not equivalent to <span class="math inline">\(13^{2020}\)</span> and that he was not interested in the actual sum. His question to his class and to you is, “What are the final two digits of the sum?”<br />
+</p>
+<p align="center"><img style="height:6cm" src="images/vulcan.png" alt="" /><br />
+</p>
+<p><strong>Solution</strong><br />
+</p>
+<p><strong><u>Solution 1</u></strong><br />
+Let’s start by examining the last two digits of various powers of 7.<br />
+</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(7^1=\phantom{16\, 8}{\mbox{\bf 07}}\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(7^2=\phantom{117\, 6}{\mbox{\bf 49}}\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(7^3=\phantom{823\, }3{\mbox{\bf 43}}\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(7^4=\phantom{5\ 76}24{\mbox{\bf 01}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(7^5=16\,8{\mbox{\bf 07}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(7^6=117\,6{\mbox{\bf 49}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(7^7=823\,5{\mbox{\bf 43}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(7^8=5\,764\,8{\mbox{\bf 01}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Notice that the last two digits repeat every four powers of 7. If the pattern continues, then <span class="math inline">\(7^9\)</span> ends with 07, <span class="math inline">\(7^{10}\)</span> ends with 49, <span class="math inline">\(7^{11}\)</span> ends with 43, <span class="math inline">\(7^{12}\)</span> ends with 01, and so on. We can simply compute these powers of 7 to verify this for these examples, but let’s justify why this pattern continues in general. If a power ends in “07”, then the last 2 digits of the next power are the same as the last 2 digits of the product <span class="math inline">\(07 \times 7 = 49\)</span>. That is, the last 2 digits of the next power are “49”. If a power ends in “49”, then the last 2 digits of the next power are the same as the last two digits of the product <span class="math inline">\(49\times 7 = 343\)</span>. That is, the last two digits of the next power are “43”. If a power ends in “43”, then the last 2 digits of the next power are the same as the last two digits of the product <span class="math inline">\(43\times 7 = 301\)</span>. That is, the last two digits of the next power are “01”. Finally, if a power ends in “01”, then the last 2 digits of the next power are the same as the last two digits of the product <span class="math inline">\(01\times 7 = 07\)</span>. That is, the last two digits of the next power are “07”. Therefore, starting with the first power of 7, every four consecutive powers of 7 will have the last two digits 07, 49, 43, and 01.<br />
+We need to determine the number of complete cycles by dividing 2020 by 4. Since <span class="math inline">\(2020\div 4=505\)</span>, there are 505 complete cycles. This means that <span class="math inline">\(7^{2020}\)</span> is the last power of 7 in the <span class="math inline">\(505^{\textrm{th}}\)</span> cycle and therefore ends with 01.<br />
+Next we will examine the last two digits of various powers of 6.<br />
+</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(6^1={\mbox{\bf 06}}\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(6^2=\phantom{117\,6}{\mbox{\bf 36}}\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(6^3=\phantom{1823\ }2{\mbox{\bf 16}}\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(6^4=\phantom{00\ 77}12{\mbox{\bf 96}}\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(6^5=\phantom{60\ \ 46}77{\mbox{\bf 76}}\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(6^6=\phantom{362\ \ 4}46\,6{\mbox{\bf 56}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(6^7=279\,9\mbox{\bf 36}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(6^8=1\,679\,6\mbox{\bf 16}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(6^9=10\,077\,6\mbox{\bf 96}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(6^{10}=60\,466\,1\mbox{\bf 76}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(6^{11}=362\,797\,0\mbox{\bf 56}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Notice that the last two digits repeat every five powers of 6 starting with the <span class="math inline">\(2^{\textrm{nd}}\)</span> power of 6. This pattern can be justified using an argument similar to the one above for powers of 7. So <span class="math inline">\(6^{12}\)</span> ends with 36, <span class="math inline">\(6^{13}\)</span> ends with 16, <span class="math inline">\(6^{14}\)</span> ends with 96, <span class="math inline">\(6^{15}\)</span> ends with 76, <span class="math inline">\(6^{16}\)</span> ends with 56, and so on. Starting with the second power of 6, every five consecutive powers of 6 will have the last two digits 36, 16, 96, 76, and 56.<br />
+We need to determine the number of complete cycles in 2020 by first subtracting 1 to allow for 06 at the beginning of the list and then dividing <span class="math inline">\(2020-1\)</span> or 2019 by 5. Since <span class="math inline">\(2019\div 5=403\)</span> remainder 4, there are 403 complete cycles and <span class="math inline">\(\tfrac{4}{5}\)</span> of another cycle. Since <span class="math inline">\(403 \times 5 = 2015\)</span>, <span class="math inline">\(6^{2015+1}=6^{2016}\)</span> is the last power of 6 in the <span class="math inline">\(403^{\textrm{rd}}\)</span> cycle and therefore ends with 56.<br />
+To go <span class="math inline">\(\frac{4}{5}\)</span> of the way into the next cycle tells us that the number <span class="math inline">\(6^{2020}\)</span> ends with the fourth number in the pattern, namely 76. In fact, we know that <span class="math inline">\(6^{2017}\)</span> ends with 36, <span class="math inline">\(6^{2018}\)</span> ends with 16, <span class="math inline">\(6^{2019}\)</span> ends with 96, <span class="math inline">\(6^{2020}\)</span> ends with 76, and <span class="math inline">\(6^{2021}\)</span> ends with 56 because they would be the numbers in the <span class="math inline">\(404^{\textrm{th}}\)</span> complete cycle.<br />
+Therefore, <span class="math inline">\(6^{2020}\)</span> ends with the digits 76.<br />
+The final two digits of the sum <span class="math inline">\(6^{2020}+7^{2020}\)</span> are found by adding the final two digits of <span class="math inline">\(6^{2020}\)</span> and <span class="math inline">\(7^{2020}\)</span>. Therefore, the final two digits of the sum are <span class="math inline">\(01+76=77\)</span>.<br />
+<strong><u>Solution 2</u></strong><br />
+From the first solution, we saw that the last two digits of powers of 7 repeat every 4 consecutive powers. We also saw that the last two digits of powers of 6 repeat every 5 consecutive powers after the first power of 6.<br />
+Let’s start at the second powers of both 7 and 6. We know that the last two digits of <span class="math inline">\(7^2\)</span> are <span class="math inline">\(49\)</span> and the last two digits of <span class="math inline">\(6^2\)</span> are <span class="math inline">\(36\)</span>. When will this combination of last two digits occur again? The cycle length for powers of 7 is 4 and the cycle length for powers of 6 is 5.<br />
+The least common multiple of 4 and 5 is 20. It follows that 20 powers after the second power, the last two digits of the powers of 7 and 6 will end with the same two digits as the second powers of each. That is, the last two digits of <span class="math inline">\(7^{22}\)</span> and <span class="math inline">\(7^2\)</span> are the same, namely 49. And, the last two digits of <span class="math inline">\(6^{22}\)</span> and <span class="math inline">\(6^2\)</span> are the same, namely 36. The following table illustrates this repetition.<br />
+</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><font size="2">Powers</font></th>
+<th style="text-align: center;"><span class="math inline">\(7^2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^3\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^4\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^5\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^6\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^7\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^8\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^9\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{10}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{11}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{12}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{13}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{14}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{15}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{16}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{17}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{18}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{19}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{20}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{21}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(7^{22}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><font size="2">Last 2 digits</font></td>
+<td style="text-align: center;"><strong>49</strong></td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">01</td>
+<td style="text-align: center;">07</td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">01</td>
+<td style="text-align: center;">07</td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">01</td>
+<td style="text-align: center;">07</td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">01</td>
+<td style="text-align: center;">07</td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">01</td>
+<td style="text-align: center;">07</td>
+<td style="text-align: center;"><strong>49</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><font size="2">Powers</font></td>
+<td style="text-align: center;"><span class="math inline">\(6^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^7\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^8\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^9\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{10}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{11}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{12}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{13}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{14}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{15}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{16}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{17}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{18}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{19}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{20}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{21}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6^{22}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><font size="2">Last 2 digits</font></td>
+<td style="text-align: center;"><strong>36</strong></td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: center;">76</td>
+<td style="text-align: center;">56</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: center;">76</td>
+<td style="text-align: center;">56</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: center;">76</td>
+<td style="text-align: center;">56</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: center;">76</td>
+<td style="text-align: center;">56</td>
+<td style="text-align: center;"><strong>36</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Since 2000 is a multiple of 20, we then know that the <span class="math inline">\(2022^{\textrm{nd}}\)</span> power of 7 will end with 49 and that the <span class="math inline">\(2022^{\textrm{nd}}\)</span> power of 6 will end in 36.<br />
+Working backwards through the cycle of the last two digits of powers of 7, it follows that the <span class="math inline">\(2021^{\textrm{st}}\)</span> power of 7 ends in 07 and that the <span class="math inline">\(2020^{\textrm{th}}\)</span> power of 7 ends in 01.<br />
+Working backwards through the cycle of the last two digits of powers of 6, it follows that the <span class="math inline">\(2021^{\textrm{st}}\)</span> power of 6 ends in 56 and that the <span class="math inline">\(2020^{\textrm{th}}\)</span> power of 6 ends in 76.<br />
+The final two digits of the sum <span class="math inline">\(6^{2020}+7^{2020}\)</span> are found by adding the final two digits of <span class="math inline">\(6^{2020}\)</span> and <span class="math inline">\(7^{2020}\)</span>. Therefore, the final two digits of the sum are <span class="math inline">\(01+76=77\)</span>.<br />
+</p>
+</body>
+</html>
