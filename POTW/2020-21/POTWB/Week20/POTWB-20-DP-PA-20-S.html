@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      border: 1px solid black;
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /*display: block;*/
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /*border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;*/
+    }
+    th {
+      border: 1px solid black;
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      border: 1px solid black;
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem B and Solution<br />
+Three-Chip Stacks</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>Chip’s favourite snack food is Dingles potato chips. He enjoys layering 3 chips together to make a stack of interesting flavours. If he only has Regular flavoured Dingles, there is only one way to stack the three chips. That is Regular, Regular and Regular which can be written as rrr. The order in which the chips are layered does not matter. For example, if we have Regular and BBQ Dingles then the stack BBQ, BBQ and Regular (bbr) is the same as BBQ, Regular and BBQ (brb).</p>
+<ol type="a">
+<li><p>If he has Regular and BBQ flavoured Dingles, list all the different stacks of 3 chips he can make.</p></li>
+<li><p>If he has three flavours of chips, Regular, BBQ, and Vinegar, list all the different stacks of 3 chips he can make.</p></li>
+<li><p>If he adds a fourth flavour, Ketchup, list all the different stacks of 3 chips he can make.</p></li>
+</ol>
+<p style="text-align:center"><img src="images/D5_dgm.png" style="width:30.0%" alt="" /></p>
+<p><span><span><span class="smallcaps">Suggestion:</span> You may use the following boxes to help you organize the possible stacks. You may also want to use r to represent Regular, b for BBQ, v for Vinegar, and k for Ketchup.</span></span></p>
+<p style="text-align:center"><img src="images/D5_boxes1.png" style="width:60.0%" alt="A two by two grid with four boxes is provided for Part a. A two by five grid with 10 boxes is provided for Part b. A four by five grid with 20 boxes is provided for Part c." /></p>
+<h2>Solution</h2>
+<p>The lists for parts a), b), and c) are given in the tables below. A solution using an exhaustive process is shown after these lists.</p>
+<p>List for a):</p>
+<table>
+<thead>
+<tr class="header">
+<td style="text-align: center;">rrr</td>
+<td style="text-align: center;">rrb</td>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">rbb</td>
+<td style="text-align: center;">bbb</td>
+</tr>
+</tbody>
+</table>
+<p>List for b):</p>
+<table>
+<thead>
+<tr class="header">
+<td style="text-align: center;">rrr</td>
+<td style="text-align: center;">rrb</td>
+<td style="text-align: center;">rrv</td>
+<td style="text-align: center;">rbb</td>
+<td style="text-align: center;">rvv</td>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">rbv</td>
+<td style="text-align: center;">bbb</td>
+<td style="text-align: center;">bbv</td>
+<td style="text-align: center;">bvv</td>
+<td style="text-align: center;">vvv</td>
+</tr>
+</tbody>
+</table>
+<p>List for c):</p>
+<table>
+<thead>
+<tr class="header">
+<td style="text-align: center;">rrr</td>
+<td style="text-align: center;">rrb</td>
+<td style="text-align: center;">rrv</td>
+<td style="text-align: center;">rrk</td>
+<td style="text-align: center;">rbb</td>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">rvv</td>
+<td style="text-align: center;">rkk</td>
+<td style="text-align: center;">rbv</td>
+<td style="text-align: center;">rbk</td>
+<td style="text-align: center;">rvk</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">bbb</td>
+<td style="text-align: center;">bbv</td>
+<td style="text-align: center;">bbk</td>
+<td style="text-align: center;">bvv</td>
+<td style="text-align: center;">bkk</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">bvk</td>
+<td style="text-align: center;">vvv</td>
+<td style="text-align: center;">vvk</td>
+<td style="text-align: center;">vkk</td>
+<td style="text-align: center;">kkk</td>
+</tr>
+</tbody>
+</table>
+<p>Solution for a):</p>
+<table>
+<tbody>
+<tr class="even">
+<th style="text-align: center;">Number of<br /> Regular</th>
+<th style="text-align: center;">Number of<br /> BBQ</th>
+<th style="text-align: center;">Possible<br /> Stack</th>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">rrr</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">rrb</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">rbb</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">bbb</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Solution for b):</p>
+<table>
+<tbody>
+<tr class="even">
+<th scope="row" style="text-align: center;">Number of<br /> Regular</th>
+<th scope="row" style="text-align: center;">Number of<br /> BBQ</th>
+<th scope="row" style="text-align: center;">Number of<br /> Vinegar</th>
+<th scope="row" style="text-align: center;">Possible<br /> Stack</th>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">rrr</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">rrb</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">rrv</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">rbb</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">rvv</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">rbv</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">bbb</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">bbv</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">bvv</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">vvv</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Solution for c):</p>
+<table>
+<tbody>
+<tr class="even">
+<th style="text-align: center;">Number of<br /> Regular</th>
+<th style="text-align: center;">Number of<br /> BBQ</th>
+<th style="text-align: center;">Number of<br /> Vinegar</th>
+<th style="text-align: center;">Number of<br /> Ketchup</th>
+<th style="text-align: center;">Possible<br /> Stack</th>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">rrr</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">rrb</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">rrv</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">rrk</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">rbb</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">rvv</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">rkk</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">rbv</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">rbk</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">rvk</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">bbb</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">bbv</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">bbk</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">bvv</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">bkk</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">bvk</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">vvv</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">vvk</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">vkk</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">kkk</td>
+</tr>
+</tbody>
+</table>
+</main>
+</body>
+</html>
