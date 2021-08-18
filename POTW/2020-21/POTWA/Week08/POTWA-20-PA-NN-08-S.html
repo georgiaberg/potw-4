@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Collecting Cards</h1>
+</header>
+<main role="solution">
+<p style="text-align:center"><img src="images/skates.png" style="height:5cm" alt="" /></p>
+<h2>Problem</h2>
+<p>Mitig loves to play hockey. He also loves to collect hockey cards. He has 169 hockey cards in total. Mitig’s younger cousin Aki also loves to play hockey, and she is just beginning her collection of hockey cards. She starts with 9.</p>
+<p>If Mitig gives Aki 8 cards a day, will they ever have the same number of cards in their collections?</p>
+<p>If they do end up with the same number of cards at some point, how many cards does each have and how many days will it take for this to happen?</p>
+<h2>Solution</h2>
+<p>One way to solve this problem would be to create a table that keeps track of how many cards Mitig and Aki have each day. Day 0 represents the day before Mitig starts giving cards to Ali. Each day, Mitig’s total will <em>decrease</em> by 8 and Aki’s total will <em>increase</em> by 8.</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Day</strong></th>
+<th style="text-align: center;"><strong>Mitig’s Total</strong></th>
+<th style="text-align: center;"><strong>Aki’s Total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">169</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">161</td>
+<td style="text-align: center;">17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">153</td>
+<td style="text-align: center;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">145</td>
+<td style="text-align: center;">33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">137</td>
+<td style="text-align: center;">41</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">129</td>
+<td style="text-align: center;">49</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">121</td>
+<td style="text-align: center;">57</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">113</td>
+<td style="text-align: center;">65</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">73</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">97</td>
+<td style="text-align: center;">81</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">89</td>
+<td style="text-align: center;">89</td>
+</tr>
+</tbody>
+</table>
+<p>So, on the 10th day, Mitig and Aki each have 89 hockey cards.</p>
+<p>Another way to solve this problem is to see that Mitig and Aki have a total of <span class="math inline">\(169 + 9= 178\)</span> cards. They will have the same number of cards when each has half of the total: <span class="math inline">\(178 \div 2 = 89\)</span> cards. So Aki needs <span class="math inline">\(89 - 9 = 80\)</span> more cards to have half of them. If Mitig gives 8 cards each day, that will take <span class="math inline">\(80 \div 8 = 10\)</span> days. Since there is no remainder in this division, they will have the same number of cards on the 10th day.</p>
+<h3>Teacher’s Notes</h3>
+<p>If this question was asked in a high school mathematics class, students might use a very different approach to find the answer.</p>
+<p>Each person’s collection total could be described with a mathematical equation that describes the relationship between the number of days that have passed and the total number of hockey cards each person has.</p>
+<p>Let <span class="math inline">\(x\)</span> represent the number of days of trading.<br />
+Let <span class="math inline">\(y\)</span> represent the number of hockey cards.</p>
+<p>For Mitig, the equation showing his number of hockey cards over time is:</p>
+<p><span class="math display">\[y = 169 - 8x\]</span></p>
+<p>For Aki, the equation showing her number of hockey cards over time is:</p>
+<p><span class="math display">\[y = 9 + 8x\]</span></p>
+<p>We can draw straight lines on a graph that represent these equations. We know that any two lines that are not parallel will intersect at a point. Solving this problem is the same as finding the point of intersection of these two lines.</p>
+<p style="text-align:center"><img src="images/HockeyCardGraph.png" style="height:90mm" alt = "The lines representing Mitig's collection and Aki's collection intersect at a single point. The point of intersection is around (10, 90)." /></p>
+<p>If we precisely draw each of these lines, we can find the point of intersection graphically. We could also use algebraic techniques that would use the equations to solve the problem. In mathematics there are often many ways to solve the same problem.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 30%;
+      height: 6cm;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Mixed Up Letters</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>The letters <strong>A, B, C, D, E, F, G, H,</strong> and <strong>I</strong> each appear in one of the nine squares of the grid below.</p>
+<table border="1">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;</td>
+<td style="text-align: left;">&nbsp;</td>
+<td style="text-align: left;">&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&nbsp;</td>
+<td style="text-align: left;">&nbsp;</td>
+<td style="text-align: left;">&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&nbsp;</td>
+<td style="text-align: left;">&nbsp;</td>
+<td style="text-align: left;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>A</strong> is in one of the top corners</p></li>
+<li><p><strong>B</strong> is directly below <strong>H</strong> and directly to the left of <strong>I</strong></p></li>
+<li><p><strong>C</strong> is directly to the right of <strong>F</strong></p></li>
+<li><p><strong>D</strong> is in the middle square of the grid</p></li>
+<li><p><strong>E</strong> is in the same column as <strong>C</strong></p></li>
+<li><p><strong>F</strong> is directly above <strong>D</strong></p></li>
+<li><p><strong>G</strong> is directly below <strong>E</strong></p></li>
+<li><p><strong>H</strong> is directly below <strong>A</strong></p></li>
+<li><p><strong>I</strong> is between <strong>B</strong> and <strong>G</strong></p></li>
+</ul>
+<p>What is the correct arrangement of these letters in the grid that satisfies all the clues above?</p>
+<h2>Solution</h2>
+<p>We will first give the final grid. There are a number of different ways to get to this answer. On the next page, we will give one possible solution.<br />
+</p>
+<div align="center"><table border="1">
+<tbody>
+<tr class="even">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;"><strong>F</strong></td>
+<td style="text-align: center;"><strong>C</strong></td>
+<tr class="odd">
+<td style="text-align: center;"><strong>H</strong></td>
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;"><strong>E</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;"><strong>I</strong></td>
+<td style="text-align: center;"><strong>G</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Since <strong>D</strong> is in the middle square, then <strong>F</strong> must be in the square in the top middle of the grid. Since <strong>C</strong> is to the right of <strong>F</strong>, then <strong>C</strong> must be in the top right corner of the grid. We add these to the grid.</p>
+<div align="center"><table border="1">
+<tbody>
+<tr class="even">
+<td style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="text-align: center;"><strong>F</strong></td>
+<td style="text-align: center;"><strong>C</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">&nbsp;</td>
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;">&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">&nbsp;</td>
+<td style="text-align: center;">&nbsp;</td>
+<td style="text-align: center;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Since <strong>A</strong> is in a top corner, and <strong>C</strong> is in the top right corner, then <strong>A</strong> must be the top left corner. Now we know where <strong>A</strong> is, we know that <strong>H</strong> appears below <strong>A</strong> and <strong>B</strong> appears below <strong>H</strong> in the first column. We add these to the grid.</p>
+<div align="center"><table border="1">
+<tbody>
+<tr class="even">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;"><strong>F</strong></td>
+<td style="text-align: center;"><strong>C</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>H</strong></td>
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;">&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;">&nbsp;</td>
+<td style="text-align: center;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Since <strong>I</strong> is between <strong>B</strong> and <strong>G</strong>, and <strong>B</strong> is to the left of <strong>I</strong>, now we know these letters appear in the bottom row. We add these to the grid.</p>
+<div align="center"><table border="1">
+<tbody>
+<tr class="even">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;"><strong>F</strong></td>
+<td style="text-align: center;"><strong>C</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>H</strong></td>
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;"><strong>I</strong></td>
+<td style="text-align: center;"><strong>G</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Since we know that <strong>G</strong> is directly below <strong>E</strong>, this means that <strong>E</strong> is directly above <strong>G</strong>. This will finish the third column and the grid.</p>
+<div align="center"><table border="1">
+<tbody>
+<tr class="even">
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;"><strong>F</strong></td>
+<td style="text-align: center;"><strong>C</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>H</strong></td>
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;"><strong>E</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: center;"><strong>I</strong></td>
+<td style="text-align: center;"><strong>G</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Teacher’s Notes</h3>
+<p>Solving a problem like this one is good practice in <em>computational thinking</em>, which is an essential skill in mathematics and computer science. We might ask ourselves, can a computer solve this type of problem, and if so what is the procedure it would use?</p>
+<p>One way a computer could solve this problem is through <em>brute force</em>. This means that the computer would try every possible arrangement of letters in the grid until it finds one arrangement that satisfies the rules. It could start by putting the letters in order<br />
+</p>
+<blockquote>
+<p>Row 1: A, B, C<br />
+Row 2: D, E, F<br />
+Row 3: G, H, I<br />
+</p>
+</blockquote>
+<p>but you find out that this arrangement does not work for several reasons.</p>
+<p>Then you can try<br />
+</p>
+<blockquote>
+<p>Row 1: B, A, C<br />
+Row 2: D, E, F<br />
+Row 3: G, H, I<br />
+</p>
+</blockquote>
+<p>and again you find out this arrangement violates one or more of the rules.</p>
+<p>It turns out that there are 362 880 possible arrangements of these 9 letters to consider. Even though this is a relatively small problem, a brute force solution becomes a pretty big task. In general brute force solutions are considered unusable for problems of any reasonable size, so computer scientists look for alternative techniques or look for ways to reduce the number of arrangements that need to be checked in this kind of search. Reducing the search space is called <em>pruning</em>. Techniques that a computer would use to solve a problem like this one are used in artificial intelligence and machine learning.</p>
+</main>
+</body>
+</html>

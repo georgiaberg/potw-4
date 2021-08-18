@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Archaeological Ages</h1>
+</header>
+<main role="solution">
+<p style="text-align:center"> <img src="images/templeruins.png" style="height:6cm"  alt="" /> </p>
+<h2>Problem</h2>
+<p>You are an archaeologist, and have made a startling series of discoveries right around the corner from your office.</p>
+<p>You have taken the pieces back to the lab, and are trying to figure out how old your objects are. Your rival, Indianapolis Jane, has tampered with your artifact dating machine. The ages it is computing are correct but are hard to compare. Here are the results from the machine:</p>
+<blockquote>
+<p><strong>Artifact #1</strong> is 50 decades, 100 weeks, and 48 hours old</p>
+<p><strong>Artifact #2</strong> is 3 centuries, 4 decades, and 6 years old</p>
+<p><strong>Artifact #3</strong> is 2 centuries, 28 decades, and 52 weeks old</p>
+</blockquote>
+<p>You want to present these artifacts to your colleagues in order from oldest to newest. In which order should you present them? Justify your answer.</p>
+<p><span class="smallcaps">Note: A <em>decade</em> is equal to 10 years, and a <em>century</em> is equal to 100 years.</p>
+<h2>Solution</h2>
+</p>
+<p>One way to solve this problem is to estimate the age of each artifact. To compare the ages, we need a common unit. We know that 1 decade is equal to 10 years, and that 1 century is equal to 100 years. We know that each year has approximately 52 weeks and each day has 24 hours. So we can approximate the age of each artifact in years.</p>
+<ul>
+<li><p>Approximate age of <strong>Artifact #1</strong>:</p>
+<p>We see that 50 decades is equal to <span class="math inline">\(50 \times 10 = 500\)</span> years, and 100 weeks is approximately 2 years, and 48 hours is equal to 2 days which is insignificant in the calculation of the number of years in the age. We can estimate the age of <strong>Artifact #1</strong> at approximately <span class="math inline">\(500 + 2 = 502\)</span> years old.</p></li>
+<li><p>Approximate age of <strong>Artifact #2</strong>:</p>
+<p>Since 3 centuries is equal to <span class="math inline">\(3 \times 100 = 300\)</span> years, and 4 decades is equal to <span class="math inline">\(4 \times 10 = 40\)</span> years, we can estimate the age of <strong>Artifact #2</strong> at approximately <span class="math inline">\(300 + 40 + 6 = 346\)</span> years old.</p></li>
+<li><p>Approximate age of <strong>Artifact #3</strong>:</p>
+<p>Since 2 centuries is equal to <span class="math inline">\(2 \times 100 = 200\)</span> years, and 28 decades is equal to <span class="math inline">\(28 \times 10 = 280\)</span> years, and 52 weeks is approximately 1 year, we can estimate the age of <strong>Artifact #3</strong> at approximately <span class="math inline">\(200 + 280 + 1 = 481\)</span> years old.</p></li>
+</ul>
+<p>So the oldest item is <strong>Artifact #1</strong>, the next oldest is <strong>Artifact #3</strong>, and the newest is <strong><strong>Artifact #2</strong></strong>.</p>
+</main>
+</body>
+</html>

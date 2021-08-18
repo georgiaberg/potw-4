@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+    ul.task-list{
+    	list-style: none;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+What Number Am I? </h1>
+</header>
+<main role="solution">
+<p style="text-align:center"><img src="images/numbers.png" style="height:6cm" alt="" /> </p>
+<h2>Problem</h2>
+<ol type="A">
+<li><p>I am a three-digit number. All of my digits are different. My digits are all even numbers greater than 0 and less than 8. If you read my digits from left to right, they are not always increasing. The hundreds digit is the smallest digit. <em>What number am I?</em></p></li>
+<li><p>I am a four-digit number. All of my digits are different. If the digits appeared in the same order on a (12 hour) digital clock, it would show a valid time. The sum of the hours digits of this time is equal to the difference between the larger minutes digit and the smaller minutes digit of this time. The ones (units) digit is 8. <em>What number am I?</em></p></li>
+<li><p>I am a four-digit number. All of my digits are odd. The product of the thousands digit and the hundreds digit is the same as the two-digit number equal to my last two digits. The hundreds digit and the ones (units) digit are the same number. Exactly one of my digits is a 1. <em>What number am I?</em></p></li>
+</ol>
+<h2>Solution</h2>
+<ol type="A">
+<li><p>The even numbers that are greater than 0 and less than 8 are: 2, 4, and 6. Since this is a three-digit number and the digits are all different, all three of these numbers must be digits in the number. Since the hundreds digit is the smallest digit, the number must start with 2. Since the digits are not always increasing, the number cannot be 246. The only other possibility is the number 264. So the number must be 264.</p></li>
+<li><p>Since this is a four-digit number that is a valid time on a digital clock, the hours digits would be the thousands digit and the hundreds digit, and the minutes digits would be the tens digit and the ones (units) digit. Since this is a four-digit number, the thousands digit cannot be 0. It follows that the thousands digit must be a 1. Since the digits must all be different, the hundreds digit could be either a 0 or a 2. If the hundreds digit is a 0, that would mean the difference between the minutes digits must be <span class="math inline">\(1 + 0 = 1\)</span>. Since the ones digit is 8, that would mean the tens digit would have to be either 7 or 9. However, 78 and 98 are not valid minutes on a digital clock. So, the hundreds digit must be a 2. This means the difference between the minutes digits must be 3. The only possibility is that the tens digit is 5. So the number must be 1258.</p></li>
+<li><p>Since all the digits are odd, only one of these digits is 1, and the hundreds digit and ones (units) digit are the same, then these two digits must be one of 3, 5, 7, or 9. Also, exactly one of the thousands digit or tens digit must be a 1. The product of the thousands and hundreds digit must be a two-digit number. However, if the thousands digits was a 1, then the product of these two digits would be a single-digit number. This means the tens digit must be a 1. So, we need to find two odd, single digit numbers that give a product of either 13, 15, 17, or 19. The only number in this list that can be factored into the product of two digits is 15. So the two-digit number equal to the last two digits must be 15 and the hundreds digit must be 5. Since <span class="math inline">\(3 \times 5 = 15\)</span>, the thousands digit must be 3, which is an odd number. So the number must be 3515.</p>
+<p><strong>Teacher’s Notes</strong></p>
+<p>When we add two positive numbers together, we know that the sum of those numbers will also be positive. However, when we subtract one positive number from another positive number, the answer may be positive, it may be 0, or it may be a negative number.</p>
+<p>In part B) of this problem we were given information about the sum of two digits and the difference of two other digits (all of which were different). In order to guarantee that the difference we were considering was a positive number the problem included the phrase:<br />
+<em>“the difference between the larger minutes digit and the smaller minutes digit”</em>.</p>
+<p>Another way to guarantee a non-negative result is to use the <em>absolute value</em> function. The absolute value of a number is denoted using vertical bars, and is formally defined as:</p>
+<p><span class="math display">\[|x | = 
+\begin{cases}
+	~~x &amp; \text{ for } x \geq 0 \\
+	-x &amp; \text{ for }x &lt; 0 \\
+\end{cases}\]</p>
+<p>What this really means is that the absolute value of a number is the value of that number without regard to its sign. For example, <span class="math inline">\(| 5 |= 5\)</span> and <span class="math inline">\(| -5 |= 5\)</span>.</p>
+<p>So if we wanted to guarantee an non-negative result from a subtraction, we could ask for the absolute value of the difference. In other words, <span class="math inline">\(|x - y |\)</span> always results in a non-negative number no matter what the values we have for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Knowing about absolute value, an alternative statement for this problem could have been:</p>
+<p><em>“The sum of the hours digits of this time is equal to the absolute value of the difference between the minutes digits.”</em></p></li>
+</ol>
+</main>
+</body>
+</html>

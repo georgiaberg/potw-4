@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Quiz Results </h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>The grade 3 and 4 students in Spruce Glen Public School had to write a quiz. The bar chart below shows the results of the quiz. Reading the grades from left to right in the bar chart, we see the grades from lowest to highest. In other words, <strong>C-</strong> is the lowest grade and <strong>A+</strong> is the highest grade.</p>
+<p align="center"><img src="images/DataChart.png" style="width:16cm" alt = "A bar chart shows the number of students with each grade. One student got a C minus, three got a C, zero got a C plus, two got a B minus, four got a B, seven got a B plus, five got an A minus, six got an A, and seven got an A plus." /></p>
+<ol type="A">
+<li><p>How many students wrote the quiz?</p></li>
+<li><p>What is the median of all the grades on this quiz? The median is the middle value of the data when arranged in order.</p></li>
+</ol>
+<h2>Solution</h2>
+<ol type="A">
+<li><p>From the bar chart, we can calculate the total number of students by adding up the number of quizzes with each grade:</p>
+<p><span class="math display">\[1 + 3 + 0 + 2 + 4 + 7 + 5 + 6 + 7 = 35\]</p>
+<p>So a total of 35 students wrote the quiz.</p></li>
+<li><p>To find the median grade, we could list all of the grades in sorted order and look for the middle value in that list. Another way would be to discard matching numbers of grades from each end of the chart. You could do this by marking matching <strong>X</strong>s on the bars of the graph, working from the outside toward the middle. Each <strong>X</strong> on a bar represents one student’s grade.</p>
+<p>In this case, we see that there are 7 students with A+ grades and a total of 6 students with grades of C- (1), C (3), and B- (2). That leaves 1 grade of A+ unaccounted for at this point.</p>
+<p>Now we notice that there are a total of 11 students with grades of B (4) and B+ (7). From the right side of the chart, that could match up with 1 student with a grade of A+, 6 students with a grade of A, and 4 students with a grade of A-. Since the only grade left unaccounted for at this point is from a student with a grade of A-, this means the median grade is A-.</p></li>
+</ol>
+<h3>Teacher’s Notes</h3>
+<p>The diagram in the problem was generated using a spreadsheet. Another activity would be to have the students recreate the chart in a spreadsheet themselves.</p>
+<p>Here is the source data used to create the chart:</p>
+<p align="center"><img src="images/DataSource.png" style="height:60mm" alt= "A table shows the results of the quiz, including the number of student with each grade and the total number of students which is 35." />
+</p>
+<p>The starting point for this chart was created by highlighting the cells from <strong>A1</strong> to <strong>B10</strong>, and then choosing to create a bar chart. Then we needed to do some additional formatting to add the grid lines and <span class="math inline">\(y\)</span>-axis title that appear in the version you see in this problem’s description.</p>
+<p>Note that the row showing the total is not included when generating the chart itself. The value in cell <strong>B11</strong> was calculated using a formula: <strong>=SUM(B2:B10)</strong>.</p>
+</body>
+</html>

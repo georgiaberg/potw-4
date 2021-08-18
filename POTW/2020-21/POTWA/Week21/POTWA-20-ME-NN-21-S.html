@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 50%;
+      overflow-x: auto;
+      border: 1px solid black;
+      /*display: block;*/
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /*border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;*/
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+      border: 1px solid black;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+      border: 1px solid black;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Trading Treats</h1>
+</header>
+<main role="solution">
+<p style="text-align:center"><img src="images/lollipops.png" style="width:20.0%" alt="" /></p>
+<h2>Problem</h2>
+<p>Owen went to his neighbourhood convenience store where he bought <span class="math inline">\(25\)</span> small packages of different kinds of candy. After counting the candies in his purchase, he calculated that he had <span class="math inline">\(100\)</span> candies in total.</p>
+<ol type="A">
+<li><p>If each package contained the same amount of candy, how many candies were in each package?</p></li>
+<li><p>Owen decided to give one-fifth of the candy that evening to his brother, Clive. Owen saved the rest for another day. How many candies did he give to Clive?</p></li>
+<li><p>The following day, his sister Charlotte bought some candy. Charlotte had a lot of sour cherries, which Owen adores. Owen had many red lollipops, which are Charlotte’s favourite candy. They decided that one lollipop was worth two sour cherries. Owen traded <span class="math inline">\(25\)</span> of his lollipops for sour cherries. How many sour cherries did he receive from Charlotte?</p></li>
+<li><p>After the trade, Owen eats the same amount of candy each day until his candy is finished. This takes 3 weeks. How many candies does he eat each day?</p></li>
+</ol>
+<h2>Solution</h2>
+<ol type="A">
+<li><p>We can use skip counting by <span class="math inline">\(25\)</span>, until we get to <span class="math inline">\(100\)</span>, to determine how many candies are in each package: <span class="math inline">\(25\)</span>, <span class="math inline">\(50\)</span>, <span class="math inline">\(75\)</span>, <span class="math inline">\(100\)</span><br />
+It takes four steps to get to <span class="math inline">\(100\)</span>, which means that there are <span class="math inline">\(4\)</span> candies in each package.</p></li>
+<li><p>We can calculate <span class="math inline">\(\frac{1}{5}\)</span> of a number by dividing that number by <span class="math inline">\(5\)</span>. So Owen gave <span class="math inline">\(100 \div 5 = 20\)</span> candies to Clive.</p></li>
+<li><p>Since each lollipop is worth <span class="math inline">\(2\)</span> sour cherries, and Owen traded <span class="math inline">\(25\)</span> lollipops to Charlotte, he received <span class="math inline">\(2 \times 25 = 50\)</span> sour cherries.</p></li>
+<li><p>Owen had a total of <span class="math inline">\(100 - 20 = 80\)</span> candies left after giving Clive <span class="math inline">\(20\)</span> candies on the first night. He used <span class="math inline">\(25\)</span> of those candies in the trade with Charlotte. This meant he had <span class="math inline">\(80 - 25 = 55\)</span> of his original candies left. But since he got <span class="math inline">\(50\)</span> sour cherries from Charlotte, the total number of candies he had after the trade was <span class="math inline">\(55 + 50 = 105\)</span>.</p>
+<p>Alternatively, we see that Owen gave away <span class="math inline">\(25\)</span> candies and he gained <span class="math inline">\(50\)</span> candies for a net gain of <span class="math inline">\(50 - 25 = 25\)</span> candies. Adding this to the original 80 that he had by the second day, we can see that Owen has <span class="math inline">\(80 + 25 = 105\)</span> candies after the trade.</p>
+<p>Since there are <span class="math inline">\(7\)</span> days in <span class="math inline">\(1\)</span> week, there are <span class="math inline">\(3 \times 7 = 21\)</span> days in <span class="math inline">\(3\)</span> weeks. We can make a table to determine how many candies he would eat in total over that time, depending on the number of candies he eats per day.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Candies Eaten per Day</strong></th>
+<th style="text-align: center;"><strong>Total Eaten in 3 Weeks</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">21</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">42</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">63</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">84</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">105</td>
+</tr>
+</tbody>
+</table>
+<p>Owen will finish the rest of the candy by eating <span class="math inline">\(5\)</span> candies each day over <span class="math inline">\(3\)</span> weeks.</p></li>
+</ol>
+<h3>Teacher’s Notes</h3>
+<p>Skip counting shows the connection between the mathematical operations of addition and multiplication. Finding the product of two whole numbers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can be defined as either “adding <span class="math inline">\(x\)</span> to itself <span class="math inline">\(y\)</span> times” or “adding <span class="math inline">\(y\)</span> to itself <span class="math inline">\(x\)</span> times”.</p>
+<p>Skip counting is a good way to introduce multiplication. However, as the numbers get larger, or we start working with fractions or negative numbers, it can be more practical to use established algorithms to multiply numbers together. There are a variety of techniques people use such as the <em>grid method</em> or the <em>lattice method</em>.</p>
+<p>A very common algorithm used to find the product of <span class="math inline">\(x \times y\)</span> is to multiply <span class="math inline">\(x\)</span> by each digit of <span class="math inline">\(y\)</span>, and append zeros to the ends of the products as you work on the digits of <span class="math inline">\(y\)</span> from right to left. Then you need to add each digit’s product together.</p>
+<p>This last method can be easily implemented in a computer to complete the multiplication. In some ways, it is easier for a computer because it works on binary numbers, which only have ones and zeros. Multiplying a number by <span class="math inline">\(1\)</span> is the same a making a copy of the number, and multiplying a number by <span class="math inline">\(0\)</span> is always <span class="math inline">\(0\)</span>. The computer can use an operation called a <em>bitshift</em> that will manage the process of appending zeros to the end of each digit’s product.</p>
+</main>
+</body>
+</html>

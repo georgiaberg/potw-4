@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Tents Situation </h1>
+</header>
+<main role="solution">
+<p style="text-align:center"><img src="images/camping.png" style="height:4cm" alt="" /></p>
+<h2>Problem</h2>
+<p>Two years ago, Range Lake North Public School took its grade 3 and grade 4 classes on a camping trip. There were 41 students going on the trip. They took 9 tents with them.</p>
+<p>Each tent slept either 3 campers or 5 campers. Every tent was completely filled and every camper was in a tent. How many 5-person tents did they bring with them?</p>
+<h2>Solution</h2>
+<p>Since 41 is neither a multiple of 3 nor a multiple of 5, the students must have taken at least one of each type of tent.</p>
+<p>Now we can consider all combinations of 3-person tents and 5-person tents where there is a total of 9 tents, and where we have at least 1 and at most 8 tents that sleep 5 campers. We can create a table to keep track of the numbers:</p>
+<table border="1">
+<tbody>
+<tr class="even">
+<td style="text-align: left;"><strong>Number of 5-person tents</strong></td>
+<td style="text-align: left;"><strong>Total campers in 5-person tents</strong></td>
+<td style="text-align: left;"><strong>Number of 3-person tents</strong></td>
+<td style="text-align: left;"><strong>Total campers in 3-person tents</strong></td>
+<td style="text-align: left;"><strong>Total campers (sum)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><span class="math inline">\(1 \times 5 = 5\)</span></td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;"><span class="math inline">\(8 \times 3 = 24\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(5 + 24 = 29\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><span class="math inline">\(2 \times 5 = 10\)</span></td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;"><span class="math inline">\(7 \times 3 = 21\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(10 + 21 = 31\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><span class="math inline">\(3 \times 5 = 15\)</span></td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;"><span class="math inline">\(6 \times 3 = 18\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(15 + 18 = 33\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><span class="math inline">\(4 \times 5 = 20\)</span></td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><span class="math inline">\(5 \times 3 = 15\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(20 + 15 = 35\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><span class="math inline">\(5 \times 5 = 25\)</span></td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><span class="math inline">\(4 \times 3 = 12\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(25 + 12 = 37\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;"><span class="math inline">\(6 \times 5 = 30\)</span></td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><span class="math inline">\(3 \times 3 = 9\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(30 + 9 = 39\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;"><span class="math inline">\(7 \times 5 = 35\)</span></td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><span class="math inline">\(2 \times 3 = 6\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(35 + 6 = 41\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;"><span class="math inline">\(8 \times 5 = 40\)</span></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><span class="math inline">\(1 \times 3 = 3\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(40 + 3 = 43\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>From the table, we can see that the only possible combination that meets the requirements is to take 7 tents that sleep 5 campers and 2 tents that sleep 3 campers.</p>
+<p>Alternatively, if we only had tents that sleep 3 campers we could accommodate <span class="math inline">\(3 \times 9 = 27\)</span> people. However, we have 41 people, so we need space for <span class="math inline">\(41 - 27 = 14\)</span> more campers. The bigger tents sleep 2 more people each, so we need <span class="math inline">\(14 \div 2 = 7\)</span> tents that sleep 5 campers each. With a total of 9 tents, we need 2 tents that sleep 3 campers.</p>
+<h3>Teacher’s Notes</h3>
+<p>For many of these kinds of problems, we can also use an algebraic method to solve it.</p>
+<p>We can write an equation to represent this problem.</p>
+<p>Let <span class="math inline">\(x\)</span> represent the number of 3-person tents required.</p>
+<p>Let <span class="math inline">\(y\)</span> represent the number of 5-person tents required.</p>
+<p>Then we know, <span class="math inline">\(3x + 5y = 41\)</span>.</p>
+<p>Without any further restrictions on <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, there are an infinite number of possible pairs of values for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> that satisfy this equation.</p>
+<p>However, we have extra information that reduces the number of possible answers. This information is implicit rather explicitly stated in the problem. For example, we know that it is not possible for there to be a negative number of tents. We also know that we cannot have a fractional number of tents. This will lead us to single values for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> that satisfy the equation <span class="math inline">\(3x + 5y = 41\)</span>.</p>
+<p>In general, we have to be careful when using algebra to solve equations that represent a real-life situation. It is important to make sure that the answers we generate from our algebraic manipulations make sense, and that they take into consideration any implicit restrictions.</p>
+</main>
+</body>
+</html>

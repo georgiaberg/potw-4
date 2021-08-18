@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+School Supply Spending</h1>
+</header>
+<main role="solution">
+<p style="text-align:center"><img src="images/classroom-supplies.png" style="height:4cm" alt="" /> </p>
+<h2>Problem</h2>
+<p>Mr. Cameron has $100 to spend on school supplies for his classroom. His students need pencils, erasers, binders, lined paper, whiteboard markers, and crayons. When he looks through the catalogue, he discovers that the items he needs are only available in packages. The table below shows the prices.</p>
+<table border="1">
+<tbody>
+<tr class="even">
+<th style="text-align: left;">Supplies</td>
+<th style="text-align: center;">Amount per Package</td>
+<th style="text-align: center;">Cost per Package</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pencils</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">$0.50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">erasers</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">$1.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">binders</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">$5.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lined paper</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">$1.50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">whiteboard markers</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">$4.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">crayons</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">$1.00</td>
+</tr>
+</tbody>
+</table>
+<p>Mr. Cameron has 20 students in his class. Each student needs 5 pencils, 2 erasers, 5 binders, 50 sheets of lined paper, 1 whiteboard marker, and 1 entire package of crayons. Mr. Cameron needs 8 whiteboard markers himself.</p>
+<ol type="A">
+<li><p>Does Mr. Cameron have enough money to buy all of his classroom supplies? Justify your answer.</p></li>
+<li><p>If he does have enough money, how much is leftover from the $100? If he does not have enough money, how much more would he need?</p></li>
+</ol>
+<h2>Solution</h2>
+<p>A) To solve this problem, we need to determine how many packages of each supply are needed in order to have enough for all 20 students in Mr. Cameron’s class.</p>
+<p>Since there are 10 pencils per package and each student requires 5 pencils, then 1 package of pencils is enough for <span class="math inline">\(10 \div 5 = 2\)</span> students. Since there are 20 students in the class, Mr. Cameron needs <span class="math inline">\(20 \div 2 = 10\)</span> packages of pencils.</p>
+<p>Alternatively, since there are 20 students, and each student needs 5 pencils, then Mr. Cameron needs <span class="math inline">\(20 \times 5 = 100\)</span> pencils. Since each package has 10 pencils, he needs <span class="math inline">\(100 \div 10 = 10\)</span> packages of pencils.</p>
+<p>Similarly, we can calculate:</p>
+<ul>
+<li><p>1 package of binders is enough for <span class="math inline">\(25 \div 5 = 5\)</span> students, so he requires <span class="math inline">\(20 \div 5 = 4\)</span> packages of binders.<br />
+<em>OR</em><br />
+Mr. Cameron needs a total of <span class="math inline">\(20 \times 5 = 100\)</span> binders, which means he requires <span class="math inline">\(100 \div 25 = 4\)</span> packages.</p></li>
+<li><p>1 package of lined paper is enough for <span class="math inline">\(100 \div 50 = 2\)</span> students, so he requires <span class="math inline">\(20 \div 2 = 10\)</span> packages of lined paper.<br />
+<em>OR</em><br />
+Mr. Cameron needs a total of <span class="math inline">\(20 \times 50 = 1000\)</span> sheets of paper, which means he requires <span class="math inline">\(1000 \div 100 = 10\)</span> packages.</p></li>
+</ul>
+<p>Also, 1 package of erasers is enough for <span class="math inline">\(12 \div 2 = 6\)</span> students. This means we need <span class="math inline">\(20 \div 6 = 3\)</span> packages with a remainder of 2. So 3 packages would not have enough erasers for the class, and thus we need to round up to 4 packages.</p>
+<p>Alternatively, we need <span class="math inline">\(20 \times 2 = 40\)</span> erasers, which means we require <span class="math inline">\(40 \div 12\)</span> packages, which is equal to 3 packages with a remainder of 4, and thus we round up to 4 packages. Both calculations determine that we require 4 packages of erasers. Note that the remainders are different, because in the first division we are calculating a number of students and in the second division we are calculating a number of erasers.</p>
+<p>Since each student needs just 1 whiteboard marker, we require <span class="math inline">\(20 \div 4 = 5\)</span> packages for the students. However, since Mr. Cameron needs 8 markers himself, that would require 2 more for a total of 7 packages of markers.</p>
+<p>Alternatively, we need <span class="math inline">\(20 + 8 = 28\)</span> whiteboard markers in total, which means we require <span class="math inline">\(28 \div 4 = 7\)</span> packages.</p>
+<p>Finally, we need 1 package of crayons for each student, which is a total of 20 packages.</p>
+<p>Now we can make a new table knowing how many packages of each supply are required for the class. We can multiply the number of packages by the cost per package for each of the supplies.</p>
+<table border="1">
+<tbody>
+<tr class="even">
+<th valign="top" style="text-align: center;">Supplies</td>
+<th valign="top" style="text-align: center;">Number of Packages</td>
+<th valign="top" style="text-align: center;">Cost per Package (in $)</td>
+<th valign="top" style="text-align: center;">Total Cost <br />(in $)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pencils</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0.50</td>
+<td style="text-align: right;"><span class="math inline">\(10 \times 0.50 = 5.00\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">erasers</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: right;"><span class="math inline">\(4 \times 1.00 = 4.00\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">binders</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5.00</td>
+<td style="text-align: right;"><span class="math inline">\(4 \times 5.00 = 20.00\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lined paper</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1.50</td>
+<td style="text-align: right;"><span class="math inline">\(10 \times 1.50 = 15.00\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">whiteboard markers</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">4.00</td>
+<td style="text-align: right;"><span class="math inline">\(7 \times 4.00 = 28.00\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">crayons</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: right;"><span class="math inline">\(20 \times 1.00 = 20.00\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>So the total cost of supplies is: <span class="math display">\[5.00 + 4.00 + 20.00 + 15.00 + 28.00 + 20.00 = \$92.00\]</p>
+<p>B) Since Mr. Cameron has $100 to spend, he has enough for these supplies with <span class="math inline">\(\$100 - \$92 = \$8\)</span> left over.</p>
+<h3>Teacher’s Notes</h3>
+<p>When we are solving this problem, essentially we need to find <em>equivalent ratios</em>. We have been told the ratio of one student to a number of pencils, erasers, binders, sheets of paper, whiteboard markers, and crayons. We need an equivalent ratio for 20 students to amounts of each of those items.</p>
+<p>For example, with pencils we want a ratio of <span class="math inline">\(1:5\)</span>, so we need an equivalent ratio <span class="math inline">\(20:x\)</span>.<br />
+Now we just need to solve for <span class="math inline">\(x\)</span>.</p>
+<p>One technique for finding equivalent ratios is to rewrite the ratios as fractions.<br />
+For example, the ratio <span class="math inline">\(1:5\)</span> can be written as the fraction <span class="math inline">\(\tfrac{1}{5}\)</span>.<br />
+So now we just need to solve the equation:</p>
+<p><span class="math display">\[\dfrac{1}{5} = \dfrac{20}{x}\]</p>
+<p>If we have two fractions that are equal, that means the products of the numerator of one and the denominator of the other are equal. This is sometimes referred to as <em>cross-multiplying</em>. In this example it means:</p>
+<p><span class="math display">\[1 \times x = 5 \times 20\]</p>
+<p>So,</p>
+<p><span class="math display">\[x = 100\]</p>
+<p>This means we need 100 pencils to supply the whole class.</p>
+</main>
+</body>
+</html>

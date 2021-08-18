@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Numbered Triangle</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>Diana has outlined the following triangle formed of boxes:</p>
+<p align="center"><img src="images/EmptyPascalsTriangleArrows.png" style="width:17cm" alt = "A tower of identical boxes arranged into 9 rows. 9 boxes lying side by side form the bottom row. Every row above the bottom row contains one less box than the row below it, ending with 1 box in the top row. Every box in the tower touches exactly two boxes in the row below it, except for the boxes in the bottom row." /></p>
+<p>Diana fills in the top box of the triangle with a 1. The first box and last box of the remaining rows of the triangle are filled with a 1. The rest of the boxes in each row are filled with the sum of the numbers in the two boxes in the row above that touch the top side of the box Diana is filling. For example, the middle box of the third row is filled with the sum of the numbers in the two boxes in the second row.</p>
+<p>What does the triangle look like after Diana has filled in all of the numbers according to the rules described above?</p>
+<p>Can you find any patterns in the finished triangle? Share these patterns with others in your class.</p>
+<hr />
+<p><strong>Not printing this page?</strong> You can fill in the boxes on our <a href="https://www.geogebra.org/m/cedqqmrf">interactive worksheet</a>.</p>
+<h2>Solution</h2>
+<p>Here is the completed triangle:</p>
+<p align="center"><img src="images/SolutionPascalsTriangle.png" style="width:165mm" alt = "The top three boxes have the number 1. The numbers in the boxes in the third row from the top are 1, 2, 1, in that order. The fourth row is 1, 3, 3, 1. The fifth row is 1, 4, 6, 4, 1. The sixth row is 1, 5 ,10 ,10, 5, 1. The seventh row is 1, 6, 15, 20, 15, 6 ,1. The eighth row is 1, 7, 21, 35, 35, 21, 7, 1, and the ninth row is 1, 8, 28, 56, 70, 56, 28, 8, 1." /></p>
+<h3>Teacher’s Notes</h3>
+<p>This problem is an exploration of <em>Pascal’s Triangle</em> which is named for French mathematician Blaise Pascal (1623 - 1662). There are lots of patterns to be found in this structure. It is easier to describe many of the patterns in terms of rows of the triangle, in particular we refer to the top row of the triangle as <strong>Row 0</strong>. Here are a few of the patterns:</p>
+<ul>
+<li><p>The triangle is symmetric along a vertical line of symmetry. In other words, the left side matches the the right side.</p></li>
+<li><p>Starting with a 1 in <strong>Row 1</strong> and moving along the diagonal, we see the whole numbers in order: \(1, 2, 3, 4, 5, 6, 7, 8\).</p></li>
+<li><p>Starting with a 1 in <strong>Row 2</strong> and moving along the diagonal, we see the differences between adjacent numbers increasing by 1 at each step: <span class="math inline">\((3 - 1) = 2, (6 - 3) = 3, (10 - 6) = 4, (15 - 10) = 5, (21 - 15) = 6, (28 - 21) = 7\)</span>.</p></li>
+<li><p>The sum of the numbers in a row is twice the sum of the numbers in the row above. For example, the sum of the numbers in <strong>Row 5</strong> is <span class="math inline">\(1 + 5 + 10 + 10 + 5 + 1 = 32\)</span>, and the sum of the numbers in <strong>Row 4</strong> is <span class="math inline">\(1 + 4 + 6 + 4 + 1 = 16\)</span>.<br />
+In general, the sum of the numbers in the <span class="math inline">\(n^{th}\)</span> row is <span class="math inline">\(2^n\)</span>.</p></li>
+<li><p>If you start at any 1 and move along the diagonal which is not a diagonal of 1s, and then change direction for the last number, then the sum of the entries along the diagonal will equal the last number. For example, starting with a 1 in <strong>Row 3</strong>: <span class="math inline">\(1 + 4 + 10 + 20 = 35\)</span>. This is often referred to as the <em>Hockey Stick Identity</em>, because if you circle the numbers in this path, the shape will look somewhat like a hockey stick.</p></li>
+<li><p>In Algebra, the numbers in the <span class="math inline">\(n^{th}\)</span> row provide the coefficients for the expansion of a <strong>binomial</strong> expression raised to the <span class="math inline">\(n^{th}\)</span> power. For example, <span class="math inline">\((x + y)^3 = 1x^3 + 3x^2y + 3xy^2 + 1y^3\)</span>.</p></li>
+</ul>
+<p>The list above is not comprehensive, there are many other patterns in Pascal’s Triangle. Hopefully your students were able to find some others!</p>
+</main>
+</body>
+</html>

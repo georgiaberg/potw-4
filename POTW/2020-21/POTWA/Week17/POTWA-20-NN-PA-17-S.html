@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    /*hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }*/
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+	button {
+		border-radius: 5px;
+  		background-color: #00008B;
+  		border: 1px solid #00008B;
+  		color: #FFFFFF;
+  		padding: 10px 10px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 16px;
+  	}
+  	button:hover{
+  		background: #D3D3D3;
+  		border: 1px solid #00008B;
+  		color: #000000
+  	}
+  	@media print {
+  		.noPrint{
+    		display:none;
+    	}
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<script>
+function hideSeek() {
+  var x = document.getElementById("longdesc");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" />
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Shape Sums</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>Each symbol in the grid below represents a numerical value. We know the sum of symbols for the first, second, and bottom rows and the leftmost and rightmost columns.</p>
+<p style="text-align:center"><img longdesc="POTWA-20-NN-PA-17-S.html#problem" style="width:75%" src="images/ProblemGrid.png" alt="A 4 by 4 grid with a triangle, a circle, a square, or a hexagon placed in each square of the 16 squares. A number is placed to the right of three of the rows and below two of the columns." /></p>
+<button onclick="hideSeek()" style="box-shadow:none">Hide/Reveal Description of Grid</button>
+<div id="longdesc" style="display:none">
+<p>A 4 by 4 grid with a triangle, a circle, a square or a hexagon in each square.
+<ul><li>The first row has 4 triangles with the number 16 to the right of the row.</li><li>The second row in order has triangle, circle, square, hexagon with the number 19 to the right of the row.</li><li>The third row has circle, circle, square, hexagon with a question mark to the right of the row.</li><li>The fourth row has circle, triangle, circle, square with the number 20 to the right of the row.</li><li>The number 22 appears at the bottom of the first column.</li><li>The number 18 is at the bottom of the fourth column.</li><li>The middle two columns have question marks at the bottom.</li></ol>
+</p>
+<hr style="border-top: dashed 1px black" />
+</div>
+<p>For example, we know from the grid:</p>
+<p style="text-align:center"><img style="width:75%" src="images/RowExample.png" alt="Triangle plus triangle plus triangle plus triangle is equal to 16." /></p>
+<p>What are the missing sums?<br />
+<strong>Not printing this page?</strong> You can fill in the values on our <a href="https://www.geogebra.org/m/axkd8b8x">interactive worksheet</a>.</p>
+<h2>Solution</h2>
+<p>There are many ways to solve this problem. Here is one approach.</p>
+<p>Since the leftmost column has two triangles and two circles, and the column beside it also has two triangles and two circles, the sum of the columns must be the same. So the sum of the second column must be 22.</p>
+<p>From the top row we know that the sum of 4 triangles is 16. So the value of one triangle must be <span class="math inline">\(\frac{1}{4}\)</span> of 16 or <span class="math inline">\(16 \div 4 = 4\)</span>.</p>
+<p>Since the value of one triangle is 4, then the sum of two triangles is <span class="math inline">\(4 + 4 = 8\)</span>. The leftmost column shows the sum of two triangles and two circles is 22, so the sum of two circles is <span class="math inline">\(22 - 8 = 14\)</span>. Therefore the value of one circle must be <span class="math inline">\(\frac{1}{2}\)</span> of 14 or <span class="math inline">\(14 \div 2 = 7\)</span>.</p>
+<p>Since the sum of the bottom row is formed by two circles, one triangle, and one square, and we know the sum of two circles and one triangle is <span class="math inline">\(14 + 4 = 18\)</span>, then the value of one square is <span class="math inline">\(20 - 18 = 2\)</span>.</p>
+<p>Now we know that the sum of the third column is <span class="math inline">\(4 + 2 + 2 + 7 = 15\)</span>.</p>
+<p>Since the sum of the second row is formed by one triangle, one circle, one square and one hexagon, and we know the sum of one triangle, one circle, and one square is <span class="math inline">\(4 + 7 + 2=13\)</span>, then the value of one hexagon is <span class="math inline">\(19 - 13 = 6\)</span>.</p>
+<p>Now we know that the sum of the third row is <span class="math inline">\(7 + 7 + 2 + 6 = 22\)</span>.</p>
+<p>Here is the completed grid:</p>
+<p style="text-align:center"><img style="width:75%" src="images/SolutionGrid.png" alt="" /></p>
+<p>Here is a second of way to find the sum of the third row without actually finding the value of the hexagon. Notice that the second and third rows have the same shapes in the last three columns, and only the first column shape is different.<br />
+Since we know that the difference between the values of a circle and a triangle is <span class="math inline">\(7 - 4 = 3\)</span>, then the sum of the third row must be 3 more than the sum of the second row, which is <span class="math inline">\(19 + 3 = 22\)</span>.</p>
+<p><strong>Teacher’s Notes</strong></p>
+<p>We could look at this problem algebraically, where we are trying to solve a <em>linear system of equations</em>. If we assign variable names to the shapes,</p>
+<ul>
+<li><p><span class="math inline">\(t =\)</span> triangle</p></li>
+<li><p><span class="math inline">\(c =\)</span> circle</p></li>
+<li><p><span class="math inline">\(s =\)</span> square</p></li>
+<li><p><span class="math inline">\(h =\)</span> hexagon</p></li>
+</ul>
+<p>then we can describe the information given in the problem as follows: <span class="math display">\[\begin{aligned}
+	4t &amp;= 16 \\
+	t + c + s + h &amp;= 19 \\
+	2c + t + s &amp;= 20 \\
+	2t + 2c &amp;= 22 \\
+	t + 2h + s &amp;= 18\end{aligned}\]</span></p>
+<p>Now, we could use algebraic techniques to find the values of these four variables.</p>
+<p>We expect that there is a single solution to these types of problems, and it turns out that there is for this problem. However, for some problems we are not given enough information to determine specific values for each variable. For a problem with four variables, a minimum requirement to guarantee a single solution is that we need <em>at least</em> four equations. Also, those equations must be <em>consistent</em>. This means that none of the equations can contradict each other. For example, if we added the equation <span class="math inline">\(t = 7\)</span> to the system in this problem, this would contradict equation (1). A system that is <em>inconsistent</em> has no solutions. This is something that students will learn more about in higher level math courses.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" />
+<header role="title">
+<h1>Problem of the Week<br />
+Problem A and Solution<br />
+Wardrobe Malfunction</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>Rashid has decided to make clothing decisions easy for himself in the morning. He has kept 3 shirts, 2 pairs of pants, and 2 pairs of socks. They are as follows:</p>
+<p>Shirts: light blue shirt, dark blue shirt, and burgundy shirt</p>
+<p><img src="images/shirtlightblue.png" style="height:20mm" alt="Light blue shirt" /><img src="images/shirtdarkblue.png" style="height:23mm" alt="Dark blue shirt" /><img src="images/shirtburgundy.png" style="height:23mm" alt="Burgundry shirt" /></p>
+<p>Pants: blue jeans, burgundy pants</p>
+<p><img src="images/pantsblue.png" style="height:28mm" alt="Blue pants" /> <img src="images/pantsburgundy.png" style="height:28mm" alt="Burgundy pants" /></p>
+<p>Socks: blue socks, red socks</p>
+<p><img src="images/socksblue.png" style="height:18mm" alt="Blue socks" /><img src="images/socksred.png" style="height:23mm" alt="Red socks" /></p>
+<p>Note that Rashid always wears two socks that are the same colour.</p>
+<ol type="A">
+<li><p>How many possible different outfits could Rashid wear?</p></li>
+<li><p>How many of the outfits from part A contain all blue items?</p></li>
+<li><p>What fraction of the total possible outfits contain all blue items?</p></li>
+<li><p>What fraction of the total possible outfits contain at least one burgundy item?</p></li>
+</ol>
+<h2>Solution</h2>
+<p>One way to solve this problem is to create a tree that shows all possible combinations of shirts, pants, and socks that Rashid can wear.</p>
+<ol type="A">
+<li><p>Here is tree showing those combinations:</p>
+<p><img src="images/TreeDiagram.png" alt = "The tree starts with the word "Outfits" and has three branches, one for each choice of shirt. Then, for each choice of shirt there are two branches, one for each choice of pants. Finally, for each choice of pants there are two branches, one of each choice of socks." /></p>
+<p>From this diagram we can identify each possible outfit by following a path from “Outfits” to a particular pair of socks.</p>
+<p>For example, one outfit is: <strong>light blue shirt/blue jeans/blue socks</strong><br />
+Another outfit would be: <strong>dark blue shirt/burgundy pants/red socks</strong></p>
+<p>From the tree we can see that there are 12 different outfits Rashid can wear.</p>
+<p>We can also calculate the number of outfits without listing all possibilities. Rashid has 3 choices for a shirt, and for each of the 3 choices of a shirt he has 2 choices for pants, and for each shirt/pants combination he has 2 choices for socks. So he has a total of <span class="math inline">\(3 \times 2 \times 2 = 12\)</span> different outfits he can put together.</p></li>
+<li><p>There are two combinations that include all blue items:<br />
+<strong>light blue shirt/blue jeans/blue socks</strong><br />
+<strong>dark blue shirt/blue jeans/blue socks</strong></p></li>
+<li><p>Since there are 12 different outfits and 2 of them contain all blue items, <span class="math inline">\(\tfrac{2}{12}\)</span>, or equivalently <span class="math inline">\(\tfrac{1}{6}\)</span>, of the total outfits contain all blue items.</p></li>
+<li><p>All 4 of the combinations that have a burgundy shirt will include something burgundy. As well, half of the combinations that have a light blue shirt will have burgundy pants, so 2 of these outfits include something burgundy. Similarly, there are 2 outfits that will have a dark blue shirt that include something burgundy.</p>
+<p>This is a total of <span class="math inline">\(4+2+2=8\)</span> outfits that will include a burgundy item.</p>
+<p>This means that <span class="math inline">\(\tfrac{8}{12}\)</span>, or equivalently <span class="math inline">\(\tfrac{2}{3}\)</span>, of the total outfits include at least one burgundy item.</p></li>
+</ol>
+<h3>Teacher’s Notes</h3>
+<p>This problem asks for the number of different outfits Rashid could wear. Mathematically, this is asking to find a number of <em>combinations</em>. Assuming that the items are unique, we can easily calculate the total number of combinations by multiplying together the number of options available for each part of the whole. For example, in this problem there are 3 options for shirts, 2 options for pants, and 2 options for socks. So the total number of outfit combinations is:</p>
+<p><span class="math display">\[3 \times 2 \times 2 = 12\]</span></p>
+<p>In this type of problem, the order of the combination does not matter. An outfit described as “light blue shirt, blue jeans, and red socks” is the same outfit as “blue jeans, red socks, and light blue shirt”.</p>
+<p>Where order does matter, mathematically we refer to these types of arrangements as <em>permutations</em>. For example, if we have a shirt, pants, and a pair of socks, and we want to put them beside each other on the table, the order we arrange them is an example of a permutation. In this case, “light blue shirt, blue jeans, and red socks” is a different arrangement than “blue jeans, red socks, and light blue shirt”. If the items are unique, we can calculate the number of permutations by thinking about how many options we have for each position in the arrangement.</p>
+<p>In this example,</p>
+<ul>
+<li><p>We have 3 choices for the leftmost position: the light blue shirt, the blue jeans, or the red socks.</p></li>
+<li><p>After selecting one of the options, now we are left with 2 choices for the middle position.</p></li>
+<li><p>Now there is only 1 option left for the rightmost position.</p></li>
+</ul>
+<p>Now we multiply together the number of choices for each position to find the total number of arrangements. So the number of permutations of these items of clothing is:</p>
+<p><span class="math display">\[3 \times 2 \times 1 = 6\]</span></p>
+</main>
+</body>
+</html>
