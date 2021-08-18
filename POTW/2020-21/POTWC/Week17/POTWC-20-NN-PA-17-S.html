@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem C and Solution</p>
+<p align="center">Greta’s New Gig</p>
+<p><strong>Problem</strong></p>
+<p>Greta currently works 45 hours per week and earns a weekly salary of $729. She will soon be starting a new job where her salary will be increased by 10% and her hours reduced by 10%. How much more will she be earning per hour at her new job?</p>
+<p align="center"><img style="height:4cm" src="images/piggybank.png" alt="" /></p>
+<p><strong>Solution</strong></p>
+<p><strong>Solution 1</strong><br />
+To calculate how much Greta earns per hour (i.e. her hourly rate of pay), divide her weekly salary by the number of hours worked.<br />
+Greta’s old hourly rate of pay is <span class="math inline">\(\$729\div 45\text{ h}=\$16.20\)</span>/h.<br />
+<span class="math display">\[\begin{aligned}
+\text{New Weekly Salary }&amp;=\text{Old Weekly Salary}+10\%\text{ of Old Weekly Salary}\\
+&amp;=\$729+0.1\times \$729\\
+&amp;=\$729+\$72.90\\
+&amp;=\$801.90\end{aligned}\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+\text{New Number of Hours Worked }&amp;=\text{Old Hours Worked}-10\%\text{ of Old Hours Worked}\\
+&amp;=45\text{ h}-0.1\times 45\text{ h}\\
+&amp;=45\text{ h}-4.5\text{ h}\\
+&amp;=40.5\text{ h}\end{aligned}\]</span></p>
+<p>Greta’s new hourly rate of pay is <span class="math inline">\(\$801.90\div 40.5\text{ h}=\$19.80\)</span>/h.<br />
+The change in her hourly rate of pay is <span class="math inline">\(\$19.80\text{/h }-\$16.20\text{/h }=\$3.60\text{/h}\)</span>.<br />
+Therefore, Greta will be earning $3.60 more at her new job.<br />
+<strong>Solution 2</strong><br />
+In the second solution we will use a more concise calculation. Greta’s new weekly salary is 10% more than her old weekly salary. So Greta will earn 110% of her old weekly salary. Greta’s hours will be reduced by 10%, so her new hours will be 90% of her old hours. To calculate her change in hourly rate we can take her new hourly rate and subtract her old hourly rate.<br />
+<span class="math display">\[\begin{aligned}
+\text{Change in Hourly Rate }&amp;=\text{New Hourly Rate }-\text{ Old Hourly Rate}\\[-.5mm]
+&amp;=\text{New Salary}\div \text{New Hours Worked}-\text{Old Salary}\div \text{Old Hours Worked}\\
+&amp;=(\$729\times 1.10) \div (45 \times 0.9)-\$729 \div 45\\
+&amp;=\$801.90\div 40.5-\$729 \div 45\\
+&amp;=\$19.80\text{/h}-\$16.20\text{/h}\\
+&amp;=\$3.60\text{/h}\\\end{aligned}\]</span> Therefore, Greta will be earning $3.60 more at her new job.<br />
+</p>
+</body>
+</html>
