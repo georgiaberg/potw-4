@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem E and Solution</p>
+<p align="center">All the Children <br />
+<br />
+</p>
+<p><strong>Problem</strong><br />
+</p>
+<p>My family has four children, each with a different age. The product of their ages is <span class="math inline">\(17\,280\)</span>. The sum of the ages of the three oldest children is 40 and the sum of the ages of the three youngest children is 32.<br />
+Determine all possibilities for the ages of the four children.<br />
+</p>
+<p align="center"><img style="height:10cm" src="images/children.png" alt="" /></p>
+<p><strong>Solution</strong><br />
+</p>
+<p>Let the ages of the children from youngest to oldest be <span class="math inline">\(a,\ b,\ c,\ d\)</span>.<br />
+Since the ages of the three oldest children sum to 40, <span class="math inline">\(b+c+d=40\)</span>. (1)<br />
+Since the ages of the three youngest children sum to 32, <span class="math inline">\(a+b+c=32\)</span>.   (2)<br />
+Subtracting (2) from (1), we obtain <span class="math inline">\(d-a=8\)</span>. This means that the difference between the age of the oldest child and the age of the youngest child is 8.<br />
+Now we can factor <span class="math inline">\(17\,280\)</span>.<br />
+<span class="math inline">\(17\,280=2^7\times 3^3 \times 5=(2^2\times 3)\times(2^2\times 3)\times(2^2\times 3)\times(2\times 5)=12\times 12\times 12\times 10\)</span>. Since the children all have different ages, we can use this statement to help us figure out the possible ages of the oldest and youngest children.<br />
+Is it possible that the oldest child is 12? If the oldest child is 12, then the youngest child would be <span class="math inline">\(12-8=4\)</span>. The largest product that could be generated using two more different ages between 4 and 12 would be <span class="math inline">\(12\times 11\times 10 \times 4=5280\)</span>. Since this is less than <span class="math inline">\(17\,280\)</span>, it follows that the oldest child must be older than 12.<br />
+Is it possible that the youngest child is 10? If the youngest child is 10, then the oldest child would be <span class="math inline">\(10+8=18\)</span>. The smallest product that could be generated using two more different ages between 10 and 18 would be <span class="math inline">\(10\times 11\times 12 \times 18=23\,760\)</span>. Since this is greater than <span class="math inline">\(17\,280\)</span>, it follows that the youngest child must be younger than 10.<br />
+There are now a limited number of possibilities to consider for the ages of the youngest and oldest children. The possibilities are <span class="math inline">\((5,13)\)</span>, <span class="math inline">\((6,14)\)</span>, <span class="math inline">\((7,15)\)</span>, <span class="math inline">\((8,16)\)</span>, and <span class="math inline">\((9,17)\)</span>. No other combinations are possible since the oldest child must be older than 12 and the youngest child must be younger than 10.<br />
+The prime numbers 7, 13, and 17 are not factors of <span class="math inline">\(17\,280\)</span>. Therefore we can eliminate the possibilities where an age is one of 7, 13, or 17, leaving <span class="math inline">\((6,14)\)</span> and <span class="math inline">\((8,16)\)</span>. Since 14 is a multiple of 7, we can conclude that it is also not a factor of <span class="math inline">\(17\,280\)</span>. Thus, we can eliminate <span class="math inline">\((6,14)\)</span>. Now there is only one possibility left to consider, namely <span class="math inline">\((8,16)\)</span>.<br />
+Now <span class="math inline">\(17\,280=8\times 16\times 3^3 \times 5\)</span>. Using the remaining factors <span class="math inline">\(3^3\)</span> and 5, we need to create two numbers between 8 and 16. The only possibilities are <span class="math inline">\(3^2=9\)</span> and <span class="math inline">\(3\times 5=15\)</span>.<br />
+Therefore, the only possibility is that the ages of the children are 8, 9, 15, and 16. It is easy to verify that this is a valid solution.</p>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem E and Solution</p>
+<p align="center">Cupid’s Arrow</p>
+<p><strong>Problem</strong></p>
+<p>At a Valentine’s dance, contestants can participate in a game. They are blindfolded and spun around. They then try to place an arrow on a white heart on a red gameboard. (See the diagram below.) The heart was constructed by attaching two white semi-circles onto the hypotenuse of an isosceles right-angled triangle. Each semi-circle has the same diameter, equal to half the length of the hypotenuse. The heart was then pasted onto a large rectangular sheet of red paper such that the hypotenuse of the triangle is parallel to the base of the rectangle. We know the following measurements:<br />
+</p>
+<ul>
+<li><p>The distance from the top of a semi-circle to the top of the rectangle is 25 cm.<br />
+</p></li>
+<li><p>The distance from the bottom vertex of triangle to the bottom of the rectangle is 25 cm.<br />
+</p></li>
+<li><p>The length of each equal side of the triangle is <span class="math inline">\(25{\sqrt 2}\)</span> cm.<br />
+</p></li>
+<li><p>The length of the base of the rectangle is 1 m.</p></li>
+</ul>
+<p>(The dashed lines, the length measurements and the right angle symbol will not actually be on the finished gameboard.) If a contestant places their arrow randomly somewhere on the gameboard, what is the probability that it will land on the white heart?<br />
+</p>
+<p align="center"><img style="height:8cm" src="images/Newheart.png" alt="The rectangular gameboard with a white heart. A dashed horizontal line divides the heart along the hypotenuse of the right-angled triangle which forms the bottom of the heart. The right angle is at the bottom point of the heart. The various length measurements are shown on the gameboard." /></p>
+<p><span><span class="smallcaps">Note</span>: To solve the problem, it may be helpful to use the following fact:<br />
+In an isosceles triangle, the line joining the vertex opposite the unequal side to the midpoint of the unequal side will be perpendicular to the unequal side.</span></p>
+<p><strong>Solution</strong></p>
+<p>To find the probability of placing the arrow in the white heart, we need to find the area of the heart and the area of the rectangle. We will label a radius of a semi-circle with <span class="math inline">\(r\)</span> and the distance from the vertex of the right-angled triangle to the midpoint of the hypotenuse with <span class="math inline">\(h\)</span>. Using the helpful fact, we know that this line will be perpendicular to the hypotenuse. Therefore, the height of the rectangle is <span class="math inline">\(25 + r + h + 25\)</span>.<br />
+We now need to find the values of <span class="math inline">\(r\)</span> and <span class="math inline">\(h\)</span>.<br />
+</p>
+<p align="center"><img style="height:8cm" src="images/Newheartsoln1.png" alt="A radius of one of the semi circles is drawn perpendicular to the dashed horizontal line. It has length r. A line of length h is drawn perpendicular to the dashed horizontal line from the bottom vertex of the heart up to the dashed line." /></p>
+<p>We will first find the value of <span class="math inline">\(r\)</span>.<br />
+In the right-angled triangle, we know the the two equal sides are <span class="math inline">\(25\sqrt{2}\)</span> and the hypotenuse is equal to the sum of the two diameters of the semi-circles, which is <span class="math inline">\(4r\)</span>.<br />
+Since the triangle is a right-angled triangle, we can use the Pythagorean Theorem to find the value of <span class="math inline">\(r\)</span>. <span class="math display">\[\begin{aligned}
+(4r)^2&amp;=(25{\sqrt 2})^2 + (25{\sqrt 2})^2\\
+16r^2&amp;=1250 + 1250\\
+16r^2&amp;=2500\\
+r^2&amp;= 156.25\\
+r &amp;= 12.5\\\end{aligned}\]</span></p>
+<p>We can now find <span class="math inline">\(h\)</span>.<br />
+Let’s look at the heart. We will label the original triangle <span class="math inline">\(\triangle ADC\)</span> and let <span class="math inline">\(B\)</span> be the midpoint of <span class="math inline">\(AD\)</span>.</p>
+<p><img style="height:4cm" src="images/Newheartsoln2.png" alt="The heart from the gameboard. C is the vertex of the triangle that forms the bottom point of the heart. A and D are the vertices of the hypotenuse of the triangle, that runs horizontally along the width of the heart." /></p>
+<p>From above, we know that <span class="math inline">\(\angle ABC = 90^\circ\)</span>. We also know <span class="math inline">\(AC=25\sqrt{2}\)</span>, <span class="math inline">\(AB= 2r = 25\)</span>, and <span class="math inline">\(BC=h\)</span>.</p>
+<p>Since <span class="math inline">\(\triangle ABC\)</span> is a right-angled triangle, we can use the Pythagorean Theorem to find the value of <span class="math inline">\(h\)</span>.</p>
+<p><span class="math display">\[\begin{aligned}
+h^2&amp;= (25\sqrt 2)^2 - 25^2\\
+h^2&amp;=1250-625\\
+h^2&amp;=625\\
+h&amp;=25, \text{ since } h&gt;0\end{aligned}\]</span></p>
+<p>We can now find the area of the rectangle and the area of the heart.<br />
+For the rectangle, the base is 1 m or 100 cm.<br />
+The height is <span class="math inline">\(25 + r + h + 25 = 25 + 12.5 + 25 + 25 = 87.5\)</span> cm.<br />
+Therefore, the area of the rectangle is <span class="math inline">\(100(87.5)=8750\mbox{ cm}^2\)</span>.<br />
+For the heart, the area is the total of the area of the two semi-circles plus the area of <span class="math inline">\(\triangle ADC\)</span>. The two semi-circles make up a circle of radius 12.5 cm. For <span class="math inline">\(\triangle ADC\)</span>, the base is <span class="math inline">\(AD= 4r = 50\)</span> and the height is <span class="math inline">\(h=25\)</span>.<br />
+Therefore, the area of the heart is <span class="math inline">\(\pi (12.5)^2 + \dfrac{(50)(25)}{2} = (156.25\pi + 625)\)</span> cm<span class="math inline">\(^2\)</span>.<br />
+Therefore, the probability that the arrow will land on the white heart is <span class="math display">\[\dfrac{\text{area of heart}}{\text{area of rectangle}}= \dfrac{156.25\pi + 625}{8750} \approx 0.13\]</span></p>
+</body>
+</html>

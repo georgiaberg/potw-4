@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /*display: block;*/
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /*border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;*/
+    }
+    th {
+      border: 1px solid black;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      border: 1px solid black;
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem D<br />
+More Surprise Cupcakes</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>As part of their opening day celebration, Benny’s Bakery made 150 cupcakes. The cupcakes all looked identical on the outside, but 6 of them had caramel inside. Customers who bought a cupcake with caramel won a free cake. The cupcakes were randomly arranged and customers were allowed to choose their own cupcakes.</p>
+<p>Lin was the first customer in line and bought two cupcakes. Ming was next and also bought two cupcakes. What is the probability that at least one of Ming’s cupcakes had caramel inside?</p>
+<p style="text-align:center"><img src="images/cupcakes-green.png" style="width:60.0%" alt="" /></p>
+<h2>Solution</h2>
+<p>To start, we will count the total number of ways to select the first four cupcakes. There are 150 ways to select the first cupcake. For each of these possible selections, there are 149 ways to select the second cupcake. So there are <span class="math inline">\(150\times 149=22\,350\)</span> ways to select the first two cupcakes. For each of these possible selections, there are 148 ways to select the third cupcake. That means there are <span class="math inline">\(22\,350\times 148=3\,307\,800\)</span> ways to select the first three cupcakes. For each of these possible selections, there are a further 147 ways to select the fourth cupcake. So in total, there are <span class="math inline">\(3\,307\,800\times 147=486\,246\,600\)</span> ways to select the first four cupcakes. That’s a lot of choices!</p>
+<p>Of the 150 available cupcakes, 6 contain caramel and <span class="math inline">\(150-6=144\)</span> do not. Once a cupcake with caramel is selected, the number of available cupcakes with caramel decreases by 1. Similarly, once a cupcake <em>without</em> caramel is selected, the number of available cupcakes <em>without</em> caramel decreases by 1.</p>
+<p>We now have two choices on how to approach this problem; a direct approach or an indirect approach.</p>
+<ul>
+<li><p><strong>Direct Approach:</strong> Determine the total number of ways that Ming can select at least one cupcake with caramel, and then calculate the associated probability.</p></li>
+<li><p><strong>Indirect Approach:</strong> Determine the total number of ways that Ming can select two cupcakes <em>without</em> caramel, then calculate the associated probability and subtract this result from 1, because these are complementary events.</p></li>
+</ul>
+<p>We will present three solutions. The first uses an indirect approach, and the second uses a direct approach. The third solution also uses an indirect approach and gives a much simpler solution to the problem.</p>
+<p><strong>Solution 1</strong>: Indirect Approach</p>
+<p>In how many ways can Ming select two cupcakes <em>without</em> caramel? We will look at four cases relating to Lin’s cupcakes and calculate the number of ways to select the first four cupcakes for each case.</p>
+<p><strong>Case 1:</strong> Lin selects two cupcakes without caramel.<br />
+The number of possible selections is <span class="math inline">\(144\times 143\times 142\times 141= 412\,293\,024\)</span>.</p>
+<p><strong>Case 2:</strong> Lin selects a cupcake with caramel and then a cupcake without caramel.<br />
+The number of possible selections is <span class="math inline">\(6\times 144\times 143\times 142= 17\,544\,384\)</span>.</p>
+<p><strong>Case 3:</strong> Lin selects a cupcake without caramel and then a cupcake with caramel.<br />
+The number of possible selections is <span class="math inline">\(144\times 6\times 143\times 142= 17\,544\,384\)</span>.</p>
+<p><strong>Case 4:</strong> Lin selects two cupcakes with caramel.<br />
+The number of possible selections is <span class="math inline">\(6\times 5\times 144\times 143= 617\,760\)</span>.</p>
+<p>Thus, the total number of ways in which Ming can select two cupcakes without caramel is <span class="math inline">\(412\,293\,024+17\,544\,384+17\,544\,384+617\,760=447\,999\,552\)</span>. To calculate the probability, we will divide this result by the total number of ways to select four cupcakes. <span class="math display">\[P(\mbox{Ming selects two cupcakes without caramel})=\frac{447\,999\,552}{486\,246\,600}=\frac{3432}{3725}\]</span> The probability of Ming selecting <em>at least one</em> cupcake with caramel is equal to 1 minus the probability of Ming selecting two cupcakes <em>without</em> caramel. <span class="math display">\[P(\mbox{Ming selects at least one cupcake with caramel})= 1-\frac{3432}{3725}=\frac{293}{3725}\approx 0.079\]</span> Thus, the probability of Ming selecting at least one cupcake with caramel is <span class="math inline">\(\frac{293}{3725}\)</span>, or approximately 8%.</p>
+<p><strong>Solution 2</strong>: Direct Approach</p>
+<p>There are more possibilities to consider when using the direct approach, so we will use a table to show the number of ways for Ming to select at least one cupcake with caramel. Let <span class="math inline">\(C\)</span> represent a cupcake with caramel, and <span class="math inline">\(X\)</span> represent a cupcake without caramel. So <span class="math inline">\(CX\)</span> represents the possibility that the first cupcake contained caramel but the second did not. The possible cases are shown in the table.</p>
+<table>
+<thead>
+<tr class="header">
+<th scope="col" style="text-align: center;">Lin’s Cupcakes</th>
+<th scope="col" style="text-align: center;">Ming’s Cupcakes</th>
+<th scope="col" style="text-align: center;">Calculation</th>
+<th scope="col" style="text-align: right;">Number of Possibilities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(CC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(CX\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6\times 5\times 4\times 144\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(17\,280\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(CC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(XC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6\times 5\times 144\times 4\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(17\,280\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(CC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(CC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6\times 5\times 4\times 3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(360\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(CX\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(CX\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6\times 144\times 5\times 143\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(617\,760\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(CX\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(XC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6\times 144\times 143\times 5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(617\,760\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(CX\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(CC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6\times 144\times 5\times 4\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(17\,280\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(XC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(CX\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(144\times 6\times 5\times 143\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(617\,760\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(XC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(XC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(144\times 6\times 143\times 5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(617\,760\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(XC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(CC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(144\times 6\times 5\times 4\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(17\,280\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(XX\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(CX\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(144\times 143\times 6\times 142\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(17\,544\,384\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(XX\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(XC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(144\times 143\times 142\times 6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(17\,544\,384\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(XX\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(CC\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(144\times 143\times 6\times 5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(617\,760\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Adding the numbers in the rightmost column of the previous table, we find that the total number of possibilities is <span class="math inline">\(38\,247\,048\)</span>. <span class="math display">\[P(\mbox{Ming selects at least one cupcake with caramel})= \frac{38\,247\,048}{486\,246\,600}=\frac{293}{3725}\approx 0.079\]</span> Thus, the probability of Ming selecting at least one cupcake with caramel is <span class="math inline">\(\frac{293}{3725}\)</span>, or approximately <span class="math inline">\(8\%\)</span>.</p>
+<p><strong>Solution 3</strong>: Ignore Lin’s Cupcakes</p>
+<p>It turns out there is a simpler way to solve this problem if we ignore Lin’s cupcakes. We can do this because we don’t know how many of Lin’s cupcakes had caramel, so removing her cupcakes from the solution does not change the probability that at least one of Ming’s cupcakes has caramel. In fact when a customer buys two cupcakes, the probability that at least one cupcake has caramel is the same, regardless of where that customer is in line, as long as we don’t know how many cupcakes with caramel have already been purchased. We will use the indirect approach, so we will first calculate the probability Ming selects two cupcakes without caramel. Since we are ignoring Lin’s cupcakes, there are <span class="math inline">\(150\times 149=22\,350\)</span> ways to select the two cupcakes, and <span class="math inline">\(144\times 143=20\,592\)</span> ways to select both cupcakes without caramel. Thus, <span class="math display">\[\begin{aligned}
+P(\mbox{Ming selects two cupcakes \emph{without} caramel})&amp;=\frac{20\,592}{22\,350}=\frac{3432}{3725}\\
+P(\mbox{Ming selects \emph{at least one} cupcake with caramel})&amp;= 1-\frac{3432}{3725}=\frac{293}{3725}\approx 0.079\end{aligned}\]</span> Thus, the probability of Ming selecting at least one cupcake with caramel is <span class="math inline">\(\frac{293}{3725}\)</span>, or approximately <span class="math inline">\(8\%\)</span>.</p>
+</main>
+</body>
+</html>

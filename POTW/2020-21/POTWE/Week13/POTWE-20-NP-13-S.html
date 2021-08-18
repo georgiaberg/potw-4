@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem E and Solution</p>
+<p align="center">What Exponent? <br />
+<br />
+</p>
+<p><strong>Problem</strong><br />
+</p>
+<p>A two-digit positive integer <span class="math inline">\(x\)</span> exists such that when the expression <span class="math inline">\((10^x-x)\)</span> is evaluated, the sum of the digits of the difference is 300.<br />
+Determine the value of the exponent <span class="math inline">\(x\)</span>.<br /></p>
+<p align="center"><img style="height:4cm" src="images/digitsum.png" alt="" /></p>
+<p><strong>Solution</strong><br />
+</p>
+<p>When <span class="math inline">\(10^{x}\)</span> is written out there is a one followed by <span class="math inline">\(x\)</span> zeroes, a total of <span class="math inline">\((x+1)\)</span> digits. When we attempt to subtract <span class="math inline">\(x\)</span> from this number using the traditional algorithm for subtraction we are required to borrow.<br />
+So instead, we will convert to a question that has the same answer and will be easier to work with. The expression <span class="math inline">\((10^x-x)\)</span> will have the same difference as <span class="math inline">\((10^x-1)-(x-1)\)</span>. The number <span class="math inline">\((10^x-1)\)</span> is one less than <span class="math inline">\(10^x\)</span>. This new number is then made up of <span class="math inline">\(x\)</span> nines. Let’s look at a few specific cases to see if we can determine what is happening in this problem.<br />
+</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(10^x-1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(x-1\)</span></th>
+<th style="text-align: right;"><span class="math inline">\((10^x-1)-(x-1)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(10\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(9\,999\,999\,999\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(9\,999\,999\,990\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(11\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(99\,999\,999\,999\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(99\,999\,999\,989\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(12\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(999\,999\,999\,999\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(11\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(999\,999\,999\,988\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(13\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(9\,999\,999\,999\,999\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(12\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(9\,999\,999\,999\,987\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>A pattern seems to be forming in the digits of the difference. As the exponent <span class="math inline">\(x\)</span> increases by 1, the number of nines to the left of the rightmost two digits increases by 1. If we ignore the rightmost two digits, we can predict the number of leading nines in the difference by comparing to the exponent.</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Exponent</th>
+<th style="text-align: center;">Number of nines to the left of two rightmost digits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(10\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(11\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(12\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(13\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(11\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(x\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(x-2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>We have not proven this result. We will use the result to find the value of <span class="math inline">\(x\)</span> that gives the difference a digit sum of 300. We will then verify that the result is correct.<br />
+Ignoring the rightmost two digits, the difference would be a number made up of <span class="math inline">\((x-2)\)</span> nines and the digit sum would be <span class="math inline">\(9(x-2)\)</span>. We want <span class="math inline">\(x\)</span> so that <span class="math display">\[\begin{aligned}
+9(x-2)&amp;&lt;&amp;300\\
+9x-18&amp;&lt;&amp;300\\
+9x&amp;&lt;&amp;318\\
+x&amp;&lt;&amp;35\frac{1}{3}\\\end{aligned}\] Since the exponent <span class="math inline">\(x\)</span> is a positive two-digit integer, <span class="math inline">\(x\le 35\)</span>. Note, this is not necessarily the answer. It simply is the maximum value that <span class="math inline">\(x\)</span> could be.<br />
+If <span class="math inline">\(x=35\)</span>, the rightmost two digits are <span class="math inline">\(100-35=65\)</span>. The digit sum is <span class="math inline">\(33\times 9 + 6+5=308\)</span>. This is not the digit sum we are looking for.<br />
+If <span class="math inline">\(x=34\)</span>, the rightmost two digits are <span class="math inline">\(100-34=66\)</span>. The digit sum is <span class="math inline">\(32\times 9 + 6+6=300\)</span>.<br />
+If our pattern is correct, the value of <span class="math inline">\(x\)</span> is 34. We will verify the result. Remember, <span class="math display">\[10^{34}-34=(10^{34}-1)-(34-1)=(10^{34}-1)-33\]<br />
+<span class="math inline">\((10^{34}-1)\)</span> is a 34-digit number consisting of exactly 34 nines.</p>
+<p align="center"><img style="height:3cm" src="images/Subtraction.png" alt="When the number 33 is subtracted from the 34-digit integer with all digits equal to 9, the result is a 34-digit integer with units digit and tens digit equal to 6 and all other digits equal to 9." /></p>
+<!--
+<p><span class="math inline">\(\textcolor{red}{{\textcolor{black}{ \hspace*{4mm}9}}}\hspace*{5.2mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5.2mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5.2mm}\textcolor{red}{{\textcolor{black}{9}}}
+\hspace*{5mm}\cdots \hspace*{2mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{6mm}\textcolor{red}{{\textcolor{black}{9}}}\)</span><br />
+<span class="math inline">\(\hspace*{90mm}\textcolor{red}{{\textcolor{black}{-}}}\hspace*{5mm}\textcolor{red}{{\textcolor{black}{3}}}\hspace*{6mm}\textcolor{red}{{\textcolor{black}{3}}}\)</span><br />
+<u> </u></p>
+<p><span class="math inline">\(\textcolor{red}{{\textcolor{black}{\hspace*{4mm}9}}}\hspace*{5.2mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5.2mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5.2mm}\textcolor{red}{{\textcolor{black}{9}}}
+\hspace*{5mm}\cdots \hspace*{2mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5mm}\textcolor{red}{{\textcolor{black}{9}}}\hspace*{5mm}\textcolor{red}{{\textcolor{black}{6}}}\hspace*{6mm}\textcolor{red}{{\textcolor{black}{6}}}\)</span><br />
+-->
+The difference still has 34 digits. The total number of digits is made up of the rightmost two digits and 32 nines. The digit sum is <span class="math inline">\(6+6+32\times 9=300\)</span>.<br />
+Our result is confirmed. When <span class="math inline">\(x=34\)</span>, the sum of the digits of the difference <span class="math inline">\(10^{34}-34\)</span> is 300.</p>
+</body>
+</html>

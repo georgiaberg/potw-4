@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem E and Solution</p>
+<p align="center">Rock Out</p>
+<p><strong>Problem</strong></p>
+<p>Sameer likes playing rock paper scissors so much that he started a club at his school. At every club meeting, each person plays rock paper scissors against each of the other people at the meeting the same number of times.<br />
+There were 40% more people at the second club meeting than the first. The total number of rock paper scissors matches played at the second meeting was twice the number of matches played at the first meeting. The number of matches each person plays against each of the other people at the meeting stays the same from meeting to meeting.<br />
+How many people were at the first meeting?</p>
+<p align="center"><img style="height:6cm" src="images/18Ehands.png" alt="" /></p>
+<p><strong>Solution</strong></p>
+<p>Let <span class="math inline">\(p\)</span> represent the number of people at the first meeting. Then the number of people at the second meeting is <span class="math inline">\(1.4p\)</span>. Note that both <span class="math inline">\(p\)</span> and <span class="math inline">\(1.4p\)</span> must be positive integers.<br />
+We need to first establish how many games are played. Suppose there were 4 people (<span class="math inline">\(A, B, C, \text{ and } D\)</span>), and each person played against every other person once, as shown below.</p>
+<p align="center"><img style="height:2cm" src="images/18Ediagram.png" alt="The letters A, B, C, and D are placed as the vertices of a square. A line segment joins each pair of vertices. Four of the line segments form the edges of the square, and the other two form the diagonals." /></p>
+<p>We can see there would be 6 matches played (<span class="math inline">\(AB\)</span>, <span class="math inline">\(AC\)</span>, <span class="math inline">\(AD\)</span>, <span class="math inline">\(BC\)</span>, <span class="math inline">\(BD\)</span>, and <span class="math inline">\(CD\)</span>). This is easy to see in a small diagram, but as the number of people and matches increase, the diagrams become hard to read, so we need to find a general solution.<br />
+Often, when counting something like this we “double-count” by mistake. We think that because there are 4 people and each person plays the 3 other people, that means there are <span class="math inline">\(4\times 3=12\)</span> matches in total. However, we have counted each match twice, so we need to divide the result by 2. So if there were 4 people, with each person playing every other person once, there would be <span class="math inline">\(\frac{4\times 3}{2}=6\)</span> matches played in total.<br />
+In general, if there are <span class="math inline">\(p\)</span> people and each person plays against every other person once, there would be <span class="math inline">\(\frac{p(p-1)}{2}\)</span> matches played in total. If each person plays against every other person <span class="math inline">\(n\)</span> times, the total number of matches would need to be multiplied by <span class="math inline">\(n\)</span>, to obtain <span class="math inline">\(n\left(\frac{p(p-1)}{2}\right)\)</span>. This represents the total number of matches at the first meeting. Now in the second meeting, the number of people is <span class="math inline">\(1.4p\)</span>, so the total number of matches in the second meeting would be <span class="math display">\[n\left(\frac{1.4p(1.4p-1)}{2}\right)\]</span><br />
+We know that the number of matches played at the second meeting is twice the number of matches played at the first meeting. So,</p>
+<p><span class="math display">\[n\left(\frac{1.4p(1.4p-1)}{2}\right)=2\left[ n\left(\frac{p(p-1)}{2}\right)\right]\]</span></p>
+<p>Dividing both sides by <span class="math inline">\(\frac{n}{2},\ n\neq 0\)</span>, this simplifies to <span class="math display">\[1.4p(1.4p-1)=2p (p-1)\]</span></p>
+<p>Dividing both sides by <span class="math inline">\(p,\ p\neq 0\)</span>, this simplifies to</p>
+<p><span class="math display">\[\begin{aligned}
+1.4(1.4p-1)&amp;=2 (p-1)\\
+1.96p-1.4&amp;=2p-2\\
+0.6&amp;=0.04p\\
+15&amp;=p\end{aligned}\]</span></p>
+<p>Therefore, there were 15 people at the first meeting.</p>
+</body>
+</html>
