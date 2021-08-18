@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem D and Solution</p>
+<p align="center">To the Other Side <br />
+<br />
+</p>
+<p>Points <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> are vertices of a cube with side length 2 cm, and <span class="math inline">\(B\)</span> is the point of intersection of the diagonals of one face of the cube, as shown below. Determine the length of <span class="math inline">\(CB\)</span>.</p>
+<p align="center"><img style="height:8cm" src="images/cube.png" alt = "Line segment C A is an edge on the base of the cube. Line segment A B lies on a vertical face of the cube and line segment C B passes through the interior of the cube." /></p>
+<p><strong>Solution</strong><br />
+</p>
+<p><strong>Solution 1</strong></p>
+<p>Label vertices <span class="math inline">\(D\)</span>, <span class="math inline">\(E\)</span> and <span class="math inline">\(G\)</span>, as shown.<br />
+Drop a perpendicular from <span class="math inline">\(B\)</span> to <span class="math inline">\(AD\)</span>. Let <span class="math inline">\(F\)</span> be the point where the perpendicular meets <span class="math inline">\(AD\)</span>. Join <span class="math inline">\(B\)</span> to <span class="math inline">\(F\)</span> and <span class="math inline">\(C\)</span> to <span class="math inline">\(F\)</span>.</p>
+<p>The faces of a cube are squares. The diagonals of a square meet at the centre of the square. Therefore, <span class="math inline">\(BF = 1\)</span> and <span class="math inline">\(AF =1\)</span>.<br />
+</p>
+<p align="center"><img style="height:6cm" src="images/cubesoln2.png" alt = "Vertex G is on the top face of the cube above vertex A. Vertex D is on the base of the cube shares an edge with A. Vertex E is on the top face of the cube above vertex D. Triangle B C F lies inside the cube of side length 2." /></p>
+<p>Now, <span class="math inline">\(\triangle CAF\)</span> is right-angled.</p>
+<p>Using the Pythagorean Theorem in <span class="math inline">\(\triangle CAF\)</span>,<br />
+<span class="math inline">\(CF^2=CA^2+AF^2=2^2+1^2=5\)</span>.<br />
+Therefore, <span class="math inline">\(CF=\sqrt{5}\)</span>, since <span class="math inline">\(CF&gt;0\)</span>.</p>
+<p>Looking at <span class="math inline">\(\triangle CFB\)</span>, we know from above that <span class="math inline">\(CF~=~\sqrt{5}\)</span> and <span class="math inline">\(BF=1\)</span>. We also know that <span class="math inline">\(\angle CFB = 90^\circ\)</span>.<br />
+</p>
+<p align="center"><img style="height:4cm" src="images/trianglesoln.png" alt = ""/></p>
+<p>Because of the three-dimensional nature of the problem, it may not be obvious to all that <span class="math inline">\(\angle CFB = 90^{\circ}\)</span>. To help visualize this, notice that <span class="math inline">\(CF\)</span> and <span class="math inline">\(BF\)</span> lie along faces of the cube that meet at <span class="math inline">\(90^{\circ}\)</span>.<br />
+Using the Pythagorean Theorem in <span class="math inline">\(\triangle CFB\)</span>, <span class="math inline">\(CB^2=CF^2+BF^2=\sqrt{5}^2+1^2=5+1= 6\)</span>. Since <span class="math inline">\(CB&gt;0\)</span>, we have <span class="math inline">\(CB=\sqrt{6}\)</span>.<br />
+<strong>Therefore, the length of <span class="math inline">\(CB\)</span> is <span class="math inline">\(\sqrt{6}\)</span> cm.</strong><br />
+<strong>Solution 2</strong></p>
+<p>Label vertices <span class="math inline">\(D\)</span> and <span class="math inline">\(E\)</span>, as shown.<br />
+</p>
+<p align="center"><img style="height:6cm" src="images/cubesoln1.png" alt = "Vertex D is on the base of the cube and shares an edge with A. Vertex E is on the top face of the cube above vertex D." /></p>
+<p>The faces of a cube are squares. The diagonals of a square right bisect each other. It follows that <span class="math inline">\(AB=BE=\frac{1}{2}AE\)</span>. Since the face is a square, <span class="math inline">\(\angle ADE=90^{\circ}\)</span> and <span class="math inline">\(\triangle ADE\)</span> is right-angled. Using the Pythagorean Theorem in <span class="math inline">\(\triangle ADE\)</span>, <span class="math inline">\(AE^2=AD^2+DE^2=2^2+2^2=8\)</span>. Since <span class="math inline">\(AE&gt;0\)</span>, we have <span class="math inline">\(AE=\sqrt{8}\)</span>. Then <span class="math inline">\(AB=\frac{1}{2}AE=\frac{\sqrt{8}}{2}\)</span>.<br />
+Because of the three-dimensional nature of the problem, it may not be obvious to all that <span class="math inline">\(\angle CAB=90^{\circ}\)</span>. To help visualize this, note that <span class="math inline">\(\angle CAD=90^{\circ}\)</span> because the face of the cube is a square. Rotate <span class="math inline">\(AD\)</span> counterclockwise about point <span class="math inline">\(A\)</span> on the side face of the cube so that the image of <span class="math inline">\(AD\)</span> lies along <span class="math inline">\(AB\)</span>. The corner angle will not change as a result of the rotation, so <span class="math inline">\(\angle CAD=\angle CAB=90^{\circ}\)</span>.<br />
+We can now use the Pythagorean Theorem in <span class="math inline">\(\triangle CAB\)</span> to find the length <span class="math inline">\(CB\)</span>. <span class="math display">\[CB^2=CA^2+AB^2=2^2 + \left(\frac{\sqrt{8}}{2}\right)^2=4+\frac{8}{4}=4+2=6\] Since <span class="math inline">\(CB&gt;0\)</span>, we have <span class="math inline">\(CB=\sqrt{6}\)</span> cm.<br />
+<strong>Therefore, the length of <span class="math inline">\(CB\)</span> is <span class="math inline">\(\sqrt{6}\)</span> cm.</strong><br />
+Note, we could have simplified <span class="math inline">\(AB=\frac{1}{2}AE=\frac{\sqrt{8}}{2}\)</span> to <span class="math inline">\(\sqrt{2}\)</span> as follows: <span class="math display">\[\frac{\sqrt{8}}{2}=\frac{\sqrt{4 \times 2}}{2}=\frac{\sqrt{4} \times \sqrt{2}}{2}=\frac{2\sqrt{2}}{2}=\sqrt{2}.\] The calculation of <span class="math inline">\(CB\)</span> would have been simpler using <span class="math inline">\(AB=\sqrt{2}\)</span>. Often simplifying radicals is not a part of the curriculum at the grade 9 or 10 level.</p>
+</body>
+</html>

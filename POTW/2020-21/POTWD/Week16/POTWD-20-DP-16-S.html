@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem D and Solution</p>
+<p align="center">Another Path Using Math <br />
+<br />
+</p>
+<p>A landscaper needs to fill a path measuring 2 feet by 8 feet with patio stones. The patio stones are each 1 foot by 2 feet, so the landscaper calculates that she will need 8 of them.<br />
+Before arranging the patio stones, the landscaper wants to look at all her options. She can not cut or overlap the stones, and they all must fit inside the path area without any gaps. Two possible arrangements of the stones are shown below. How many different arrangements are there in total?<br />
+</p>
+<p align="center"><img style="height:2cm" src="images/12Dstones1.png" alt="One possible arrangement of eight, 1 by 2 rectangles filling a 2 by 8 rectangle. There is a pair of rectangles with a horizontal orientation one on top of the other, followed by one rectangle with a vertical orientation, followed by another pair of rectangles placed horizontally, then another vertical rectangle and finally another pair of horizontal rectangles." />&nbsp;&nbsp;&nbsp;<img style="height:2cm" src="images/12Dstones2.png" alt="Another possible arrangement consisting of two vertical rectangles side by side, followed by a pair of horizontal rectangles one on top of the other, then another pair of horizontal rectangles, and finally two more vertical rectangles side by side." /></p>
+<p><strong>Solution</strong><br />
+</p>
+<p>Let’s consider the ways that the patio stones can be arranged. We will imagine we are looking at the path from the side, just like in the images shown in the question. First, notice that there must always be an even number of patio stones that have a horizontal orientation, because they must be placed in pairs.<br />
+</p>
+<ul>
+<li><p><u>All patio stones are vertical (and none are horizontal)</u><br />
+This can be done in only one way.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones3.png" alt="The arrangement with eight vertical rectangles." /></p></li>
+<li><p><u>Six patio stones are vertical and two are horizontal</u><br />
+There could be 0, 1, 2, 3, 4, 5, or 6 vertical stones to the right of the horizontal stones. So there are 7 ways that six patio stones are vertical and two are horizontal. The first 2 of these ways are shown.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones4.png" alt="One possible arrangement has six vertical rectangles side by side followed by one pair of horizontal rectangles. Another possible arrangement has five vertical rectangles side by side followed by a pair of horizontal rectangles and then one more vertical rectangle." /></p></li>
+<li><p><u>Four patio stones are vertical and four are horizontal</u><br />
+We need to consider sub cases:<br />
+</p>
+<ul>
+<li><p>Case 1: There are no vertical stones between the horizontal stones.<br />
+There could be 0, 1, 2, 3, or 4 vertical stones to the right of the horizontal stones. So there are 5 ways that four patio stones are vertical and four are horizontal when there are no vertical stones between the horizontal stones. The first 2 of these ways are shown.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones5.png" alt="The first arrangement has five vertical rectangles followed by two pairs of horizontal rectangles. The second has three vertical rectangles followed by two pairs of horizontal rectangles and then one vertical rectangle."/></p></li>
+<li><p>Case 2: There is one vertical stone between the horizontal stones.<br />
+There could be 0, 1, 2, or 3 vertical stones to the right of the rightmost horizontal stones. So there are 4 ways that four patio stones are vertical and four are horizontal when there is one vertical stone between the horizontal stones. The first 2 of these ways are shown.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones6.png" alt="The first arrangement has three vertical rectangles, then a pair of horizontal rectangles, then a vertical rectangle, then a pair of horizontal rectangles. The second has two vertical rectangles, then a pair of horizontal rectangles, then a vertical rectangle, then a pair of horizontal rectangles, then a vertical rectangle."/></p></li>
+<li><p>Case 3: There are two vertical stones between the horizontal stones.<br />
+There could be 0, 1, or 2 vertical stones to the right of the rightmost horizontal stones. So there are 3 ways that four patio stones are vertical and four are horizontal when there are two vertical stones between the horizontal stones. The first 2 of these ways are shown.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones7.png" alt="One arrangement alternates between two vertical rectangles and two horizontal rectangles. The other has one vertical rectangle, then two horizontal rectangles, then two vertical rectangles, then two horizontal rectangles, then one vertical rectangle."/></p></li>
+<li><p>Case 4: There are three vertical stones between the horizontal stones.<br />
+There could be 0 or 1 vertical stones to the right of the rightmost horizontal stones. So there are 2 ways that four patio stones are vertical and four are horizontal when there are three vertical stones between the horizontal stones.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones8.png" alt="The two possible arrangements."/></p></li>
+<li><p>Case 5: There are four vertical stones between the horizontal stones.<br />
+There cannot be any vertical stones to the right of the rightmost horizontal stones, because they are all in between the horizontal stones. So there is 1 way that four patio stones are vertical and four are horizontal when there are four vertical stones between the horizontal stones.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones9.png" alt="The only possible arrangement."/></p></li>
+</ul></li>
+<li><p><u>Two patio stones are vertical, six are horizontal</u><br />
+</p>
+<ul>
+<li><p>Case 1: There are no horizontal stones between the vertical stones.<br />
+There could be 0, 2, 4, or 6 horizontal stones to the right of the rightmost vertical stone. So there are 4 ways that two patio stones are vertical and six are horizontal when there are no horizontal stones between the vertical stones. The first 2 of these ways are shown.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones10.png" alt="One arrangement has three pairs of horizontal rectangles followed by two vertical rectangles. The other has two pairs of horizontal rectangles, then two vertical rectangles, then a pair of horizontal rectangles."/></p></li>
+<li><p>Case 2: There are two horizontal stones between the vertical stones.<br />
+There could be 0, 2, or 4 horizontal stones to the right of the rightmost vertical stone. So there are 3 ways that two patio stones are vertical and six are horizontal when there are two horizontal stones between the vertical stones. The first 2 of these ways are shown.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones11.png" alt="One arrangement has two pairs of horizontal rectangles, then a vertical rectangle, then a pair of horizontal rectangles, then a vertical rectangle. The other alternates between two horizontal rectangles and one vertical rectangle."/></p></li>
+<li><p>Case 3: There are four horizontal stones between the vertical stones.<br />
+There could be 0 or 2 horizontal stones to the right of the rightmost vertical stone. So there are 2 ways that two patio stones are vertical and six are horizontal when there are four horizontal stones between the vertical stones.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones12.png" alt="One arrangement has two horizontal rectangles, then a vertical rectangle, then two pairs of horizontal rectangles, then a vertical rectangle. The other arrangement has a vertical rectangle, then two pairs of horizontal rectangles, then a vertical rectangle, then a pair of horizontal rectangles."/></p></li>
+<li><p>Case 4: There are six horizontal stones between the vertical stones.<br />
+There cannot be any horizontal stones to the right of the rightmost vertical stone, because they are all between the vertical stones. So there is 1 way that two patio stones are vertical and six are horizontal when there are six horizontal stones between the vertical stones.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones13.png" alt="The only possible arrangement."/></p></li>
+</ul></li>
+<li><p><u>All patio stones are horizontal</u><br />
+This can be done in only one way.</p>
+<p align="center"><img alt="" style="height:2cm" src="images/12Dstones14.png" alt="The arrangement with four pairs of horizontal rectangles placed one after the other."/></p></li>
+</ul>
+<p>Therefore, the total number of different arrangements of the patio stones is <span class="math inline">\(1+7+(5+4+3+2+1) + (4+3+2+1)+1 = 34.\)</span></p>
+</body>
+</html>

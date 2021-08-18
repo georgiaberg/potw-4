@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem D and Solution<br />
+Surprise Cupcakes</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>As part of their opening day celebration, Benny’s Bakery made 150 cupcakes. The cupcakes all looked identical on the outside, but 6 of them had caramel inside. Customers who bought a cupcake with a caramel inside won a free cake. The cupcakes were randomly arranged and customers were allowed to choose their own cupcakes.</p>
+<p>Zoe was the first customer in line and bought three cupcakes. What is the probability that exactly one of Zoe’s cupcakes had caramel inside?</p>
+<p style="text-align:center"><img src="images/cupcakes.png" style="width:60.0%" alt="" /></p>
+<h2>Solution</h2>
+<p>To start, we will count the total number of ways to select Zoe’s cupcakes. There are 150 ways to select the first cupcake. For each of these possible selections, there are 149 ways to select the second cupcake. So there are <span class="math inline">\(150\times 149=22\,350\)</span> ways to select the first two cupcakes. For each of these selections, there are 148 ways to select the third cupcake. So there are <span class="math inline">\(22\,350\times 148=3\,307\,800\)</span> ways to select the first three cupcakes. That’s a lot of ways!</p>
+<p>Of the 150 available cupcakes, 6 contain caramel and <span class="math inline">\(150-6=144\)</span> do not. Once a cupcake without caramel is selected, the number of available cupcakes without caramel decreases by 1.</p>
+<p>If Zoe selects exactly one cupcake with caramel, then her other two cupcakes do not have caramel. We have three cases to consider.</p>
+<p><strong>Case 1:</strong> The first cupcake has caramel.<br />
+The number of possible selections is <span class="math inline">\(6 \times 144 \times 143= 123\,552\)</span>.</p>
+<p><strong>Case 2:</strong> The second cupcake has caramel.<br />
+The number of possible selections is <span class="math inline">\(144 \times 6 \times 143= 123\,552\)</span>.</p>
+<p><strong>Case 3:</strong> The third cupcake has caramel.<br />
+The number of possible selections is <span class="math inline">\(144 \times 143 \times 6= 123\,552\)</span>.</p>
+<p>Thus, the total number of ways in which Zoe can select exactly one cupcake with caramel is <span class="math inline">\(123\,552 \times 3 = 370\,656\)</span>. To calculate the probability, we will divide this result by the total number of ways to select three cupcakes. <span class="math display">\[P(\mbox{Zoe selects exactly one cupcake with caramel})=\frac{370\,656}{3\,307\,800}=\frac{15\,444}{137\,825}\approx 0.112\]</span> Thus, the probability of Zoe selecting exactly one cupcake with caramel is <span class="math inline">\(\frac{15\,444}{137\,825}\)</span>, or approximately 11%.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem D and Solution</p>
+<p align="center">Doing Some Beading <br />
+<br />
+</p>
+<p><strong>Problem</strong><br />
+</p>
+<p>Amir is putting beads on a string. He plans on starting with 8 round beads, then 24 square beads, then 48 round beads, and then <span class="math inline">\(p\)</span> square beads (where <span class="math inline">\(p&gt;0\)</span>). At some point after he has put on <span class="math inline">\(n\)</span> beads (where <span class="math inline">\(n&gt;0\)</span>), he realizes that on his string there are twice as many beads of one shape than there are of the other shape. Determine the maximum and minimum values of <span class="math inline">\(p\)</span> that result in exactly 5 possible values of <span class="math inline">\(n\)</span>.</p>
+<p align="center"><img style="height:4cm" src="images/bead1.png" alt="" /></p>
+<p><strong>Solution</strong><br />
+ We can start by drawing a sketch to visualize the problem.</p>
+<p align="center"><img style="height:2cm" src="images/sketch1.png" alt = "A string of beads starting with 8 round beads, followed by 24 square beads, then 48 round beads, and finally p square beads." /></p>
+<p>Notice that we must have <span class="math inline">\(n&gt;8\)</span> because the first 8 beads are round, and we need at least one bead of each shape.<br />
+After 8 round beads and 4 square beads, there are twice as many round beads as square beads. So the first value of <span class="math inline">\(n\)</span> is <span class="math inline">\(8+4=12\)</span>.<br />
+After 8 round beads and 16 square beads, there are twice as many square beads as round beads. So the second value of <span class="math inline">\(n\)</span> is <span class="math inline">\(8+16=24\)</span>.<br />
+The next beads are all square, so there are no additional values of <span class="math inline">\(n\)</span> until we get to the next section of round beads.<br />
+After 12 round beads and 24 square beads, there are twice as many square beads as round beads. So the third value of <span class="math inline">\(n\)</span> is <span class="math inline">\(12+24=36\)</span>.<br />
+After 48 round beads and 24 square beads, there are twice as many round beads as square beads. So the fourth value of <span class="math inline">\(n\)</span> is <span class="math inline">\(48+24=72\)</span>.<br />
+The next beads are all round, so there are no additional values of <span class="math inline">\(n\)</span> until we get to the next section of square beads.<br />
+After 56 round beads and 28 square beads, there are twice as many round beads as square beads. So the fifth value of <span class="math inline">\(n\)</span> is <span class="math inline">\(56+28=84\)</span>. If there are 28 square beads, then <span class="math inline">\(24+p=28\)</span>, so <span class="math inline">\(p=4\)</span>. That means the minimum value of <span class="math inline">\(p\)</span> is 4.<br />
+To figure out the maximum value of <span class="math inline">\(p\)</span>, we need to find the sixth value of <span class="math inline">\(n\)</span>. After 56 round beads and 112 square beads, there are twice as many square beads as round beads. If there are 112 square beads, then <span class="math inline">\(24+p=112\)</span>, so <span class="math inline">\(p=88\)</span>. We want <span class="math inline">\(p\)</span> to be less than 88 though, because we want only 5 possible values of <span class="math inline">\(n\)</span>. That means the maximum value of <span class="math inline">\(p\)</span> is 87.<br />
+Thus, the minimum value of <span class="math inline">\(p\)</span> is 4 and the maximum value of <span class="math inline">\(p\)</span> is 87.</p>
+</body>
+</html>
