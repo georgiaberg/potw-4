@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SolutionD2</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem B and Solution</p>
+<p align="center">Flangles <br />
+<br />
+</p>
+<p><strong>Problem</strong> <br />
+<br />
+</p>
+<p align="center"><img style="height:8cm" src="images/flags1.png" alt="Twenty seven flag positions, one for each of the letters from A to Z and one for a space, as given in the table." /></p>
+<p>Semaphore signal flags are used to communicate in places such as on aircraft carriers. Each letter is represented by a specific position of the two flags. Each flag is placed vertically, horizontally, or exactly halfway between the vertical and the horizontal.<br />
+</p>
+<ol type="a">
+<li><p>Add each letter to the table below by looking at the type of angle between the two flags in the signal for that letter. Letters A and L are already placed. The ‘space’ is not a letter. It is used to put a space between words. Assume the angles are between 0<span class="math inline">\(^{\circ}\)</span> and 180<span class="math inline">\(^{\circ}\)</span>, but can also include 0<span class="math inline">\(^{\circ}\)</span> and 180<span class="math inline">\(^{\circ}\)</span>.<br />
+</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Angle Type</strong></th>
+<th style="text-align: left;"><strong>Letters</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Acute</td>
+<td style="text-align: left;">A,</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Right</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Obtuse</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Straight</td>
+<td style="text-align: left;">L,</td>
+</tr>
+</tbody>
+</table>
+<p>Here is how we know that the angle for letter A is acute and for letter L is straight:</p>
+<p align="center">Letter A<br /></p>
+<p align="center"><img style="height:2cm" src="images/AngleA.png" alt = "Position of the two flags for the letter A." /><img style="height:2cm" src="images/FlagA.png" alt = "Angle being measured between the two flags." /></p>
+<p align="center">Letter L<br /></p>
+<p align="center"><img style="height:2cm" src="images/AngleL.png" alt = "Position of the two flags for the letter L." /> <img style="height:2cm" src="images/FlagL.png" alt = "Angle being measured between the two flags." /></p></li>
+<li><p>When communicating with semaphore signal flags, there are only four different angle measurements between the two flags. What are these angles? Assume the angles are between 0<span class="math inline">\(^{\circ}\)</span> and 180<span class="math inline">\(^{\circ}\)</span>, but can also include 0<span class="math inline">\(^{\circ}\)</span> and 180<span class="math inline">\(^{\circ}\)</span>.</p></li>
+<li><p>Try to communicate a simple message to a friend using your arms as semaphores.</p></li>
+</ol>
+<p><strong>Solution</strong> <br />
+<br />
+</p>
+<ol type="a">
+<li><p>The appropriate groups of letters are:</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Angle Type</strong></th>
+<th style="text-align: left;"><strong>Letters</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Acute</td>
+<td style="text-align: left;">A, G, H, O, T, W, Z</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Right</td>
+<td style="text-align: left;">B, F, I, J, N, P, U, X</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Obtuse</td>
+<td style="text-align: left;">C, E, K, M, Q, S, V, Y</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Straight</td>
+<td style="text-align: left;">D, L, R</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Since each acute angle is halfway between horizontal and the vertical, each one must measure <span class="math inline">\(\frac{1}{2}\)</span> of <span class="math inline">\(90^{\circ}\)</span> which is <span class="math inline">\(45^{\circ}\)</span>.<br />
+Also, each obtuse angle must measure <span class="math inline">\(90^{\circ} + 45^{\circ} = 135^{\circ}\)</span>.<br />
+Therefore, the four angles in use are <span class="math inline">\(45^{\circ}\)</span>, <span class="math inline">\(90^{\circ}\)</span>, <span class="math inline">\(135^{\circ}\)</span>, and <span class="math inline">\(180^{\circ}\)</span>.</p></li>
+</ol>
+</body>
+</html>

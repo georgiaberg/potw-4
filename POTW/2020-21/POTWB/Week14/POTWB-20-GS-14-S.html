@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SolutionR4</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem B and Solution</p>
+<p align="center">Reflecting on Your Design <br />
+<br />
+</p>
+<p><strong>Problem</strong> <br />
+</p>
+<p>In parts a) and b), we are going to be performing a number of reflections. When you are finished all the reflections, you should have an overall pattern that is pleasing to the eye.<br />
+</p>
+<ul>
+<li><p>The solid lines in the image show the start of a pattern. The dotted lines represent mirrors that will reflect an image. First, reflect the solid lines across mirror A to create new solid lines between mirrors A and B. Then reflect the new solid lines across mirror B to create new solid lines between mirrors B and C. Continue in this way to finish the design, and reflect the new lines of the pattern across mirrors C, D, E, F, and then G.</p>
+<p align="center"><img style="height:8cm" src="images/R4_dgm1a.png" alt="A circle is divided into eight equal pieces. Eight dotted lines meeting at a central point form the sides of the pieces. These lines are labelled A, B, C, D, E, F, G, and H, in a clockwise direction. A design is drawn using solid lines within the section between lines H and A." /></p></li>
+<li><p>The start of a second pattern is shown on the right. The dotted lines represent mirrors that will reflect an image. First, reflect the pattern across mirror A to create a new pattern between mirrors A and B. Then reflect the new pattern across mirror B to create a new pattern between mirrors B and C. Continue in this way to finish the design, and reflect the new pattern across mirrors C, D and then E.</p>
+<p align="center"><img style="height:8cm" src="images/R4_dgm2a.png" alt="A circle is divided into six equal pieces. Six dotted lines meeting at a central point form the sides of the pieces. These lines are labelled A, B, C, D, E, and F, in a clockwise direction. A design is drawn within the section between lines F and A." /></p></li>
+<li><p>Describe to a classmate the process you used to complete your design accurately.</p></li>
+</ul>
+<p><strong>Solution</strong> <br />
+</p>
+<p>The completed diagrams are shown on the next page.<br />
+a)</p>
+<p align="center"><img style="height:8cm" src="images/R4_soln_a.png" alt="The completed diagram has a pattern drawn in each of the eight pieces of the circle. The dotted lines form lines of symmetry of the diagram." /></p>
+<p>b)</p>
+<p align="center"><img style="height:8cm" src="images/R4_soln_b.png" alt="The completed diagram has a pattern drawn in each of the six pieces of the circle. The dotted lines form lines of symmetry of the diagram." /></p>
+<p>c) Here are some strategies you might have used.</p>
+<ul>
+<li><p>Use a MIRA or some other optical drawing instrument to ‘reflect’ across the dotted lines.</p></li>
+<li><p>Fold the paper along the dotted line, trace the solid lines onto the back of the next section, and then open the paper up and trace the solid lines through the paper so they are on the front.</p></li>
+<li><p>Mark key points on the pattern, such as the vertices of any closed shape or where a line changes direction. Then measure the horizontal or vertical distance from each key point to the dotted line. Use these distances to draw the key points in the next section, and then complete the pattern using the key points.</p></li>
+</ul>
+</body>
+</html>

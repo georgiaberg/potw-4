@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SolutionRM1</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      /* display: block; */
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      /* border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a; */
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /></p>
+<p align="center"><strong>Problem of the Week</strong></p>
+<p align="center">Problem B and Solution</p>
+<p align="center">That’s a Lot of Water <br />
+<br />
+</p>
+<p><strong>Problem</strong> <br />
+</p>
+<p>When you buy items, you “use” water from wherever those items were grown and/or produced. This water is called “virtual” water, but the water is in fact very real. According to data from The World Counts, the amount of virtual water you use on average when you buy four different items is shown in the table.<br />
+</p>
+<table border="1">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Item</strong></th>
+<th style="text-align: center;"><strong>Amount of Virtual Water (L)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">one cotton t-shirt</td>
+<td style="text-align: center;">2500</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">one sheet of printer paper</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">one bag of chocolate chips</td>
+<td style="text-align: center;">7200</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">one hamburger</td>
+<td style="text-align: center;">1800</td>
+</tr>
+</tbody>
+</table>
+<p><img style="height:3cm" src="images/drop.png" alt = "A drop of water" /></p>
+<ol type="a">
+<li><p>Juan bought 6 cotton t-shirts, 500 sheets of printer paper, 5 bags of chocolate chips, and 15 hamburgers last year. Draw a bar graph to compare the amount of virtual water he used last year for each of the four items.</p></li>
+<li><p>Calculate the total amount of virtual water used for all the items in your graph from (a). On average, a 10 minute shower uses 200 L of water. How many 10 minute showers would it take to use that much water?</p></li>
+<li><p>In this activity we looked at the amount of virtual water used to produce four different items, but we use virtual water when we buy anything. What are some ways you can reduce the amount of virtual water you use?</p></li>
+</ol>
+<p><strong>Solution</strong> <br />
+</p>
+<ol type="a">
+<li><p>First we calculate the total amount of virtual water Juan used for each of the items. <span class="math display">\[\begin{aligned}
+\text{t-shirts: } &amp; 2500 \times 6 = 15\,000\text{ L}\\
+\text{paper: } &amp; 10 \times 500 = 5000\text{ L}\\
+\text{chocolate chips: } &amp; 7200 \times 5 = 36\,000\text{ L}\\
+\text{hamburgers: } &amp; 1800 \times 15 = 27\,000\text{ L}\end{aligned}\] The graph is shown below.</p>
+<p align="center"><img style="height:10cm" src="images/15Bgraph.png"alt = "A bar graph with Items Purchased along the horizontal axis and Amount of Virtual Water measured in one thousand litres along the vertical." /></p></li>
+<li><p>To get the total amount of virtual water, add the four amounts we calculated in part (a). <span class="math display">\[15\,000+5000+36\,000+27\,000=83\,000\] So 83 000 L of virtual water was used in total. To calculate the number of showers, we will divide this number by 200. <span class="math display">\[83\,000\div 200=415\] So it would take 415 showers to use that much water, on average.</p></li>
+<li><p>There are many ways we can reduce the amount of virtual water we use. Some of the ways are listed below.</p>
+<ul>
+<li><p>Take care of clothing so it lasts longer</p></li>
+<li><p>Buy secondhand items whenever possible</p></li>
+<li><p>Use paper only when necessary, and use both sides of the paper whenever you can</p></li>
+<li><p>Start a garden to grow your own fruits and vegetables</p></li>
+<li><p>Repair broken items instead of buying new ones</p></li>
+</ul></li>
+</ol>
+</body>
+</html>
