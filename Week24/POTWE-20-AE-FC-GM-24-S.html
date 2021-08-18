@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem E and Solution<br />
+Stay on Track</h1>
+</header>
+<main role="solution">
+<p>At noon, two trains are <span class="math inline">\(1000\)</span> km apart. The first train is north of the second train and is traveling south. The second train is traveling east. Both trains travel at the same average speed, <span class="math inline">\(100\)</span> km/h.</p>
+<p>At what time is the <span><strong>total</strong></span> distance travelled by the two trains equal to the distance between the trains?</p>
+<p style="text-align:center"><img src="images/Train.png" style="width:60.0%" alt="" /></p>
+</main>
+<h2>Solution</h2>
+<p>Let <span class="math inline">\(t\)</span> be the time in hours until the total distance travelled by the two trains is equal to the distance between the trains.</p>
+<p>Since each train is travelling at <span class="math inline">\(100\)</span> km/h, the distance travelled by each train in <span class="math inline">\(t\)</span> hours is <span class="math inline">\(100t\)</span> km. The total distance travelled by the two trains is <span class="math inline">\(2\times 100t=200t\)</span> km.</p>
+<p>The diagram shows the positions of the two trains after <span class="math inline">\(t\)</span> hours. The southbound train starts at <span class="math inline">\(B\)</span> and moves to <span class="math inline">\(C\)</span>. The eastbound train starts at <span class="math inline">\(R\)</span> and moves to <span class="math inline">\(S\)</span>.</p>
+<p style="text-align:center"><img src="images/case1aboveR.png" style="width:40.0%" alt="Points B, C, and R are plotted on a vertical axis. Point S is east of point R." /></p>
+<p>Then <span class="math inline">\(BC=RS=100t\)</span> and since <span class="math inline">\(BR = 1000\)</span>, <span class="math inline">\(CR=1000-100t\)</span>. We want the time <span class="math inline">\(t\)</span> when <span class="math inline">\(CS=BC+RS=100t+100t=200t\)</span>.</p>
+<p><span class="math inline">\(\triangle CRS\)</span> is right angled, so <span class="math display">\[\begin{aligned}
+CS^2&amp;=CR^2+RS^2\\
+(200t)^2&amp;=(1000-100t)^2+(100t)^2\\
+40000t^2&amp;=1000000-200000t+10000t^2+10000t^2\\
+20000t^2+200000t-1000000&amp;=0\\
+t^2+10t-50&amp;=0\\\end{aligned}\]</span> Using the Quadratic Formula, <span class="math display">\[\begin{aligned}
+t&amp;=\frac{-10\pm \sqrt{100-4(-50)}}{20}\\
+t&amp;=\frac{-10\pm 10\sqrt{3}}{2}\\
+t&amp;=-5\pm 5\sqrt{3}\end{aligned}\]</span> Since <span class="math inline">\(t&gt;0\)</span>, <span class="math inline">\(-5- 5\sqrt{3}\)</span> is inadmissible. Therefore, <span class="math inline">\(t=-5+ 5\sqrt{3} \ \dot=\ 3.66\)</span> hours.</p>
+<p>The distance between the two trains will be equal to their total distance travelled in <span class="math inline">\((-5+ 5\sqrt{3})\)</span> hours, which is approximately <span class="math inline">\(3\)</span> hours and <span class="math inline">\(40\)</span> minutes after they leave their initial positions. The time will be approximately 3:40 pm.</p>
+<p>Could the diagram be drawn any other way? On the next page the other two possible diagrams are briefly discussed.</p>
+<p>We will repeat some of the initial work and then apply it to a second diagram.<br />
+Let <span class="math inline">\(t\)</span> be the time in hours until the total distance travelled by the two trains is equal to the distance between the trains.<br />
+Since each train is travelling at <span class="math inline">\(100\)</span> km/h, the distance travelled by each train in <span class="math inline">\(t\)</span> hours is <span class="math inline">\(100t\)</span> km. The total distance travelled by the two trains is <span class="math inline">\(2\times 100t=200t\)</span> km.</p>
+<p>Maybe the train travelling south gets to a point in line with the west to east direction of the second train.<br />
+The diagram shows the positions of the two trains after <span class="math inline">\(t\)</span> hours.</p>
+<p style="text-align:center"><img src="images/case2atR.png" style="width:50.0%" alt="An arrow of length 100t km points south from B to R. An arrow of length 100t km points east from R to S." /></p>
+<p>Here, <span class="math inline">\(BR=1000\)</span> km and it follows that <span class="math inline">\(t=10\)</span> hours. The second train travels from <span class="math inline">\(R\)</span> to <span class="math inline">\(S\)</span>, a total of <span class="math inline">\(1000\)</span> km, in the same time. But here <span class="math inline">\(RS\)</span> is also the distance between the two trains, so is also supposed to be equal to the total distance travelled by the two trains. The total distance travelled is <span class="math inline">\(2000\)</span> km, but <span class="math inline">\(RS=1000\)</span> km. This diagram is not possible.</p>
+<p>Is it possible that the train travelling south goes lower than the west to east line along which the second train travels?<br />
+The diagram shows the positions of the two trains after <span class="math inline">\(t\)</span> hours.</p>
+<p style="text-align:center"><img src="images/case3belowR.png" style="width:50.0%" alt="An arrow points south from B to C. Point R lies between B and C, 1000 km south of B. An arrow points east from R to S." /></p>
+<p>The distance travelled by the first train is represented by <span class="math inline">\(BC=100t\)</span> km and it follows that <span class="math inline">\(RC=(100t-1000)\)</span> km. The second train travels from <span class="math inline">\(R\)</span> to <span class="math inline">\(S\)</span>, a total of <span class="math inline">\(100t\)</span> km in the same time. The total distance is <span class="math inline">\(CS=200t\)</span> km.</p>
+<p>In any triangle, the sum of the lengths of any two sides of the triangle must be greater than the length of the third side. This is known as the triangle inequality. In <span class="math inline">\(\triangle RSC\)</span>, <span class="math inline">\(RC+RS=(100t-1000)+100t=200t-1000&lt;200t=CS\)</span>.</p>
+<p>Here, the triangle inequality is not satisfied, so this “triangle” cannot represent the situation presented in this problem. It can be shown that the triangle shown on the previous page satisfies the triangle inequality.</p>
+</main>
+</body>
+</html>

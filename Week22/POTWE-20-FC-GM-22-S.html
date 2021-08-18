@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem E and Solution<br />
+Good Extensions</h1>
+</header>
+<main role="solution">
+<p>The sides of <span class="math inline">\(\triangle PQR\)</span> are extended to create <span class="math inline">\(\triangle XYZ\)</span> as follows: side <span class="math inline">\(RQ\)</span> is extended to <span class="math inline">\(Y\)</span> so that <span class="math inline">\(RQ=QY\)</span>, side <span class="math inline">\(QP\)</span> is extended to <span class="math inline">\(X\)</span> so that <span class="math inline">\(QP=PX\)</span>, and side <span class="math inline">\(PR\)</span> is extended to <span class="math inline">\(Z\)</span> so that <span class="math inline">\(PR=RZ\)</span>.</p>
+<p>If the area of <span class="math inline">\(\triangle XYZ =1197\)</span>, determine the area of <span class="math inline">\(\triangle PQR\)</span>.</p>
+<p style="text-align:center"><img src="images/manytriangles.png" style="width:50.0%" alt="" /></p>
+<h2>Solution</h2>
+<p>On the diagram, the lengths of the equal sides, <span class="math inline">\(QP=PX\)</span>, <span class="math inline">\(PR=RZ\)</span>, and <span class="math inline">\(RQ=QY\)</span>, have been marked. Join <span class="math inline">\(P\)</span> to <span class="math inline">\(Y\)</span>, <span class="math inline">\(Q\)</span> to <span class="math inline">\(Z\)</span>, and <span class="math inline">\(R\)</span> to <span class="math inline">\(X\)</span>.</p>
+<p style="text-align:center"><img src="images/manytrianglessoln.png" style="width:50.0%" alt="" /></p>
+<p><span class="math inline">\(\triangle PQR\)</span> and <span class="math inline">\(\triangle QRZ\)</span> have a common altitude drawn from vertex <span class="math inline">\(Q\)</span> to the line segment <span class="math inline">\(PZ\)</span>. The triangles have equal base lengths, <span class="math inline">\(PR=RZ\)</span>.<br />
+Therefore, area <span class="math inline">\(\triangle PQR =\)</span> area <span class="math inline">\(\triangle QRZ=x\)</span>.<br />
+</p>
+<p style="text-align:center"><img src="images/PQRtrianglesoln.png" style="width:30.0%" alt="" /></p>
+<p>At this point we can proceed to look at various other triangles with equal areas. As you go through each pair of triangles, it may help to rotate the diagram so the bases of the triangles are always on the bottom.</p>
+<p><span class="math inline">\(\triangle PQR\)</span> and <span class="math inline">\(\triangle PQY\)</span> have the same height and equal base lengths (<span class="math inline">\(RQ=QY\)</span>).<br />
+Therefore, <span class="math inline">\(\text{area }\triangle PQY = \text{area }\triangle PQR=x\)</span>.</p>
+<p><span class="math inline">\(\triangle PQY\)</span> and <span class="math inline">\(\triangle PXY\)</span> have the same height and equal base lengths (<span class="math inline">\(QP=PX\)</span>).<br />
+Therefore, <span class="math inline">\(\text{area }\triangle PXY =\text{area }\triangle PQY=x\)</span>.</p>
+<p><span class="math inline">\(\triangle PXR\)</span> and <span class="math inline">\(\triangle PQR\)</span> have the same height and equal base lengths (<span class="math inline">\(QP=PX\)</span>).<br />
+Therefore, <span class="math inline">\(\text{area }\triangle PXR =\text{area }\triangle PQR=x\)</span>.</p>
+<p><span class="math inline">\(\triangle PXR\)</span> and <span class="math inline">\(\triangle RXZ\)</span> have the same height and equal base lengths (<span class="math inline">\(PR=RZ\)</span>).<br />
+Therefore, <span class="math inline">\(\text{area }\triangle RXZ =\text{area }\triangle PXR=x\)</span>.</p>
+<p><span class="math inline">\(\triangle QRZ\)</span> and <span class="math inline">\(\triangle QYZ\)</span> have the same height and equal base lengths (<span class="math inline">\(RQ=QY\)</span>).<br />
+Therefore, <span class="math inline">\(\text{area }\triangle QYZ =\text{area }\triangle QRZ=x\)</span>.</p>
+<p>Then, <span class="math display">\[\begin{aligned}
+\text{area } {\triangle XYZ} &amp;= \text{area }{\triangle PXY} +\text{area }{\triangle PQY} +\text{area }{\triangle PQR} +\text{area }{\triangle PXR} +\text{area }{\triangle RXZ} \\
+&amp;\hspace{11.3cm}+\text{ area }{\triangle QRZ} +\text{area }{\triangle QYZ}\\
+&amp;=x+x+x+x+x+x+x\end{aligned}\]</span> Therefore, <span class="math inline">\(7x=1197\)</span> and <span class="math inline">\(x=171\)</span>.</p>
+<p>Therefore, the area of <span class="math inline">\(\triangle PQR\)</span> is <span class="math inline">\(171\)</span>.</p>
+</main>
+</body>
+</html>

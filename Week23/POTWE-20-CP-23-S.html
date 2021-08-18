@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+    h1{
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	font-size: 22px
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem E and Solution<br />
+Red Dog</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>We can take any word and rearrange all the letters to get another “word”. These new “words” may be nonsensical. For example, you can rearrange the letters in <span class="math inline">\(MATH\)</span> to get <span class="math inline">\(MTHA\)</span>.</p>
+<p>Nalan wants to rearrange all the letters in <span class="math inline">\(RED DOG\)</span>. However, she uses the following rules:</p>
+<ul>
+<li><p>the letters <span class="math inline">\(R\)</span>, <span class="math inline">\(E\)</span>, and <span class="math inline">\(D\)</span> cannot be adjacent to each other and in that order, and</p></li>
+<li><p>the letters <span class="math inline">\(D\)</span>, <span class="math inline">\(O\)</span>, and <span class="math inline">\(G\)</span> cannot be adjacent to each other and in that order.</p></li>
+</ul>
+<p>For example, the “words” <span class="math inline">\(DOGRED\)</span>, <span class="math inline">\(DDOGRE\)</span>, <span class="math inline">\(GDREDO\)</span>, and <span class="math inline">\(DREDOG\)</span> are examples of unacceptable words in this problem, but <span class="math inline">\(DROEGD\)</span> is acceptable.</p>
+<p>How many different arrangements of the letters in <span class="math inline">\(RED DOG\)</span> can Nalan make if she follows these rules?</p>
+<p style="text-align:center"><img src="images/reddog.png" style="width:30.0%" alt="" /></p>
+<h2>Solution</h2>
+<p>We will find the total number of possible “words” Nalan can make, and then exclude those “words” which don’t follow the rules (i.e. those which contain <span class="math inline">\(RED\)</span> or <span class="math inline">\(DOG\)</span> (or both)).</p>
+<ol>
+<li><p>Determine the total number of “words” formed using <span class="math inline">\(2\)</span> <span class="math inline">\(D\)</span>s, <span class="math inline">\(1\)</span> <span class="math inline">\(E\)</span>, <span class="math inline">\(1\)</span> <span class="math inline">\(G\)</span>, <span class="math inline">\(1\)</span> <span class="math inline">\(O\)</span>, and <span class="math inline">\(1\)</span> <span class="math inline">\(R\)</span>.</p>
+<p>First, place the <span class="math inline">\(E\)</span> in <span class="math inline">\(6\)</span> possible positions. Then, for each of the <span class="math inline">\(6\)</span> possible placements of the <span class="math inline">\(E\)</span>, there are <span class="math inline">\(5\)</span> ways to place the <span class="math inline">\(G\)</span>. There are then <span class="math inline">\(6\times 5=30\)</span> ways to place the <span class="math inline">\(E\)</span> and the <span class="math inline">\(G\)</span>. Then, for each of the <span class="math inline">\(30\)</span> possible placements of the <span class="math inline">\(E\)</span> and <span class="math inline">\(G\)</span>, there are <span class="math inline">\(4\)</span> ways to place the <span class="math inline">\(O\)</span>. There are then <span class="math inline">\(30\times 4=120\)</span> ways to place the <span class="math inline">\(E\)</span>, the <span class="math inline">\(G\)</span>, and the <span class="math inline">\(O\)</span>. Then, for each of the <span class="math inline">\(120\)</span> possible placements of the <span class="math inline">\(E\)</span>, <span class="math inline">\(G\)</span>, and <span class="math inline">\(O\)</span>, there are <span class="math inline">\(3\)</span> ways to place the <span class="math inline">\(R\)</span>. There are then <span class="math inline">\(120\times 3=360\)</span> ways to place the <span class="math inline">\(E\)</span>, the <span class="math inline">\(G\)</span>, the <span class="math inline">\(O\)</span>, and the <span class="math inline">\(R\)</span>.</p>
+<p>For each of the <span class="math inline">\(360\)</span> ways to place the <span class="math inline">\(E\)</span>, <span class="math inline">\(G\)</span>, <span class="math inline">\(O\)</span>, and <span class="math inline">\(R\)</span>, the <span class="math inline">\(2~D\)</span>s must go in the remaining two empty spaces in <span class="math inline">\(1\)</span> way. Therefore, there are <span class="math inline">\(360\times 1=360\)</span> ways to place the <span class="math inline">\(E\)</span>, the <span class="math inline">\(G\)</span>, the <span class="math inline">\(O\)</span>, the <span class="math inline">\(R\)</span>, and the <span class="math inline">\(2~D\)</span>s.</p>
+<p>Thus, there are <span class="math inline">\(360\)</span> possible “words” that Nalan can make.</p></li>
+<li><p>Determine how many “words” contain <span class="math inline">\(RED\)</span>.</p>
+
+<p>There are <span class="math inline">\(4\)</span> ways to place the word <span class="math inline">\(RED\)</span> in the six spaces. The word <span class="math inline">\(RED\)</span> could start in the first, second, third, or fourth position.</p>
+<p style="text-align:center"><img src="images/RED.png" style="width:80.0%" alt="" /></p>
+<p>For each placement of the word <span class="math inline">\(RED\)</span>, there are <span class="math inline">\(6\)</span> ways to place the letters of the word <span class="math inline">\(DOG\)</span> in the remaining three spaces: <span class="math inline">\(DOG\)</span>, <span class="math inline">\(DGO\)</span>, <span class="math inline">\(GDO\)</span>, <span class="math inline">\(GOD\)</span>, <span class="math inline">\(ODG\)</span> and <span class="math inline">\(OGD\)</span>. So there are <span class="math inline">\(4 \times 6=24\)</span> “words” containing <span class="math inline">\(RED\)</span>.</p></li>
+<li><p>Determine how many “words” contain <span class="math inline">\(DOG\)</span>.</p>
+<p>There are <span class="math inline">\(4\)</span> ways to place the word <span class="math inline">\(DOG\)</span> in the six spaces. The word <span class="math inline">\(DOG\)</span> could start in the first, second, third, or fourth position.</p>
+<p style="text-align:center"><img src="images/DOG.png" style="width:80.0%" alt="" /></p>
+
+<p>For each placement of the word <span class="math inline">\(DOG\)</span>, there are <span class="math inline">\(6\)</span> ways to place the letters of the word <span class="math inline">\(RED\)</span> in the remaining three spaces: <span class="math inline">\(DER\)</span>, <span class="math inline">\(DRE\)</span>, <span class="math inline">\(EDR\)</span>, <span class="math inline">\(ERD\)</span>, <span class="math inline">\(RDE\)</span> and <span class="math inline">\(RED\)</span>. So there are <span class="math inline">\(4 \times 6=24\)</span> “words” containing <span class="math inline">\(DOG\)</span>.</p></li>
+<li><p>Determine how many “words” contain both <span class="math inline">\(RED\)</span> and <span class="math inline">\(DOG\)</span>.</p>
+<p>There are <span class="math inline">\(4\)</span> “words” that contain both <span class="math inline">\(RED\)</span> and <span class="math inline">\(DOG\)</span>. They are as follows. <span class="math display">\[REDDOG\quad\quad DOGRED \quad\quad REDOGD\quad\quad DREDOG\]</span> These <span class="math inline">\(4\)</span> “words” have been double-counted, as they would have been counted in case 2 and in case 3.</p></li>
+</ol>
+<p>Thus in total, there are <span class="math inline">\(24+24-4=44\)</span> “words” that contain <span class="math inline">\(RED\)</span> or <span class="math inline">\(DOG\)</span> (or both). Since there are <span class="math inline">\(360\)</span> possible “words” Nalan can make, we can subtract <span class="math inline">\(44\)</span> from this to determine the number of these “words” that do <em>not</em> contain <span class="math inline">\(RED\)</span> or <span class="math inline">\(DOG\)</span> (or both).</p>
+<p>Therefore, <span class="math inline">\(360-44=316\)</span> “words” can be formed in which the letters <span class="math inline">\(R\)</span>, <span class="math inline">\(E\)</span> and <span class="math inline">\(D\)</span> are not adjacent to each other and in that order and the letters <span class="math inline">\(D\)</span>, <span class="math inline">\(O\)</span> and <span class="math inline">\(G\)</span> are not adjacent to each other and in that order.</p>
+</main>
+</body>
+</html>

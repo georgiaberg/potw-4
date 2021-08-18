@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Solution</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 50em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1{
+    	margin-top: 1.4em;
+    	text-align: center;
+    	font-size: 28px
+    }
+    h2, h3{
+    	margin-top: 1.4em;
+    	font-size: 22px
+    }
+    h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 80%;
+      overflow-x: auto;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+      border: 1px solid black;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+      border: 1px solid black;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    
+	button {
+		border-radius: 5px;
+  		background-color: #00008B;
+  		border: 1px solid #00008B;
+  		color: #FFFFFF;
+  		padding: 8px 8px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 12px;
+  	}
+  	button:hover{
+  		background: #D3D3D3;
+  		border: 1px solid #00008B;
+  		color: #000000
+  	}
+  	.column-left {
+  		float: left;
+  		width: 40%;
+	}
+	.column-right {
+ 		float: right;
+  		width: 30%;
+	}
+	.column-center {
+  		display: inline-block;
+  		width: 30%;
+	}
+	.long {
+  		font-size: 15px;
+	}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<script>
+function hideSeek() {
+  var x = document.getElementById("longdesc");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+</head>
+<body>
+<header role="title">
+<img src="../../POTWStandardGraphics/POTW_header.png" alt="CEMC Banner" /><br />
+<h1>Problem of the Week<br />
+Problem E and Solution<br />
+Can Drive On!</h1>
+</header>
+<main role="solution">
+<h2>Problem</h2>
+<p>Bryn observed a real need in her community for canned food at the local food bank. On April 15, she decided to start a canned food drive, and hoped to collect <span class="math inline">\(4000\)</span> cans of food by the end of June. She posted flyers and spread the word. She made the following observations.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day Number</th>
+<th style="text-align: center;">Total Number of Cans Collected Since Beginning of Drive</th>
+<th style="text-align: center;">Increase from Previous Day</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(12\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(7\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(23\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(11\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(38\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(15\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Bryn noticed that the increases from one day to the next form an arithmetic sequence with first term <span class="math inline">\(3\)</span> and common difference <span class="math inline">\(4\)</span>. (An <span><em>arithmetic sequence</em></span> is a sequence in which each term after the first is obtained from the previous term by adding a constant. For example, <span class="math inline">\(3,5,7,9\)</span> is an arithmetic sequence with four terms and common difference <span class="math inline">\(2\)</span>.)</p>
+<p>Assuming that the pattern of daily increases continues, how many days would it take to collect at least <span class="math inline">\(4000\)</span> cans of food?</p>
+<p style="text-align:center"><img src="images/cans.png" style="width:20.0%" alt="" /></p>
+<p>The following information <em>may</em> be helpful in solving the problem.</p>
+<p>The sequence <span class="math inline">\(3,5,7,9\)</span> is an arithmetic sequence with four terms and common difference <span class="math inline">\(2\)</span>. The term in position <span class="math inline">\(n\)</span> is denoted <span class="math inline">\(t_n\)</span>. For example, we say that <span class="math inline">\(t_1=3\)</span>. The subscript <span class="math inline">\(1\)</span> is the position of the term in the sequence and <span class="math inline">\(3\)</span> is the value of the term.</p>
+<p>The general term of an arithmetic sequence is <span class="math inline">\(t_n=a+(n-1)d\)</span>, where <span class="math inline">\(a\)</span> is the first term, <span class="math inline">\(d\)</span> is the common difference, and <span class="math inline">\(n\)</span> is the term number.</p>
+<p>The sum, <span class="math inline">\(S_n\)</span>, of the first <span class="math inline">\(n\)</span> terms of an arithmetic sequence can be found using either <span class="math inline">\(S_n=\dfrac{n}{2}\left(2a+(n-1)d\right)\)</span> or <span class="math inline">\(S_n=n\left(\dfrac{t_1+t_n}{2}\right)\)</span>, where <span class="math inline">\(t_1\)</span> is the first term of the sequence and <span class="math inline">\(t_n\)</span> is the <span class="math inline">\(n^{th}\)</span> term of the sequence.</p>
+<p>For example, for the arithmetic sequence <span class="math inline">\(3,5,7,9\)</span>, we have <span class="math inline">\(a=t_1=3\)</span>, <span class="math inline">\(d=2\)</span>, <span class="math inline">\(t_4=9\)</span>, and <span class="math inline">\(S_4=3+5+7+9=24\)</span>.</p>
+<p>Also, <span class="math display">\[\begin{aligned}
+\dfrac{4}{2}\left(2a+(4-1)d\right)&amp;=\dfrac{4}{2}\left(2(3)+(4-1)2\right)\\
+&amp;=2\left(12\right)\\
+&amp;=24\\
+&amp;=S_4\end{aligned}\]</span> And, <span class="math display">\[\begin{aligned}
+4\left(\dfrac{t_1+t_4}{2}\right) &amp;=4\left(\dfrac{3+9}{2}\right)\\
+&amp;=4(6)\\
+&amp;=24\\
+&amp;=S_4\end{aligned}\]</span></p>
+<h2>Solution</h2>
+<p><span><strong>Solution 1</strong></span></p>
+<p>On day <span class="math inline">\(i\)</span>, let the total number of cans collected since the beginning of the drive be <span class="math inline">\(a_i\)</span>. That is, <span class="math inline">\(a_1=2\)</span>, <span class="math inline">\(a_2=5\)</span>, <span class="math inline">\(a_3=12\)</span>, <span class="math inline">\(a_4=23\)</span>, and <span class="math inline">\(a_5 = 38\)</span>. We want to determine the day number, <span class="math inline">\(n\)</span>, so that <span class="math inline">\(a_n\geq 4000\)</span>.</p>
+<p>Let the arithmetic sequence of the increases from day to day be <span class="math inline">\(t_1, t_2, t_3, \ldots, t_n,\ldots\)</span>.</p>
+<p>Then <span class="math inline">\(t_1=a_2-a_1=5-2=3\)</span>, <span class="math inline">\(t_2=a_3-a_2=12-5=7\)</span>, <span class="math inline">\(t_3=a_4-a_3=23-12=11\)</span>, and <span class="math inline">\(t_4=a_5-a_4=38-23=15\)</span>. This sequence of increases is arithmetic, with common difference <span class="math inline">\(d=t_2-t_1=7-3=4\)</span>. To determine <span class="math inline">\(t_5\)</span>, we add the common difference <span class="math inline">\(4\)</span> to <span class="math inline">\(t_4\)</span>. So <span class="math inline">\(t_5=t_4+4=15+4=19\)</span>. Then <span class="math inline">\(a_6=a_5+t_5=38+19=57\)</span>. This means that the total number of cans on day <span class="math inline">\(6\)</span> is <span class="math inline">\(57\)</span>. We could continue generating these increases and number of cans on the next day until the goal is reached.</p>
+<p>Let’s take a closer look at the number of cans. <span class="math display">\[\begin{aligned}
+a_1&amp;=2\\
+a_2&amp;=a_1+t_1=2+3=5\\ 
+a_3&amp;=a_2+t_2=2+3+7=12\\
+a_4&amp;=a_3+t_3=2+3+7+11=23\\
+a_5&amp;=a_4+t_4=2+3+7+11+15=38\\
+a_6&amp;=a_5+t_5=2+3+7+11+15+19=57\end{aligned}\]</span></p>
+<p>We can present the information in a table.</p>
+<table>
+<tbody>
+<tr class="even">
+<th style="text-align: center;">Day Number <br /><span class="math inline">\(n\)</span></th>
+<th style="text-align: center;">Total Number of Cans <br /><span class="math inline">\(a_n\)</span></th>
+<th style="text-align: center;">Daily Increase <br /><span class="math inline">\(t_n\)</span></th>
+<th style="text-align: center;">Difference of the Daily Increase <br /><span class="math inline">\(d\)</span></th>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">38</td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">57</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Since the second difference is constant, we can represent the general term of the sequence of total cans with a quadratic function in <span class="math inline">\(n\)</span>. Let <span class="math inline">\(a_n=pn^2+qn+r\)</span>, where <span class="math inline">\(p, q, r\)</span> are constants.</p>
+<p>For <span class="math inline">\(n=1\)</span>, <span class="math inline">\(a_1=2=p(1)^2+q(1)+r\)</span>. Therefore, <span class="math inline">\(p+ q+r=2\)</span>.(1)<br />
+For <span class="math inline">\(n=2\)</span>, <span class="math inline">\(a_2=5=p(2)^2+q(2)+r\)</span>. Therefore, <span class="math inline">\(4p+2q+r=5\)</span>.(2)<br />
+For <span class="math inline">\(n=3\)</span>, <span class="math inline">\(a_3=12=p(3)^2+q(3)+r\)</span>. Therefore, <span class="math inline">\(9p+3q+r=12\)</span>.(3)</p>
+<p>Subtracting (1) from (2), <span class="math inline">\(3p+q=3\)</span>.(4)<br />
+Subtracting (2) from (3), <span class="math inline">\(5p+q=7\)</span>.(5)</p>
+<p>Subtracting (4) from (5), <span class="math inline">\(2p=4\)</span> and <span class="math inline">\(p=2\)</span> follows.<br />
+Substituting <span class="math inline">\(p=2\)</span> into (4), <span class="math inline">\(3(2)+q=3\)</span> and <span class="math inline">\(q=-3\)</span> follows.</p>
+<p>Substituting <span class="math inline">\(p=2,\ q=-3\)</span> into (1), <span class="math inline">\(2-3+r=2\)</span> and <span class="math inline">\(r=3\)</span> follows.</p>
+<p>Therefore, <span class="math inline">\(a_n=2n^2-3n+3\)</span> is the general term of the sequence of total cans, in terms of <span class="math inline">\(n\)</span>.</p>
+<p>We want to find the value of <span class="math inline">\(n\)</span> so that <span class="math inline">\(2n^2-3n+3\geq 4000\)</span>. We will do so by first solving <span class="math inline">\(2n^2-3n+3 = 4000\)</span> for <span class="math inline">\(n\)</span>. Rearranging the equation, we obtain <span class="math inline">\(2n^2-3n-3997 = 0\)</span>. Using the quadratic formula, <span class="math inline">\(n \approx -43.96\)</span> or <span class="math inline">\(n \approx 45.46\)</span>. Since <span class="math inline">\(n\)</span> is the day number, <span class="math inline">\(n&gt;0\)</span>. Therefore, <span class="math inline">\(n \approx 45.46\)</span>, and it follows that on day 46 there would be over <span class="math inline">\(4000\)</span> cans collected in total.</p>
+<p>If we check when <span class="math inline">\(n=45\)</span>, <span class="math inline">\(a_{45}=3918\)</span> cans, which is under the goal.</p>
+<p>When <span class="math inline">\(n=46\)</span>, <span class="math inline">\(a_{46}=4097\)</span> cans and the goal is achieved. Therefore, it would take <span class="math inline">\(46\)</span> days to collect at least <span class="math inline">\(4000\)</span> cans of food. There are over <span class="math inline">\(46\)</span> days from April 15 to the end of June, so it is possible to achieve the goal if the pattern continues.</p>
+<p>Two more solutions follow.</p>
+<p><span><strong>Solution 2</strong></span></p>
+<p>As in Solution 1, on day <span class="math inline">\(i\)</span>, let the total number of cans collected since the beginning of the drive be <span class="math inline">\(a_i\)</span> and let the sequence of daily increases be <span class="math inline">\(t_1, t_2, t_3, \ldots, t_n,\ldots\)</span>. Then <span class="math inline">\(t_1=a_2-a_1=3\)</span> and <span class="math inline">\(\ t_2=a_3-a_2=7\)</span>. Since the sequence of daily increases is arithmetic, the constant difference is <span class="math inline">\(d=7-3=4\)</span>. We can generate more terms: <span class="math inline">\(t_3=11\)</span>, <span class="math inline">\(t_4=15\)</span>, <span class="math inline">\(t_5=19,~\ldots\)</span>.</p>
+<p>Each term in the sequence of daily increases is the difference between consecutive terms of the original sequence, so we get the following equations.</p>
+<p><span class="math display">\[\begin{aligned}
+a_{2} - a_{1} &amp; = t_{1} \\
+a_{3} - a_{2} &amp; = t_{2} \\
+a_{4} - a_{3} &amp; = t_{3} \end{aligned}\]</span> and so on, ending with <span class="math display">\[\begin{aligned}
+a_{n-2} - a_{n-3} &amp; = t_{n-3} \\
+a_{n-1} - a_{n-2} &amp; = t_{n-2} \\
+a_{n} - a_{n-1} &amp; = t_{n-1} \end{aligned}\]</span></p>
+<p>Adding these equations, we get <span class="math display">\[a_{n} - a_{1} = t_1+t_2+t_3+\cdots +t_{n-2}+t_{n-1}=S_{n-1} \quad (1)\]</span> as illustrated below.</p>
+<p style="text-align:center"><img src="images/E27_Illustration.png" style="width:80.0%" alt="The equations are stacked vertically with the terms a subscript 1 through a subscript n appearing on the left side. The terms a subscript 2 through a subscript n minus 1 appear exactly twice in the system of equations and are crossed out. The terms a subscript 1 and a subscript n each appear exactly once in the system of equations and are not crossed out. The expressions on the left side are added and the expressions on the right side are added." /></p>
+<p>To find the sum <span class="math inline">\(S_{n-1}=t_1+t_2+t_3+ \cdots +t_{n-2}+t_{n-1}\)</span> we can use the formula <span class="math inline">\(S_n=\dfrac{n}{2}[2a+(n-1)d]\)</span> with <span class="math inline">\(a=3\)</span> and <span class="math inline">\(d=4\)</span> for <span class="math inline">\((n-1)\)</span> terms. So <span class="math display">\[\begin{aligned}
+S_{n-1}&amp;=t_1+t_2+t_3+ \cdots  +t_{n-2}+t_{n-1}\\
+&amp;=\dfrac{n-1}{2}[2a+((n-1)-1)d]\\
+&amp;=\dfrac{n-1}{2}[2(3)+((n-1)-1)(4)]\\
+&amp;=\dfrac{n-1}{2}[6+(n-2)(4)]\\
+&amp;=\dfrac{n-1}{2}[6+4n-8]\\
+&amp;=\dfrac{n-1}{2}[4n-2]\\
+&amp;=(n-1)(2n-1)\end{aligned}\]</span></p>
+<p>From (1), <span class="math inline">\(a_n-a_1=S_{n-1}\)</span>, so <span class="math inline">\(a_n=S_{n-1}+a_1=(n-1)(2n-1)+2=2n^2-3n+3\)</span>.</p>
+<p>Therefore, <span class="math inline">\(a_n=2n^2-3n+3\)</span> is the general term of the sequence of total cans, in terms of <span class="math inline">\(n\)</span>.</p>
+<p>Then, as in Solution 1, we would find the value of <span class="math inline">\(n\)</span> so that <span class="math inline">\(2n^2-3n+3\geq 4000\)</span>. Without repeating the work here, we find that it would take <span class="math inline">\(46\)</span> days to collect at least <span class="math inline">\(4000\)</span> cans of food.</p>
+<p><span><strong>Solution 3</strong></span></p>
+<p>As in Solution 1, on day <span class="math inline">\(i\)</span>, let the total number of cans collected since the beginning of the drive be <span class="math inline">\(a_i\)</span> and let the sequence of daily increases be <span class="math inline">\(t_1, t_2, t_3, \ldots , t_n, \ldots\)</span>. Then <span class="math inline">\(t_1=a_2-a_1=3\)</span> and <span class="math inline">\(t_2=a_3-a_2=7\)</span>. Since the sequence of daily increases is arithmetic, the constant difference is <span class="math inline">\(d=7-3=4\)</span>. Using the formula for the general term of an arithmetic sequence, <span class="math inline">\(t_n=a+(n-1)d\)</span>, the general term of the sequence of increases is <span class="math inline">\(t_n=3+(n-1)(4)=3+4n-4=4n-1\)</span>.</p>
+<p>To generate the sequence of total cans, we start with the first term and add more terms from the arithmetic sequence of daily increases. For example, <span class="math display">\[\begin{aligned}
+ a_1&amp;=2\\
+a_2&amp;=2+t_1=2+[4(1)-1]=2+3=5\\
+a_3&amp;=2+t_1+t_2=2+[4(1)-1]+[4(2)-1]=2+3+7=12\end{aligned}\]</span></p>
+<p>So, <span class="math display">\[\begin{aligned}
+a_n&amp;=2+t_1+t_2+t_3+\ \cdots \ +t_{n-1}\\
+&amp;=2+[4(1)-1]+[4(2)-1]+[4(3)-1]+\ \cdots \ +[4(n-1)-1]\\
+&amp;=2+[4(1)+4(2)+4(3)+\ \cdots \ +4(n-1)]+(n-1)(-1)\\
+&amp;=2+4[1+2+3+\ \cdots \ +(n-1)]-n+1\\
+&amp;=3-n+4\left[\frac{(n-1)(n)}{2}\right]\quad \quad (1)\\
+&amp;=3-n+2(n^2-n)\\
+&amp;=3-n+2n^2-2n\\
+&amp;=2n^2-3n+3\end{aligned}\]</span></p>
+<p>An explanation is provided here to show how (1) is obtained.<br />
+Notice that <span class="math inline">\(1+2+3+ \cdots +(n-1)\)</span> is an arithmetic sequence with (<span class="math inline">\(n-1\)</span>) terms, first term <span class="math inline">\(b_1=1\)</span>, and last term <span class="math inline">\(b_{n-1}=(n-1)\)</span>. Using the formula for the sum of the terms of an arithmetic sequence, <span class="math inline">\(S_n=n\left(\dfrac{b_1+b_n}{2}\right)\)</span>, we obtain <span class="math display">\[S_{n-1}=(n-1)\left(\dfrac{1+(n-1)}{2}\right)=(n-1)\left(\dfrac{n}{2}\right)=\dfrac{(n-1)(n)}{2}\]</span></p>
+<p>Therefore, <span class="math inline">\(a_n=2n^2-3n+3\)</span> is the general term of the sequence of total cans, in terms of <span class="math inline">\(n\)</span>.</p>
+<p>Then, as in Solution 1, we would find the value of <span class="math inline">\(n\)</span> so that <span class="math inline">\(2n^2-3n+3\geq 4000\)</span>. Without repeating the work here, we find that it would take <span class="math inline">\(46\)</span> days to collect at least <span class="math inline">\(4000\)</span> cans of food.</p>
+</main>
+</body>
+</html>
